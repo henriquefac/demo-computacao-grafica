@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bspy0jvdfr4wd"
-path="res://.godot/imported/modern-edits-a5.png-b6f5e2353d8bf3b20f691da8fba3f5f7.ctex"
+path="res://.godot/imported/modern-edits-a5.png-97006bedf490f91969505794fc24c2fd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/modern-edits-a5.png"
-dest_files=["res://.godot/imported/modern-edits-a5.png-b6f5e2353d8bf3b20f691da8fba3f5f7.ctex"]
+source_file="res://Assets/modern-edits-a5.png"
+dest_files=["res://.godot/imported/modern-edits-a5.png-97006bedf490f91969505794fc24c2fd.ctex"]
 
 [params]
 

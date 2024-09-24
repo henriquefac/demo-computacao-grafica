@@ -1,10 +1,10 @@
 [gd_scene load_steps=26 format=4 uid="uid://bv66evdsbn0ur"]
 
-[ext_resource type="Texture2D" uid="uid://cd2ndbcttqr0w" path="res://assets/!modern-edits-doors.png" id="1_gqgve"]
-[ext_resource type="Texture2D" uid="uid://csybkixc25b81" path="res://assets/modern-edits-a2.png" id="2_wck58"]
-[ext_resource type="Texture2D" uid="uid://bncfbwym4dkia" path="res://modern-edits-a4.png" id="3_c6kan"]
-[ext_resource type="Texture2D" uid="uid://bspy0jvdfr4wd" path="res://modern-edits-a5.png" id="4_qqy2u"]
-[ext_resource type="Texture2D" uid="uid://cs0dybonxf46t" path="res://modern-edits-b.png" id="5_8a80b"]
+[ext_resource type="Texture2D" uid="uid://cd2ndbcttqr0w" path="res://Assets/!modern-edits-doors.png" id="1_gqgve"]
+[ext_resource type="Texture2D" uid="uid://csybkixc25b81" path="res://Assets/modern-edits-a2.png" id="2_wck58"]
+[ext_resource type="Texture2D" uid="uid://bncfbwym4dkia" path="res://Assets/modern-edits-a4.png" id="3_c6kan"]
+[ext_resource type="Texture2D" uid="uid://bspy0jvdfr4wd" path="res://Assets/modern-edits-a5.png" id="4_qqy2u"]
+[ext_resource type="Texture2D" uid="uid://cs0dybonxf46t" path="res://Assets/modern-edits-b.png" id="5_8a80b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4wut5"]
 texture = ExtResource("1_gqgve")

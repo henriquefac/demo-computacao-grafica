@@ -11,8 +11,14 @@ config_version=5
 [application]
 
 config/name="demo-testes-v1"
+run/main_scene="res://Scenes/Scenario_1.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/mode=3
+window/size/borderless=true
 
 [dotnet]
 

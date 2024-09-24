@@ -6,3 +6,14 @@
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_xttck")
 circle_scene = ExtResource("2_y8s54")
+
+[node name="Canvas" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="Canvas"]
+layout_mode = 0
+offset_right = 322.0
+offset_bottom = 318.0
