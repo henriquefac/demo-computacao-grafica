@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dv3ba2vsemhr2"]
+
+[ext_resource type="Script" path="res://scripts/quadrado_vermelho.gd" id="1_aiuuh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sn75e"]
+size = Vector2(30, 30)
+
+[node name="Quadrado_vermelho" type="Node2D"]
+script = ExtResource("1_aiuuh")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_sn75e")
+debug_color = Color(0.946591, 0.108583, 0.512448, 0.42)
