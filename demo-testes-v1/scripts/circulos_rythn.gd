@@ -1,4 +1,7 @@
 extends Node2D
+# sinal mostrando que houve troca
+signal troca
+
 var lerp_speed = 5.0  # Velocidade da transição
 # Referenciar os dois círculos
 var right: Node2D
@@ -8,8 +11,8 @@ var left: Node2D
 var camera_main: Camera2D
 
 # Velocidades
-var left_vel = 4
-var right_vel = -4
+var left_vel = 3
+var right_vel = -3
 
 # Posições iniciais
 var init_cir_1 = Vector2(-70, 0)
@@ -58,8 +61,8 @@ func _ready() -> void:
 	right.set_center_circle(left)
 	
 	# Começar a girar!
-	left.girar = false
-	right.girar = true
+	left.girar = true
+	right.girar = false
 	
 	# Atualizar a câmera inicialmente
 
@@ -70,8 +73,12 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interagir"):
 		if left.girar:
 			left.is_pressed()
+			if !left.girar:
+				emit_signal("troca")
 		else:
 			right.is_pressed()
+			if !right.girar:
+				emit_signal("troca")
 
 		
 	# Aplicar órbita se estiver girando

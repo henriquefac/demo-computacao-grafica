@@ -8,3 +8,5 @@ script = ExtResource("1_ap7fv")
 
 [node name="circulos_rythn" parent="." instance=ExtResource("2_4vugi")]
 z_index = 1
+
+[connection signal="troca" from="circulos_rythn" to="." method="_on_circulos_rythn_troca"]

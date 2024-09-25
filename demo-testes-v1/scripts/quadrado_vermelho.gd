@@ -4,6 +4,7 @@ extends Node2D
 var square_size = 100
 var square_color = Color(0.9, 0.1, 0.1)
 
+
 # função para desenhar esse negócio
 func _draw() -> void:
 	# defnir a posição e o tamanho

@@ -55,7 +55,7 @@ func orbit(delta: float) -> void:
 
 # Verifica se o botão foi pressionado
 func is_pressed():
-	print("pressionado")
+	
 	if flag_in_area:
 		girar = false
 		position = new_position

@@ -4,11 +4,9 @@ res://Events/Maini_Game.tscn
 res://elementos/quadrado_vermelho.tscn
 res://cenas/teste.tscn
 res://elementos/circulos_rythn.tscn
-res://elementos/quadrado_azul.tscn
-res://elementos/left_circle.tscn
-res://elementos/right_circle.tscn
 res://cenas/rythin_game.tscn
-res://scripts/circulos_rythn.gd
+res://elementos/left_circle.tscn
 res://scripts/rythin_game.gd
-res://scripts/quadrado_azul.gd
+res://scripts/circulos_rythn.gd
 res://scripts/quadrado_vermelho.gd
+res://scripts/left_circle.gd
