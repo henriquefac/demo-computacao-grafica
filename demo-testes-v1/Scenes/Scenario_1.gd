@@ -19,5 +19,4 @@ func _start_mini_game():
 	
 	await mini_game.game_over
 	
-	get_tree().paused = false
 	_start_timer(randf_range(10,30))

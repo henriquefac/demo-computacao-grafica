@@ -1,8 +1,6 @@
+res://Scenes/Scenario_1.tscn
+res://Scenes/Scenario_2.tscn
 res://Events/Maini_Game.tscn
 res://Events/Circle.tscn
-res://Scenes/Scenario_1.tscn
 res://Scenes/Scenario_1.gd
-res://Scenes/Scenario_2.tscn
 res://Events/Maini_Game.gd
-res://Events/RandomCircle.gd
-res://Scenes/Camera.gd

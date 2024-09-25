@@ -21,5 +21,4 @@ func _create_new_circle():
 
 func _on_circle_clicked():
 	score += 1
-	print("Pontuação: ", score)
 	_create_new_circle()
