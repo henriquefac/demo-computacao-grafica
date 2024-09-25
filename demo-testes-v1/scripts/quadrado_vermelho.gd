@@ -1,7 +1,7 @@
 extends Node2D
 
 # criar um quadrado : D
-var square_size = 110
+var square_size = 100
 var square_color = Color(0.9, 0.1, 0.1)
 
 # função para desenhar esse negócio

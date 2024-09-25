@@ -8,9 +8,12 @@
 script = ExtResource("1_7kn5g")
 
 [node name="right_circle" parent="." instance=ExtResource("3_sr03m")]
-position = Vector2(330, 178)
+position = Vector2(70, 0)
 
 [node name="left_circle" parent="." instance=ExtResource("2_urwqx")]
+position = Vector2(-70, 0)
+
+[node name="camera_main" type="Camera2D" parent="."]
 
 [connection signal="continue_azul" from="right_circle" to="left_circle" method="_on_right_circle_continue_azul"]
 [connection signal="continue_vermelho" from="left_circle" to="right_circle" method="_on_left_circle_continue_vermelho"]
