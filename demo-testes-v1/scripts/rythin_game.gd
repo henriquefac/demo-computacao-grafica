@@ -13,8 +13,8 @@ var quadrado_azul_scene = preload("res://elementos/quadrado_azul.tscn")
 var quadrado_vermelho_scene = preload("res://elementos/quadrado_vermelho.tscn")
 
 # matriz size
-var largura: int = 40
-var altura: int = 80
+var largura: int = 10
+var altura: int = 10
 
 var porcao: int = 9
 # direções possíveis (direita e cima)
@@ -148,6 +148,7 @@ func add_quadrado_azul(direcao = null):
 
 
 func _on_circulos_rythn_troca() -> void:
+	print(len(array_quadrados_segurados))
 	if len(array_quadrados_segurados) > 0:
 		array_quadrados_segurados[0].queue_free()
 		array_quadrados_segurados.pop_front()

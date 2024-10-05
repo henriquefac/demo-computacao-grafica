@@ -84,6 +84,8 @@ func _process(delta: float) -> void:
 	# Aplicar órbita se estiver girando
 	if left.girar and Input.is_action_just_pressed("interagir"):
 		left.angle = get_angle(right, left)
+		print("Angulo relativo a bola azul para bola vermelha: %d" % left.angle)
 
 	if right.girar and Input.is_action_just_pressed("interagir"):
 		right.angle = get_angle(left, right)
+		print("Angulo relativo a bola vermelha para bola azul: %d" % right.angle)

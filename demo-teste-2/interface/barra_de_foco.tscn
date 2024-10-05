@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://crlht0i6a4nhm"]
+
+[ext_resource type="Script" path="res://interface/barra_de_foco.gd" id="1_kwb3p"]
+
+[node name="barra_de_foco" type="HBoxContainer"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 190.0
+offset_bottom = 37.0
+script = ExtResource("1_kwb3p")
+
+[node name="foco" type="ColorRect" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 0.784314, 0.0431373, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="foco"]
+layout_mode = 1
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 178.0
+offset_bottom = 24.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="foco"]
+layout_mode = 1
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 178.0
+offset_bottom = 24.0
+color = Color(0.00392157, 1, 1, 1)

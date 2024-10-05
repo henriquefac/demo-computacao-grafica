@@ -60,7 +60,6 @@ func is_pressed():
 
 # Função chamada a cada frame
 func _process(delta: float) -> void:
-	
 	if girar:
 		orbit(delta)
 	queue_redraw()
