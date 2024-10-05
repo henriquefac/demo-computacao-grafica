@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bva1vl7x23uun"]
+
+[ext_resource type="Script" path="res://rhythm-scripts/circulos_rythn.gd" id="1_7kn5g"]
+[ext_resource type="PackedScene" uid="uid://jq22ccrppiur" path="res://rhythm-elements/left_circle.tscn" id="2_urwqx"]
+[ext_resource type="PackedScene" uid="uid://wtqlg1c4h8ho" path="res://rhythm-elements/right_circle.tscn" id="3_sr03m"]
+
+[node name="circulos_rythn" type="Node2D"]
+script = ExtResource("1_7kn5g")
+
+[node name="right_circle" parent="." instance=ExtResource("3_sr03m")]
+position = Vector2(70, 0)
+
+[node name="left_circle" parent="." instance=ExtResource("2_urwqx")]
+position = Vector2(-70, 0)
+
+[node name="camera_main" type="Camera2D" parent="."]
+
+[connection signal="continue_azul" from="right_circle" to="left_circle" method="_on_right_circle_continue_azul"]
+[connection signal="continue_vermelho" from="left_circle" to="right_circle" method="_on_left_circle_continue_vermelho"]

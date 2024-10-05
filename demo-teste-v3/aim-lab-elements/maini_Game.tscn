@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dp632nkvhc0er"]
+
+[ext_resource type="Script" path="res://aim-lab-scripts/maini_Game.gd" id="1_xttck"]
+[ext_resource type="PackedScene" uid="uid://csix8cr4srlsn" path="res://aim-lab-elements/circle.tscn" id="2_y8s54"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_xttck")
+circle_scene = ExtResource("2_y8s54")

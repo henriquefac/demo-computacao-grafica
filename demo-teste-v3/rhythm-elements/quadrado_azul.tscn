@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctusdq8hkwynf"]
+
+[ext_resource type="Script" path="res://rhythm-scripts/quadrado_azul.gd" id="1_aiuuh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fexlj"]
+size = Vector2(30, 30)
+
+[node name="quadrado_azul" type="Node2D"]
+script = ExtResource("1_aiuuh")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_fexlj")

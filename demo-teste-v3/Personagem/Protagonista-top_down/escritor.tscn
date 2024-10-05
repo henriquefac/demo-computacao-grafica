@@ -1,0 +1,111 @@
+[gd_scene load_steps=21 format=3 uid="uid://b3f81lsifuyps"]
+
+[ext_resource type="Script" path="res://Personagem/Protagonista-top_down/escritor.gd" id="1_gc103"]
+[ext_resource type="PackedScene" uid="uid://c64o3x36ebifx" path="res://interface/mina_ui.tscn" id="2_74g1m"]
+[ext_resource type="Texture2D" uid="uid://dhwcpfaxgylj0" path="res://assets/atlas_texture/caminhar_cima/cima_1.tres" id="3_qq1bb"]
+[ext_resource type="Texture2D" uid="uid://bqvtfcvlu4rdq" path="res://assets/atlas_texture/caminhar_cima/cima_2.tres" id="4_wfvfs"]
+[ext_resource type="Texture2D" uid="uid://lmcl3ikvuv34" path="res://assets/atlas_texture/caminhar_cima/cima_3.tres" id="5_3f4pa"]
+[ext_resource type="Texture2D" uid="uid://dp6m8lxam4tyi" path="res://assets/atlas_texture/caminhar_cima/cima_4.tres" id="6_q3ofh"]
+[ext_resource type="Texture2D" uid="uid://4wx3a5r80yxx" path="res://assets/atlas_texture/caminhar_frente/caminhar_1.tres" id="7_jr65m"]
+[ext_resource type="Texture2D" uid="uid://bxdaf1n5adxon" path="res://assets/atlas_texture/caminhar_direita/direita_1.tres" id="7_mq17f"]
+[ext_resource type="Texture2D" uid="uid://be2my3k3r2lpb" path="res://assets/atlas_texture/caminhar_direita/direita_2.tres" id="8_1xvti"]
+[ext_resource type="Texture2D" uid="uid://cb01dxlocvww" path="res://assets/atlas_texture/caminhar_frente/caminhar_2.tres" id="8_7htut"]
+[ext_resource type="Texture2D" uid="uid://dcqlrpyy6ueec" path="res://assets/atlas_texture/caminhar_direita/direita_3.tres" id="9_1235f"]
+[ext_resource type="Texture2D" uid="uid://xbelc3pcw4pn" path="res://assets/atlas_texture/caminhar_frente/caminhar_3.tres" id="9_b176s"]
+[ext_resource type="Texture2D" uid="uid://cwgy544646kyw" path="res://assets/atlas_texture/caminhar_frente/caminhar_4.tres" id="10_5juqr"]
+[ext_resource type="Texture2D" uid="uid://by0h7trbpfacs" path="res://assets/atlas_texture/caminhar_direita/direita_4.tres" id="10_ykga5"]
+[ext_resource type="Texture2D" uid="uid://bvker8smfdnl" path="res://assets/atlas_texture/caminhar_esquerda/esquerda_1.tres" id="11_xf4vv"]
+[ext_resource type="Texture2D" uid="uid://inv2rvro2wk" path="res://assets/atlas_texture/caminhar_esquerda/esquerda_2.tres" id="12_m58tm"]
+[ext_resource type="Texture2D" uid="uid://dw2wfuqo3pftf" path="res://assets/atlas_texture/caminhar_esquerda/esquerda_3.tres" id="13_2w1ie"]
+[ext_resource type="Texture2D" uid="uid://m5k15h7tsj6m" path="res://assets/atlas_texture/caminhar_esquerda/esquerda_4.tres" id="14_ru0ja"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vgru2"]
+size = Vector2(69, 65)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j30xd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_qq1bb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wfvfs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3f4pa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_q3ofh")
+}],
+"loop": true,
+"name": &"cima",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_mq17f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_1xvti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_1235f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ykga5")
+}],
+"loop": true,
+"name": &"direita",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_xf4vv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_m58tm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_2w1ie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ru0ja")
+}],
+"loop": true,
+"name": &"esquerda",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_jr65m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7htut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_b176s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5juqr")
+}],
+"loop": true,
+"name": &"frente",
+"speed": 5.0
+}]
+
+[node name="Escritor" type="CharacterBody2D"]
+script = ExtResource("1_gc103")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-2.5, 31.5)
+shape = SubResource("RectangleShape2D_vgru2")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="main_ui" parent="." instance=ExtResource("2_74g1m")]
+
+[node name="frames" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_j30xd")
+animation = &"direita"
