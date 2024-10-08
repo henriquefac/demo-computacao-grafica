@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://elxv3xg4cclu"]
+[gd_scene load_steps=17 format=3 uid="uid://elxv3xg4cclu"]
 
 [ext_resource type="Script" path="res://personagem/metroidvania/scripts/character_metroidvania.gd" id="1_5airw"]
 [ext_resource type="Texture2D" uid="uid://cggbwgbtfrwa4" path="res://assets/personagem/metroidvania/atlas_files/correr/correr_0.tres" id="2_8nlgo"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cxabq84i2tar7" path="res://assets/personagem/metroidvania/atlas_files/idle/idel_2.tres" id="8_h6ljk"]
 [ext_resource type="Texture2D" uid="uid://cihy0uvjtbxvh" path="res://assets/personagem/metroidvania/atlas_files/correr/correr_7.tres" id="9_fgiqn"]
 [ext_resource type="Texture2D" uid="uid://b22rbmxnklv6v" path="res://assets/personagem/metroidvania/atlas_files/idle/idel_3.tres" id="9_ysykc"]
+[ext_resource type="PackedScene" uid="uid://c64o3x36ebifx" path="res://personagem/ui/main/mina_ui.tscn" id="14_jre5q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lvqvu"]
 size = Vector2(39, 58)
@@ -80,3 +81,5 @@ sprite_frames = SubResource("SpriteFrames_po74q")
 animation = &"correr"
 frame = 2
 frame_progress = 0.45281
+
+[node name="main_ui" parent="." instance=ExtResource("14_jre5q")]
