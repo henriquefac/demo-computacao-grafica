@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cd2ndbcttqr0w"
-path="res://.godot/imported/!modern-edits-doors.png-7c70033e6f7aedf8fa7ec933902abc5b.ctex"
+path="res://.godot/imported/!modern-edits-doors.png-fdb36389e464a3a7e84c9994cc0b2fa2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/!modern-edits-doors.png"
-dest_files=["res://.godot/imported/!modern-edits-doors.png-7c70033e6f7aedf8fa7ec933902abc5b.ctex"]
+source_file="res://Assets/!modern-edits-doors.png"
+dest_files=["res://.godot/imported/!modern-edits-doors.png-fdb36389e464a3a7e84c9994cc0b2fa2.ctex"]
 
 [params]
 

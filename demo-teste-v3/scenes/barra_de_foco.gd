@@ -14,7 +14,7 @@ func _ready() -> void:
 	barra_comprimento = barra_foco.size.x  # Define o tamanho total da barra de vida
 	Status.connect("foco_auterado", Callable(self, "set_foco"))
 	set_foco()
-	Status.diminuir_vida(10)
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

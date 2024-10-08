@@ -35,7 +35,7 @@ func _ready() -> void:
 	Status.connect("dopamina_auterada",  Callable(self, "atualizar"))
 	add_bars()  # Adiciona as barras ao contêiner e à lista
 	atualizar()
-	Status.diminuir_dopamina(1)
+
 # Chamado a cada frame
 func _process(delta: float) -> void:
 	pass

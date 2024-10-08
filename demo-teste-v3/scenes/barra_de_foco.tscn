@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://crlht0i6a4nhm"]
 
-[ext_resource type="Script" path="res://interface/barra_de_foco.gd" id="1_kwb3p"]
+[ext_resource type="Script" path="res://personagem/ui/barra_de_foco/barra_de_foco.gd" id="1_kwb3p"]
 
 [node name="barra_de_foco" type="HBoxContainer"]
 offset_left = 10.0

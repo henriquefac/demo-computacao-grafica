@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=3 uid="uid://b3f81lsifuyps"]
 
 [ext_resource type="Script" path="res://Personagem/Protagonista-top_down/escritor.gd" id="1_gc103"]
-[ext_resource type="PackedScene" uid="uid://c64o3x36ebifx" path="res://interface/mina_ui.tscn" id="2_74g1m"]
+[ext_resource type="PackedScene" uid="uid://c64o3x36ebifx" path="res://scenes/mina_ui.tscn" id="2_74g1m"]
 [ext_resource type="Texture2D" uid="uid://dhwcpfaxgylj0" path="res://assets/atlas_texture/caminhar_cima/cima_1.tres" id="3_qq1bb"]
 [ext_resource type="Texture2D" uid="uid://bqvtfcvlu4rdq" path="res://assets/atlas_texture/caminhar_cima/cima_2.tres" id="4_wfvfs"]
 [ext_resource type="Texture2D" uid="uid://lmcl3ikvuv34" path="res://assets/atlas_texture/caminhar_cima/cima_3.tres" id="5_3f4pa"]

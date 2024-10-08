@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://w7u8duxgylg1"]
 
 [ext_resource type="PackedScene" uid="uid://b3f81lsifuyps" path="res://Personagem/Protagonista-top_down/escritor.tscn" id="1_svqrl"]
-[ext_resource type="Texture2D" uid="uid://clve1s5svogfl" path="res://icon.svg" id="2_fsfq0"]
+[ext_resource type="Texture2D" uid="uid://cdpy0npuhuu7d" path="res://icon.svg" id="2_fsfq0"]
 
 [node name="Cena_1" type="Node2D"]
 
