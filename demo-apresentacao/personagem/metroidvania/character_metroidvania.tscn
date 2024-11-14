@@ -68,6 +68,8 @@ animations = [{
 }]
 
 [node name="character_metroidvania" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_5airw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://78dnw8xhseef"]
+
+[ext_resource type="PackedScene" uid="uid://cflupwlg25ara" path="res://personagem/inimigos/macaco/macacoNode.tscn" id="1_n81x3"]
+[ext_resource type="Script" path="res://personagem/inimigos/macaco/sate_machine.gd" id="2_yl88r"]
+[ext_resource type="Script" path="res://personagem/inimigos/macaco/states/idleState.gd" id="3_2yduc"]
+[ext_resource type="Script" path="res://personagem/inimigos/macaco/states/airState.gd" id="4_6jw8q"]
+[ext_resource type="Script" path="res://personagem/inimigos/macaco/states/followState.gd" id="5_o4745"]
+
+[node name="EnemyMacaco" type="Node2D"]
+
+[node name="Macaco_Node" parent="." instance=ExtResource("1_n81x3")]
+position = Vector2(1, 0)
+
+[node name="SateMachine2" type="Node" parent="." node_paths=PackedStringArray("intitial_state")]
+script = ExtResource("2_yl88r")
+intitial_state = NodePath("idle")
+
+[node name="idle" type="Node" parent="SateMachine2" node_paths=PackedStringArray("enemy")]
+script = ExtResource("3_2yduc")
+enemy = NodePath("../../Macaco_Node")
+
+[node name="air" type="Node" parent="SateMachine2" node_paths=PackedStringArray("enemy")]
+script = ExtResource("4_6jw8q")
+enemy = NodePath("../../Macaco_Node")
+
+[node name="FollowState" type="Node" parent="SateMachine2" node_paths=PackedStringArray("enemy")]
+script = ExtResource("5_o4745")
+enemy = NodePath("../../Macaco_Node")
