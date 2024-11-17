@@ -1,8 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://cg0vu05n3doqo"]
+[gd_scene load_steps=5 format=3 uid="uid://c7t4h2y0k3irk"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ol6k"]
+[ext_resource type="PackedScene" uid="uid://cg0vu05n3doqo" path="res://personagem/metroidvania/teste/personagemNode.tscn" id="1_vuwep"]
+[ext_resource type="Script" path="res://personagem/inimigo/macaco/sate_machine.gd" id="2_x2r54"]
+[ext_resource type="Script" path="res://personagem/metroidvania/teste/states/idleStatePLayer.gd" id="3_4745j"]
+[ext_resource type="Script" path="res://personagem/metroidvania/teste/states/walkStatePlayer.gd" id="4_qrxqm"]
 
-[node name="Personagem" type="CharacterBody2D"]
+[node name="Personagem" type="Node2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_1ol6k")
+[node name="PersonagemNode" parent="." groups=["PlayerMetro"] instance=ExtResource("1_vuwep")]
+
+[node name="StateMachine" type="Node" parent="PersonagemNode" node_paths=PackedStringArray("intitial_state")]
+script = ExtResource("2_x2r54")
+intitial_state = NodePath("idle")
+
+[node name="idle" type="Node" parent="PersonagemNode/StateMachine" node_paths=PackedStringArray("playerCharacter")]
+script = ExtResource("3_4745j")
+playerCharacter = NodePath("../..")
+
+[node name="walk" type="Node" parent="PersonagemNode/StateMachine" node_paths=PackedStringArray("playerCharacter")]
+script = ExtResource("4_qrxqm")
+playerCharacter = NodePath("../..")
