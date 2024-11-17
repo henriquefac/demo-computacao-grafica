@@ -67,7 +67,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="character_metroidvania" type="CharacterBody2D"]
+[node name="character_metroidvania" type="CharacterBody2D" groups=["PlayerMetro"]]
 script = ExtResource("1_5airw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

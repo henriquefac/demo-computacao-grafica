@@ -22,6 +22,10 @@ Status="*res://script/status.gd"
 
 project/assembly_name="demo-apresentacao"
 
+[global_group]
+
+PlayerMetro="Player_Metroid"
+
 [input]
 
 Esquerda={
