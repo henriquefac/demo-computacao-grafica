@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://0483ch74swy"]
+
+[ext_resource type="Script" path="res://personagem/ui/barra_dopamina/barra_dopamina.gd" id="1_sdp84"]
+
+[node name="barra_dopamina" type="HBoxContainer"]
+offset_right = 180.0
+offset_bottom = 27.0
+script = ExtResource("1_sdp84")
+
+[node name="dopamina" type="ColorRect" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 0.784314, 0.0431373, 1)
+
+[node name="bar_holder" type="HBoxContainer" parent="dopamina"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -6.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2

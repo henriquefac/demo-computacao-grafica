@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ciaoiktgy8mw3"]
+
+[ext_resource type="Script" path="res://events/aim_lab/circle_generator.gd" id="1_2od84"]
+[ext_resource type="PackedScene" uid="uid://cd6o0f1r3wjj1" path="res://events/aim_lab/red_random_circle.tscn" id="2_0thah"]
+
+[node name="CircleGenerator" type="Node2D"]
+process_mode = 3
+top_level = true
+script = ExtResource("1_2od84")
+circle_scene = ExtResource("2_0thah")
