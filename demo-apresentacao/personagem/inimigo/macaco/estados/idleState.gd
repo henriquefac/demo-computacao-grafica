@@ -27,7 +27,6 @@ func randomize_wander():
 
 func Enter():
 	personagem = get_tree().get_first_node_in_group("PlayerMetro")
-	print(directionPlayer().length())
 	
 	if init:
 		enemy.wallEsquerda.connect(chengeDirectionToRight)

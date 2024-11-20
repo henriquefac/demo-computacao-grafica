@@ -105,7 +105,6 @@ func checkFortWall():
 #var dash_dir = Vector2.ZERO
 
 func atkMove():
-	print("realizar ataque")
 
 	
 	dash_dir = Vector2(-1, 0)

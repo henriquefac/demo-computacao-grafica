@@ -11,7 +11,6 @@ func _ready() -> void:
 	for child in get_children():
 		if child is State:
 			states[child.name.to_lower()] = child
-			print(child.name.to_lower())
 			child.Transitioned.connect(on_child_transitioned)
 	if intitial_state:
 		intitial_state.Enter()

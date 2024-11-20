@@ -25,6 +25,7 @@ project/assembly_name="demo-apresentacao"
 [global_group]
 
 PlayerMetro="Player_Metroid"
+HitBoxEnemy="HitBox dos nimigos"
 
 [input]
 

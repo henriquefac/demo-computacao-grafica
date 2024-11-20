@@ -7,7 +7,6 @@ var animationNode: AnimationPlayer
 
 
 func Enter():
-	print("ataque")
 	animationNode = enemy.animationPLayer
 
 	if not animationNode.is_connected("animation_finished",  transitionIdle):

@@ -1,7 +1,13 @@
 extends Node
+
+
+
 # emitir sinia s quando algum status forem afetados
 signal foco_auterado
 signal dopamina_auterada
+
+# velocidade auxiliar que o player 
+
 
 var vida_maxima = 100
 var vida_atual = vida_maxima
