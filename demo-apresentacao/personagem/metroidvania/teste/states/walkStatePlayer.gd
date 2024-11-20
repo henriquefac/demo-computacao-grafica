@@ -14,8 +14,11 @@ var timer:= 0.2
 
 # area HurtBox
 var hurtBox : HurtBoxPlayer
+var on:bool
+
 
 func Enter():
+	on = true
 	if hurtBox == null:
 		hurtBox = playerCharacter.hurtBox
 	if not hurtBox.is_connected("area_entered", transictionDamage):
@@ -23,10 +26,13 @@ func Enter():
 	dir = Vector2()
 	timer = 0.4
 	
-	pass
+	jump = playerCharacter.is_on_floor()
+	if Input.is_action_pressed("Pular") and jump:
+		playerCharacter.velocity.y = playerCharacter.faceJump()
+		jump = false
 	
 func Exit():
-	pass
+	on = false
 
 func Update(_delta: float):
 	timer -= _delta
@@ -68,7 +74,6 @@ func transictionIdle():
 
 
 func transictionDamage(area: HitBoxEnemy):
-	if typeof(area) == TYPE_OBJECT and area is HitBoxEnemy:
-		playerCharacter.vectorDirDamage = area.inimigo.dash_dir
-		Status.diminuir_vida(area.dano)
+	if typeof(area) == TYPE_OBJECT and area is HitBoxEnemy and on:
+		playerCharacter.getDamage(area)
 		Transitioned.emit(self, "damage")

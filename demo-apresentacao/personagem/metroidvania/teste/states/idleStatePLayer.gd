@@ -6,12 +6,15 @@ class_name IdleStatePlayer
 
 # area HurtBox
 var hurtBox : HurtBoxPlayer
-func Enter():
+var on:bool
 
+func Enter():
+	on = true
 	# fica parado
 	playerCharacter.velocity.x = 0
 	
 func Exit():
+	on = false
 	if hurtBox == null:
 		hurtBox = playerCharacter.hurtBox
 	if not hurtBox.is_connected("area_entered", transictionDamage):
@@ -28,12 +31,11 @@ func transitionTrigger():
 	transitionWalk()
 	pass
 func transitionWalk():
-	if Input.is_action_just_pressed("Direita") or Input.is_action_just_pressed("Esquerda") or Input.is_action_just_pressed("Pular"):
+	if Input.is_action_pressed("Direita") or Input.is_action_pressed("Esquerda") or Input.is_action_just_pressed("Pular"):
 		Transitioned.emit(self, "walk")
 		
 
 func transictionDamage(area: HitBoxEnemy):
-	if typeof(area) == TYPE_OBJECT and area is HitBoxEnemy:
-		playerCharacter.vectorDirDamage = area.inimigo.dash_dir
-		Status.diminuir_vida(area.dano)
+	if typeof(area) == TYPE_OBJECT and area is HitBoxEnemy and on:
+		playerCharacter.getDamage(area)
 		Transitioned.emit(self, "damage")

@@ -5,16 +5,18 @@ class_name RecordeStatusEfect
 
 var dictStatus: Dictionary = {}  # Dicionário para armazenar os status ativos
 func _ready() -> void:
-	pass
+	Player.STATUS_ON.connect(addStatus)
 	
 func _process(delta: float) -> void:
 	for status:StatusEfect in get_children():
 		if status.toStart:
+			print(len(get_children()))
 			Aply(status)
 			status.Terminate.connect(Terminate)
 		status.Update(delta)  # Atualiza todos os status
 		
-
+func addStatus(status: StatusEfect):
+	add_child(status)
 		
 # Aplica os efeitos no jogador
 func Aply(status: StatusEfect):

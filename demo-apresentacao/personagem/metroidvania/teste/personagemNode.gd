@@ -1,12 +1,15 @@
 extends CharacterBody2D
 class_name PlayerCharacter
 
+# receber status
+signal STATUS_ON
+
 @export var SPEED:=200
 @export var JUMP:=-400
 var aux:Array
 
 # vetor direção
-var vectorDirDamage: Vector2
+var vectorDirDamage: int
 
 # animacao
 var animation: AnimationPlayer
@@ -51,11 +54,18 @@ func animationControl():
 	else:
 		animation.play("idle")
 
-# o que acontece quando é atingido
-func HutBoxActivate():
-	velocity = Vector2.ZERO
+
 	
 
+func getDamage(area: HitBoxEnemy):
+	
+	var statusAply = area.getStatus()
+	if statusAply:
+		STATUS_ON.emit(statusAply)
+	
+	velocity = area.vectorKnock()
+	vectorDirDamage = velocity.normalized().x
+	Status.diminuir_vida(area.dano)
 
 
 # criar funções que controlam os status do personagem

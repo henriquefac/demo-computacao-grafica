@@ -4,12 +4,22 @@ extends Area2D
 @export var inimigo: macaco
 @export var dano:=15
 
-# Called when the node enters the scene tree for the first time.
+
+var efeitoStatus: StatusEfect
+
+
 func _ready() -> void:
-	
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+# vetor de knockback
+func getStatus():
+	efeitoStatus = StatusSlow.new()
+	efeitoStatus.SetDuration(0.8)
+	return efeitoStatus
+func vectorKnock():
+	return inimigo.dash_dir * 400  + Vector2(0, -400)

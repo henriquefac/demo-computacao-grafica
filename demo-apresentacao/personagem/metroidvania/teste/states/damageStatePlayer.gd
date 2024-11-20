@@ -5,12 +5,8 @@ class_name DamageStatePlayer
 var timer = 0.7
 
 func Enter():
-	timer = 0.7
-	playerCharacter.velocity = Vector2()
-	playerCharacter.HutBoxActivate()
-	playerCharacter.velocity.y = -400
-	playerCharacter.velocity += playerCharacter.vectorDirDamage * 400
-	
+	print("dano")
+	timer = 0.7	
 
 	
 func Exit():
@@ -23,7 +19,7 @@ func Update(_delta: float):
 	
 func Physics_Update(_delta: float):
 	if not playerCharacter.is_on_floor():
-		playerCharacter.velocity.x += playerCharacter.vectorDirDamage.x * 100 * _delta
+		playerCharacter.velocity.x += playerCharacter.vectorDirDamage * 100 * _delta
 	else:
 		Transitioned.emit(self, "idle")
 	pass
