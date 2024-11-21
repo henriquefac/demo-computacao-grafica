@@ -21,6 +21,7 @@ Status="*res://script/status.gd"
 
 [display]
 
+window/size/mode=2
 window/size/borderless=true
 window/vsync/vsync_mode=0
 

@@ -19,9 +19,9 @@ script = ExtResource("1_reww5")
 [node name="Control" type="Control" parent="."]
 layout_direction = 1
 layout_mode = 3
+anchors_preset = 0
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_lock_ = true
 
 [node name="ColorRect" type="ColorRect" parent="Control"]
 process_mode = 3
@@ -32,15 +32,14 @@ anchor_bottom = 1.0
 offset_right = 4096.0
 offset_bottom = 4096.0
 color = Color(0.0980392, 0.0980392, 0.0980392, 0.827451)
-metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="Control"]
 process_mode = 3
 layout_mode = 1
-offset_left = 326.0
-offset_top = 130.0
-offset_right = 1554.0
-offset_bottom = 883.0
+offset_left = -43.0
+offset_top = -55.0
+offset_right = 1185.0
+offset_bottom = 698.0
 text = "Você é João Mendes, um escritor com TDAH e tem apenas
 uma semana para entregar o livro que garantirá o
 emprego dos seus sonhos!
@@ -64,7 +63,6 @@ process_mode = 3
 self_modulate = Color(1, 0.941176, 0, 1)
 top_level = true
 layout_direction = 1
-anchors_preset = -1
 offset_left = 1605.0
 offset_top = 924.0
 offset_right = 1857.0
@@ -80,6 +78,7 @@ language = "Por_BR"
 [node name="Sprite2D" type="Sprite2D" parent="."]
 process_mode = 3
 show_behind_parent = true
-position = Vector2(958, 538)
+position = Vector2(581, 330.5)
+scale = Vector2(0.607292, 0.615741)
 texture = ExtResource("1_tsril")
 metadata/_edit_lock_ = true
