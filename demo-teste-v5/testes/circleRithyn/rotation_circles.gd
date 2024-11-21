@@ -15,8 +15,8 @@ var left_vel = 3
 var right_vel = -3
 
 # Posições iniciais
-var init_cir_1 = Vector2(-70, 0)
-var init_cir_2 = Vector2(70, 0)
+var init_cir_1 = Vector2(-30, 0)
+var init_cir_2 = Vector2(30, 0)
 
 # Conseguir ângulo de um círculo para o outro
 func get_angle(circ1: Node2D, circ2: Node2D) -> float:
@@ -42,8 +42,8 @@ func update_camera_position_smooth(delta: float):
 func _ready() -> void:
 	camera_main = $camera_main
 	
-	right = $right_circle
-	left = $left_circle
+	right = $right
+	left = $left
 
 	left.position = init_cir_1
 	right.position = init_cir_2

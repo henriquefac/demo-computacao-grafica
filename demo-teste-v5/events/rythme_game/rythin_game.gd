@@ -13,8 +13,8 @@ var quadrado_azul_scene = preload("res://events/rythme_game/quadrado_azul.tscn")
 var quadrado_vermelho_scene = preload("res://events/rythme_game/quadrado_vermelho.tscn")
 
 # matriz size
-var largura: int = 10
-var altura: int = 10
+var largura: int = 5
+var altura: int = 5
 
 var porcao: int = 9
 # direções possíveis (direita e cima)
@@ -145,12 +145,18 @@ func add_quadrado_azul(direcao = null):
 		array_quadrados_segurados.append(new_qdrd)
   # Marca a posição como ocupada
 
+# mover todos os quadrados
+func movevByVector(vector: Vector2):
+	for quadrado in array_quadrados_segurados:
+		pass
 
 func _on_circulos_rythn_troca() -> void:
 	print(len(array_quadrados_segurados))
 	if len(array_quadrados_segurados) > 0:
-		array_quadrados_segurados[0].queue_free()
-		array_quadrados_segurados.pop_front()
+		var quadrado = array_quadrados_segurados.pop_front()
+		print(quadrado.position - array_quadrados_segurados[0].position)
+		quadrado.queue_free()
+		
 	if left_circle.orbit_speed < 6:
 		var dif = 3/left_circle.orbit_speed 
 		left_circle.orbit_speed += 0.2 * dif

@@ -1,5 +1,5 @@
 extends Node2D
-
+class_name QuadradoAzul
 # criar um quadrado : D
 var square_size = 120
 var square_color = Color(0.2, 0.8, 0.9)

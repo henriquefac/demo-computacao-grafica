@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cisphqifg2inb"]
+[gd_scene load_steps=4 format=3 uid="uid://cisphqifg2inb"]
 
 [ext_resource type="Script" path="res://events/rythme_game/rythin_game.gd" id="1_ap7fv"]
 [ext_resource type="PackedScene" uid="uid://bva1vl7x23uun" path="res://events/rythme_game/circulos_rythn.tscn" id="2_4vugi"]
+[ext_resource type="Texture2D" uid="uid://bmuyvqn73ltp4" path="res://icon.svg" id="3_evckh"]
 
 [node name="rythin_game" type="Node2D"]
 process_mode = 3
@@ -10,5 +11,9 @@ script = ExtResource("1_ap7fv")
 
 [node name="circulos_rythn" parent="." instance=ExtResource("2_4vugi")]
 z_index = 1
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(-1, 209)
+texture = ExtResource("3_evckh")
 
 [connection signal="troca" from="circulos_rythn" to="." method="_on_circulos_rythn_troca"]
