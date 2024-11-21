@@ -4,7 +4,7 @@ class_name MatrizRandoWalk
 # matriz
 var matriz: Array = []
 
-@export var medida:=8
+@export var medida:=6
 
 var altura := medida
 var largura := medida - 2
