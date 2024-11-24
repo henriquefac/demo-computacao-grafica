@@ -2,12 +2,11 @@ extends State
 class_name DamageState
 
 @export var enemy: macaco
-var timer = 0.7
+var timer = 10
 
 
 func Enter():
-	timer = 0.7	
-
+	timer = 10	
 	
 func Exit():
 	pass

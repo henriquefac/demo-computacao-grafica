@@ -30,7 +30,8 @@ func Enter():
 	if Input.is_action_pressed("Pular") and jump:
 		playerCharacter.velocity.y = playerCharacter.faceJump()
 		jump = false
-	
+	print(playerCharacter.is_atk)
+	print(playerCharacter.is_dashing)
 func Exit():
 	on = false
 
@@ -74,7 +75,6 @@ func transitionAtk():
 
 func transictionIdle():
 	if timer < 0 and playerCharacter.velocity.length() == 0 and jump:
-		playerCharacter.is_atk = true
 		Transitioned.emit(self, "idle")
 	pass
 

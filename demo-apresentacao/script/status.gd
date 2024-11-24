@@ -19,24 +19,23 @@ var dopamina_bar_atual = dopamina_bars
 func diminuir_vida(dano: int):
 	vida_atual = max(vida_atual - dano, 0)
 	emit_signal("foco_auterado")
-	print("Vida atual: ", vida_atual)
+
 
 # Função para restaurar vida
 func restaurar_vida(valor: int):
 	vida_atual = min(vida_atual + valor, vida_maxima)
 	emit_signal("foco_auterado")
-	print("Vida atual: ", vida_atual)
+
 
 func diminuir_dopamina(dano: int):
 	dopamina_bar_atual = max(dopamina_bar_atual - dano, 0)
 	emit_signal("dopamina_auterada")
-	print("dopamina atual: ", dopamina_bar_atual)
+
 
 # Função para restaurar vida
 func restaurar_dopamina(valor: int):
 	dopamina_bar_atual = min(dopamina_bar_atual + valor, dopamina_bars)
 	emit_signal("dopamina_auterada")
-	print("dopamina atual: ", dopamina_bar_atual)
 
 # Função para verificar se o personagem está vivo
 func esta_vivo() -> bool:

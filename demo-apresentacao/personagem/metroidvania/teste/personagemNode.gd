@@ -30,7 +30,7 @@ var hurtBox: HurtBoxPlayer
 var hitBox: HitBoxPlayer
 
 # Propriedades para dash
-var dash_speed = 200
+var dash_speed = 100
 var dash_duration = 0.4  # Duração do dash em segundos
 var is_atk:bool = false
 var is_dashing:bool = false
@@ -107,7 +107,7 @@ func atkProcess():
 		dash_dir.x = -1
 	velocity = Vector2.ZERO
 	
-	velocity = velocity.move_toward(dash_dir.normalized() * dash_speed, 300)
+	velocity = velocity.move_toward(dash_dir.normalized() * dash_speed, 1000)
 	await get_tree().create_timer(dash_duration).timeout
 	is_dashing = false
 	velocity = Vector2()

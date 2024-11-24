@@ -5,7 +5,7 @@ class_name AtkStatePlayer
 var animationPlayer: AnimationPlayer
 
 func Enter():
-	print("atk")
+	playerCharacter.is_atk = true
 	animationPlayer = playerCharacter.animation
 	if not animationPlayer.animation_finished.is_connected(transitionIdle):
 		animationPlayer.animation_finished.connect(transitionIdle)

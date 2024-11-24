@@ -12,12 +12,20 @@ var vectorMove: Vector2
 # tempo mínimo no estado follow para entrar no estado ataque
 var minTimer = 0.4
 
+var hurtBox : HurtBoxEnemy
+var on = true
+
 func Enter():
+	on = true
 	minTimer = 0.6
 	personagem = get_tree().get_first_node_in_group("PlayerMetro")
 	
+	if hurtBox == null:
+		hurtBox = enemy.hurtbox
+	if not hurtBox.is_connected("area_entered", transictionDamage):
+		hurtBox.connect("area_entered", transictionDamage)
 func Exit():
-	pass
+	on = false
 
 func Update(_delta: float):
 	minTimer -= _delta
@@ -53,3 +61,8 @@ func transitionIdle():
 func transitionAtk():
 	if direction.length() < 150 and minTimer < 0:
 		Transitioned.emit(self, "atk")
+		
+func transictionDamage(area: HitBoxPlayer):
+	print("Aqui")
+	if typeof(area) == TYPE_OBJECT and area is HitBoxPlayer and on:
+		Transitioned.emit(self, "damage")

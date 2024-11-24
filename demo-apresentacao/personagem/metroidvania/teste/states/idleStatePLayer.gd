@@ -9,6 +9,7 @@ var hurtBox : HurtBoxPlayer
 var on:bool
 
 func Enter():
+	print("idle")
 	on = true
 	# fica parado
 	playerCharacter.velocity.x = 0
@@ -16,7 +17,8 @@ func Enter():
 		hurtBox = playerCharacter.hurtBox
 	if not hurtBox.is_connected("area_entered", transictionDamage):
 		hurtBox.connect("area_entered", transictionDamage)
-
+	print(playerCharacter.is_atk)
+	print(playerCharacter.is_dashing)
 func Exit():
 	on = false
 
@@ -36,7 +38,6 @@ func transitionWalk():
 
 func transitionAtk():
 	if Input.is_action_just_pressed("Ataque"):
-		playerCharacter.is_atk = true
 		Transitioned.emit(self, "atk")
 
 func transictionDamage(area: HitBoxEnemy):

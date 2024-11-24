@@ -17,7 +17,7 @@ var flag_stop : bool = true
 
 var velocity: Vector2
 
-var hurtBox : HurtBoxPlayer
+var hurtBox : HurtBoxEnemy
 var on = true
 
 
@@ -30,6 +30,11 @@ func randomize_wander():
 func Enter():
 	on = true
 	personagem = get_tree().get_first_node_in_group("PlayerMetro")
+	
+	if hurtBox == null:
+		hurtBox = enemy.hurtbox
+	if not hurtBox.is_connected("area_entered", transictionDamage):
+		hurtBox.connect("area_entered", transictionDamage)
 	
 	if init:
 		enemy.wallEsquerda.connect(chengeDirectionToRight)
@@ -61,7 +66,7 @@ func Physics_Update(_delta: float):
 
 func transitionTrigger():
 	transitionAir()
-	transitionFollow()
+	#transitionFollow()
 	
 # transição idl -> air
 func transitionAir():
@@ -72,9 +77,9 @@ func transitionFollow():
 	if directionPlayer().length() < 400:
 		Transitioned.emit(self, "follow")
 		
-func transitionDamage(area: HitBoxPlayer):
+func transictionDamage(area: HitBoxPlayer):
 	if typeof(area) == TYPE_OBJECT and area is HitBoxPlayer and on:
-		pass
+		Transitioned.emit(self, "damage")
 func chengeDirectionToRight():
 	wander_time += 0.2
 	if move_direction.x < 0:
