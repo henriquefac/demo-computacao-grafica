@@ -1,18 +1,52 @@
-[gd_scene load_steps=14 format=3 uid="uid://cg0vu05n3doqo"]
+[gd_scene load_steps=27 format=3 uid="uid://cg0vu05n3doqo"]
 
 [ext_resource type="Script" path="res://personagem/metroidvania/teste/personagemNode.gd" id="1_hu51n"]
-[ext_resource type="Texture2D" uid="uid://c1flisj1lkobp" path="res://assets/personagem/metroidvania/atlas_files/idle/idel_0.tres" id="2_r2o38"]
+[ext_resource type="Texture2D" uid="uid://bt3t7ugq75nhv" path="res://assets/personagem/metroidvania/main-character/metroidvania-main-character-attacks/atlas-atack/atlas-atack-1/atlas-texture-atack-1.tres" id="2_ajtuu"]
 [ext_resource type="PackedScene" uid="uid://c64o3x36ebifx" path="res://personagem/ui/main/mina_ui.tscn" id="2_sgjys"]
-[ext_resource type="Texture2D" uid="uid://cj4s2yyp6l5wo" path="res://assets/personagem/metroidvania/atlas_files/idle/idel_1.tres" id="3_yqnf0"]
-[ext_resource type="Texture2D" uid="uid://cxabq84i2tar7" path="res://assets/personagem/metroidvania/atlas_files/idle/idel_2.tres" id="4_r104v"]
-[ext_resource type="Texture2D" uid="uid://b22rbmxnklv6v" path="res://assets/personagem/metroidvania/atlas_files/idle/idel_3.tres" id="5_qmjit"]
+[ext_resource type="Texture2D" uid="uid://c7cqygrs3ivhu" path="res://assets/personagem/metroidvania/main-character/metroidvania-main-character-attacks/atlas-atack/atlas-atack-1/atlas-texture-atack-2.tres" id="3_7as2g"]
+[ext_resource type="Texture2D" uid="uid://cycxgav18kece" path="res://assets/personagem/metroidvania/main-character/metroidvania-main-character-attacks/atlas-atack/atlas-atack-1/atlas-texture-atack-3.tres" id="4_xdj8t"]
+[ext_resource type="Texture2D" uid="uid://y046y6enni0w" path="res://assets/personagem/metroidvania/main-character/metroidvania-main-character-attacks/atlas-atack/atlas-atack-1/atlas-texture-atack-4.tres" id="5_a6unf"]
+[ext_resource type="Texture2D" uid="uid://vpd5fb5ppehl" path="res://assets/personagem/metroidvania/main-character/metroidvania-main-character-attacks/atlas-atack/atlas-atack-1/atlas-texture-atack-5.tres" id="6_dbgbu"]
+[ext_resource type="Texture2D" uid="uid://ct4x4e37smb2v" path="res://assets/personagem/metroidvania/main-character/metroidvania-main-character-attacks/atlas-atack/atlas-atack-1/atlas-texture-atack-6.tres" id="7_d1dgt"]
 [ext_resource type="Script" path="res://personagem/metroidvania/recursos/HurtBoxPlayer.gd" id="7_kkjeo"]
+[ext_resource type="Texture2D" uid="uid://bt30i8bikyvaq" path="res://assets/personagem/metroidvania/main-character/metroidvania-main-character-idle/atlas-idle/atlas-texture-idle5.tres" id="8_oyb5u"]
+[ext_resource type="Texture2D" uid="uid://keqoi664vg8n" path="res://assets/personagem/metroidvania/main-character/metroidvania-main-character-idle/atlas-idle/atlas-texture-idle6.tres" id="9_i0mk8"]
+[ext_resource type="Texture2D" uid="uid://b1l0jfonk0wdi" path="res://assets/personagem/metroidvania/main-character/metroidvania-main-character-idle/atlas-idle/atlas-texture-idle7.tres" id="10_blrb4"]
+[ext_resource type="Texture2D" uid="uid://be0cjdnqlsw0a" path="res://assets/personagem/metroidvania/main-character/metroidvania-main-character-idle/atlas-idle/atlas-texture-idle8.tres" id="11_0hvoh"]
+[ext_resource type="Texture2D" uid="uid://bi3mmso8t1227" path="res://assets/personagem/metroidvania/main-character/metroidvania-main-character-idle/atlas-idle/atlas-texture-idle9.tres" id="12_mou1j"]
+[ext_resource type="Texture2D" uid="uid://brkfh2xtnn1p6" path="res://assets/personagem/metroidvania/main-character/metroidvania-main-character-idle/atlas-idle/atlas-texture-idle10.tres" id="13_ohw1e"]
+[ext_resource type="Texture2D" uid="uid://cajxjy0x4f3u0" path="res://assets/personagem/metroidvania/main-character/metroidvania-main-character-idle/atlas-idle/atlas-texture-idle12.tres" id="14_pjghi"]
+[ext_resource type="Script" path="res://personagem/metroidvania/teste/frameOffset.gd" id="15_v1cp1"]
+[ext_resource type="Script" path="res://personagem/metroidvania/recursos/HitBoxPLayer.gd" id="18_rm8lb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ol6k"]
-size = Vector2(32, 85)
+size = Vector2(32, 75)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_df4qo"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ajtuu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7as2g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xdj8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_a6unf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dbgbu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_d1dgt")
+}],
+"loop": true,
+"name": &"atk",
+"speed": 5.0
+}, {
 "frames": [],
 "loop": true,
 "name": &"default",
@@ -20,16 +54,25 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_r2o38")
+"texture": ExtResource("8_oyb5u")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_yqnf0")
+"texture": ExtResource("9_i0mk8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_r104v")
+"texture": ExtResource("10_blrb4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_qmjit")
+"texture": ExtResource("11_0hvoh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_mou1j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ohw1e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_pjghi")
 }],
 "loop": true,
 "name": &"idle",
@@ -63,9 +106,63 @@ tracks/1/keys = {
 "values": [0]
 }
 
+[sub_resource type="Animation" id="Animation_y33v1"]
+resource_name = "atk"
+length = 0.5
+step = 0.0033
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"atk"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.491749),
+"transitions": PackedFloat32Array(1.07177, 0.683019),
+"update": 0,
+"values": [0, 5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HitBoxPlayer/hitbox:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.260726, 0.39934),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.260726),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"atkProcess"
+}]
+}
+
 [sub_resource type="Animation" id="Animation_pvcp2"]
 resource_name = "idle"
-length = 0.7
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -86,31 +183,41 @@ tracks/1/path = NodePath("AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.7),
+"times": PackedFloat32Array(0.0333333, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0, 3]
+"values": [0, 5]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y2s30"]
 _data = {
 "RESET": SubResource("Animation_g3nkr"),
+"atk": SubResource("Animation_y33v1"),
 "idle": SubResource("Animation_pvcp2")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mbba3"]
-size = Vector2(19, 68)
+size = Vector2(19, 58.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u41o7"]
 
 [node name="PersonagemNode" type="CharacterBody2D"]
 script = ExtResource("1_hu51n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 1.5)
+position = Vector2(-2, -4.5)
 shape = SubResource("RectangleShape2D_1ol6k")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(15, 33)
+rotation = 3.14159
 sprite_frames = SubResource("SpriteFrames_df4qo")
 animation = &"idle"
+centered = false
+flip_h = true
+flip_v = true
+script = ExtResource("15_v1cp1")
+last_frame_width_atk = 36
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -123,5 +230,15 @@ libraries = {
 script = ExtResource("7_kkjeo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxPlayer"]
-position = Vector2(-0.5, 3)
+position = Vector2(-0.5, -2.25)
 shape = SubResource("RectangleShape2D_mbba3")
+
+[node name="HitBoxPlayer" type="Area2D" parent="."]
+position = Vector2(36, -15)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("18_rm8lb")
+
+[node name="hitbox" type="CollisionShape2D" parent="HitBoxPlayer"]
+shape = SubResource("RectangleShape2D_u41o7")
+disabled = true

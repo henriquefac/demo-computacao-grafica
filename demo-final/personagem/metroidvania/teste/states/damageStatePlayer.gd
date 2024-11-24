@@ -5,7 +5,7 @@ class_name DamageStatePlayer
 var timer = 0.7
 
 func Enter():
-	print("dano")
+	
 	timer = 0.7	
 
 	

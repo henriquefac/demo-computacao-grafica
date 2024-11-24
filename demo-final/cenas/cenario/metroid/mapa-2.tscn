@@ -1,26 +1,9 @@
-[gd_scene load_steps=22 format=4 uid="uid://d1il50vmcypu"]
+[gd_scene load_steps=19 format=4 uid="uid://b4s2ijjcbjhy5"]
 
-[ext_resource type="Script" path="res://cenas/cenario/metroid/script/mapa.gd" id="1_g74nj"]
+[ext_resource type="Script" path="res://cenas/cenario/metroid/script/mapa.gd" id="1_l1pcq"]
 [ext_resource type="Texture2D" uid="uid://uicscwnx327" path="res://assets/cenario/metroidvania/Sprite-0002.png" id="1_t2idf"]
-[ext_resource type="PackedScene" uid="uid://drjpgfg7v0147" path="res://cenas/cenario/topdown/elementos/locked_door_1.tscn" id="3_m8lwd"]
-[ext_resource type="PackedScene" uid="uid://c7t4h2y0k3irk" path="res://personagem/metroidvania/teste/personagem.tscn" id="6_12qlt"]
-[ext_resource type="PackedScene" uid="uid://db8eprcajeh73" path="res://personagem/inimigo/macaco/enemyMacaco.tscn" id="6_ncm5q"]
-
-[sub_resource type="Resource" id="Resource_i2vl1"]
-metadata/__load_path__ = "res://Events/RandomCircle.gd"
-
-[sub_resource type="PackedScene" id="PackedScene_h6ek2"]
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"names": PackedStringArray("Circle", "process_mode", "script", "Node2D"),
-"node_count": 1,
-"node_paths": [],
-"nodes": PackedInt32Array(-1, -1, 3, 0, -1, 2, 1, 0, 2, 1, 0),
-"variants": [3, SubResource("Resource_i2vl1")],
-"version": 3
-}
+[ext_resource type="PackedScene" uid="uid://db8eprcajeh73" path="res://personagem/inimigo/macaco/enemyMacaco.tscn" id="3_73bpt"]
+[ext_resource type="PackedScene" uid="uid://c7t4h2y0k3irk" path="res://personagem/metroidvania/teste/personagem.tscn" id="4_x1l34"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_5yxjc"]
 tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 1, 131072, 0, 1, 196608, 0, 2, 1, 65536, 0, 65537, 65536, 1, 131073, 65536, 1, 196609, 65536, 2, 2, 65536, 0, 65538, 65536, 1, 131074, 65536, 1, 196610, 65536, 2, 3, 131072, 0, 65539, 131072, 1, 131075, 131072, 1, 196611, 131072, 2)
@@ -415,10 +398,7 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_5uko4")
 
 [node name="Node2D" type="Node2D"]
-process_mode = 3
-auto_translate_mode = 1
-script = ExtResource("1_g74nj")
-circle_scene = SubResource("PackedScene_h6ek2")
+script = ExtResource("1_l1pcq")
 
 [node name="mapa" type="Node" parent="."]
 
@@ -440,23 +420,10 @@ tile_set = SubResource("TileSet_75wwo")
 tile_map_data = PackedByteArray("AAAdABAAAAAFAAMAAAAdAA8AAAAFAAMAAAAdAA4AAAAFAAMAAAAdAA0AAAAFAAMAAAAdAAwAAAAFAAMAAAAdAAsAAAAFAAMAAAACAAsAAAAFAAEAAAACAAwAAAAFAAIAAAABAAgAAAAEAAEAAFACAAgAAAADAAQAAGADAAgAAAAEAAEAAFAEAAgAAAAEAAEAAFAFAAgAAAADAAQAAGAGAAgAAAAEAAEAAFAHAAgAAAAEAAEAAFAIAAgAAAADAAQAAGAJAAgAAAAEAAEAAFAKAAgAAAADAAQAAGALAAgAAAAEAAEAAFAMAAgAAAAEAAEAAFANAAgAAAADAAQAAGAOAAgAAAAEAAEAAFAPAAgAAAADAAQAAGAQAAgAAAAEAAEAAFARAAgAAAAEAAEAAFASAAgAAAAEAAIAAGATAAgAAAAEAAIAAAASAAcAAAAEAAEAAAASAAYAAAAEAAEAAAASAAUAAAAEAAEAAAATAAcAAAAEAAEAAAATAAUAAAAEAAEAAAATAAYAAAAEAAEAAAASAAQAAAAEAAAAAAATAAQAAAAEAAAAAAAAAAgAAAAEAAEAAGAAAAcAAAAEAAEAAGABAAcAAAAEAAEAAGACAAcAAAADAAQAAGADAAcAAAAEAAEAAGAEAAcAAAAEAAEAAGAFAAcAAAADAAQAAGAGAAcAAAAEAAEAAGAHAAcAAAAEAAEAAGAIAAcAAAADAAQAAGAJAAcAAAAEAAEAAGAKAAcAAAADAAQAAGALAAcAAAAEAAEAAGAMAAcAAAAEAAEAAGANAAcAAAADAAQAAGAOAAcAAAAEAAEAAGAPAAcAAAADAAQAAGAQAAcAAAAEAAEAAGARAAcAAAAEAAIAAGAUAAgAAAADAAQAAGAWAAgAAAADAAQAAGAVAAgAAAADAAQAAGAXAAgAAAADAAQAAGAYAAgAAAADAAQAAGAZAAgAAAAEAAIAAGAZAAcAAAAEAAAAAAAlAAoAAAADAAAAAGAmAAoAAAADAAEAAGAnAAoAAAADAAEAAGAoAAoAAAADAAEAAGApAAoAAAADAAIAAGApAAkAAAADAAEAAAApAAgAAAADAAEAAAApAAcAAAADAAEAAAApAAYAAAADAAEAAAApAAUAAAADAAEAAAApAAQAAAADAAEAAAApAAMAAAADAAEAAAAUAAcAAAAEAAAAAGAVAAcAAAADAAQAAFAWAAcAAAAEAAEAAGAXAAcAAAADAAQAAGAYAAcAAAAEAAAAAFAKAAoAAAADAAMAAAASAAoAAAADAAMAAAAgAAoAAAADAAMAAAAnAA0AAAAEAAMAAAARABAAAAAFAAQAAAASABAAAAAFAAQAAAATABAAAAAFAAQAAAAUABAAAAAFAAQAAAATAA8AAAAFAAQAAAASAA8AAAAFAAQAAAAUAA8AAAAFAAQAAAAaAA4AAAAHAAMAAAAuAAoAAAADAAMAAAAnABAAAAAFAAQAAAAoABAAAAAFAAQAAAApABAAAAAFAAQAAAAoAA8AAAAFAAQAAAAnAA4AAAAHAAMAAAA=")
 tile_set = SubResource("TileSet_8q5gd")
 
-[node name="aim_lab" parent="." instance=ExtResource("3_m8lwd")]
-process_mode = 3
-top_level = true
-position = Vector2(863, 289)
-scale = Vector2(2, 4)
-
-[node name="locked-door" parent="." instance=ExtResource("3_m8lwd")]
-process_mode = 3
-top_level = true
-position = Vector2(1231, 481)
-scale = Vector2(1, 4)
-
-[node name="Personagem" parent="." instance=ExtResource("6_12qlt")]
+[node name="Personagem" parent="." instance=ExtResource("4_x1l34")]
 z_index = 2
-position = Vector2(80, 388)
-scale = Vector2(0.8, 0.8)
-metadata/_edit_lock_ = true
+position = Vector2(196, 382)
+scale = Vector2(0.6, 0.6)
 
 [node name="Camera2D" type="Camera2D" parent="Personagem"]
 scale = Vector2(0.8, 0.8)
@@ -471,9 +438,6 @@ drag_horizontal_offset = 0.1
 drag_vertical_offset = 0.05
 drag_left_margin = 0.55
 
-[node name="EnemyMacaco" parent="." instance=ExtResource("6_ncm5q")]
+[node name="EnemyMacaco" parent="." instance=ExtResource("3_73bpt")]
 z_index = 2
-position = Vector2(727, 514)
-
-[connection signal="body_entered" from="aim_lab" to="Personagem" method="_on_aim_lab_body_entered"]
-[connection signal="body_entered" from="locked-door" to="Personagem" method="_on_lockeddoor_body_entered"]
+position = Vector2(731, 479)

@@ -36,6 +36,7 @@ project/assembly_name="demo-apresentacao"
 [global_group]
 
 player=""
+PlayerMetro=""
 
 [input]
 

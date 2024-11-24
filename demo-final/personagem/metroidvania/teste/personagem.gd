@@ -14,3 +14,12 @@ func _ready() -> void:
 # Chamado a cada quadro. 'delta' é o tempo decorrido desde o quadro anterior
 func _process(delta: float) -> void:
 	pass
+
+
+func _on_lockeddoor_body_entered(body: Node2D) -> void:
+	if body.is_in_group("PlayerMetro"):
+		get_parent().emit_signal("player_in_door", true)
+
+func _on_aim_lab_body_entered(body: Node2D) -> void:
+	if body.is_in_group("PlayerMetro"):
+		get_parent().emit_signal("player_in_enemy", true)

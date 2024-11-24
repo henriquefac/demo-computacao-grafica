@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c7t4h2y0k3irk"]
+[gd_scene load_steps=9 format=3 uid="uid://c7t4h2y0k3irk"]
 
 [ext_resource type="Script" path="res://personagem/metroidvania/teste/personagem.gd" id="1_kn0gb"]
 [ext_resource type="PackedScene" uid="uid://cg0vu05n3doqo" path="res://personagem/metroidvania/teste/personagemNode.tscn" id="1_vuwep"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://personagem/metroidvania/teste/states/walkStatePlayer.gd" id="4_qrxqm"]
 [ext_resource type="Script" path="res://personagem/metroidvania/teste/states/damageStatePlayer.gd" id="5_u271a"]
 [ext_resource type="Script" path="res://personagem/metroidvania/teste/status/recordeStatus.gd" id="6_jlaoh"]
+[ext_resource type="Script" path="res://personagem/metroidvania/teste/states/atkStatePlayer.gd" id="7_gc5hi"]
 
 [node name="Personagem" type="Node2D"]
 script = ExtResource("1_kn0gb")
@@ -27,6 +28,10 @@ playerCharacter = NodePath("../../PersonagemNode")
 
 [node name="damage" type="Node" parent="StateMachine" node_paths=PackedStringArray("playerCharacter")]
 script = ExtResource("5_u271a")
+playerCharacter = NodePath("../../PersonagemNode")
+
+[node name="atk" type="Node" parent="StateMachine" node_paths=PackedStringArray("playerCharacter")]
+script = ExtResource("7_gc5hi")
 playerCharacter = NodePath("../../PersonagemNode")
 
 [node name="RecordeStatusEfect" type="Node" parent="." node_paths=PackedStringArray("Player")]

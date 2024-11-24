@@ -30,7 +30,8 @@ func Enter():
 	if Input.is_action_pressed("Pular") and jump:
 		playerCharacter.velocity.y = playerCharacter.faceJump()
 		jump = false
-	
+	print(playerCharacter.is_atk)
+	print(playerCharacter.is_dashing)
 func Exit():
 	on = false
 
@@ -65,7 +66,12 @@ func pular():
 # transicao para idle
 func transictionTrigger():
 	transictionIdle()
+	transitionAtk()
 	pass
+
+func transitionAtk():
+	if Input.is_action_just_pressed("Ataque"):
+		Transitioned.emit(self, "atk")
 
 func transictionIdle():
 	if timer < 0 and playerCharacter.velocity.length() == 0 and jump:

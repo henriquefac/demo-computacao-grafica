@@ -15,7 +15,7 @@ var minTimer = 0.4
 func Enter():
 	minTimer = 0.6
 	personagem = get_tree().get_first_node_in_group("PlayerMetro")
-	
+
 func Exit():
 	pass
 
@@ -36,8 +36,6 @@ func directionPlayer():
 	direction = (personagem.global_position - enemy.global_position)
 	vectorMove = direction.normalized() * speed
 	vectorMove.y = 0
-
-	
 
 func transitionTrigger():
 	transitionAir()
