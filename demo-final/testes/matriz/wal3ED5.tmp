@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbf8s84maoo4x"]
+
+[ext_resource type="Script" path="res://testes/matriz/wall.gd" id="1_h3dxn"]
+[ext_resource type="PackedScene" uid="uid://2lwxrx2p3k8x" path="res://testes/circleRithyn/rotation_circles.tscn" id="2_4uc0k"]
+
+[node name="wall" type="Node2D"]
+script = ExtResource("1_h3dxn")
+medida = null
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 245)
+scale = Vector2(3, 3)
+
+[node name="RotationCircles" parent="." instance=ExtResource("2_4uc0k")]
+z_index = 2
+
+[connection signal="troca" from="RotationCircles" to="." method="_on_rotation_circles_troca"]

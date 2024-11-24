@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ck8buq3xxdigf"]
+
+[ext_resource type="Script" path="res://testes/teste.gd" id="1_11cfw"]
+[ext_resource type="PackedScene" uid="uid://ctusdq8hkwynf" path="res://events/rythme_game/quadrado_azul.tscn" id="1_r3bdf"]
+
+[node name="Teste" type="Node2D"]
+script = ExtResource("1_11cfw")
+
+[node name="quadrado_azul" parent="." instance=ExtResource("1_r3bdf")]
+position = Vector2(635, 288)

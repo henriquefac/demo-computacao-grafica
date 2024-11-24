@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://wtqlg1c4h8ho"]
+
+[ext_resource type="Script" path="res://events/rythme_game/right_circle.gd" id="1_ut6vu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q3epm"]
+radius = 25.0
+
+[node name="right_circle" type="Node2D"]
+script = ExtResource("1_ut6vu")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_q3epm")
+debug_color = Color(0.853779, 0.295501, 0.570367, 0.42)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
