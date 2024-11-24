@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://diogte6w5yhv1"]
+
+[ext_resource type="Texture2D" uid="uid://cpl1b2mep7ik6" path="res://assets/personagem/metroidvania/main/metroidvania-main-character-idle/Idle_2.png" id="1_nv0wl"]
+
+[resource]
+atlas = ExtResource("1_nv0wl")
+region = Rect2(301, 59, 29, 69)

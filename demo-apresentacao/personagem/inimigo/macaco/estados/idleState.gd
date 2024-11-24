@@ -17,6 +17,8 @@ var flag_stop : bool = true
 
 var velocity: Vector2
 
+var hurtBox : HurtBoxPlayer
+var on = true
 
 
 func randomize_wander():
@@ -26,6 +28,7 @@ func randomize_wander():
 	flag_stop = !flag_stop
 
 func Enter():
+	on = true
 	personagem = get_tree().get_first_node_in_group("PlayerMetro")
 	
 	if init:
@@ -68,6 +71,10 @@ func transitionAir():
 func transitionFollow():
 	if directionPlayer().length() < 400:
 		Transitioned.emit(self, "follow")
+		
+func transitionDamage(area: HitBoxPlayer):
+	if typeof(area) == TYPE_OBJECT and area is HitBoxPlayer and on:
+		pass
 func chengeDirectionToRight():
 	wander_time += 0.2
 	if move_direction.x < 0:
@@ -81,3 +88,6 @@ func chengeDirectionToLeft():
 	wander_time += 0.2
 	if move_direction.x > 0:
 		move_direction.x = -1
+		
+func Exit():
+	on = false

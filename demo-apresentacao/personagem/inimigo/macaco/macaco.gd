@@ -11,6 +11,9 @@ var hitbox: HitBoxEnemy
 var x_value_hitbox
 var flipHitBox: bool
 
+# area para inimigo levar dano
+var hurtbox: HurtBoxEnemy
+
 # raycast esquerdo
 var esquerda: RayCast2D
 # raycast direito
@@ -42,6 +45,7 @@ var dash_dir = Vector2.ZERO
 
 func _ready() -> void:
 	hitbox = $HitBoxEnemy
+	hurtbox = $HurtBoxEnemy
 	x_value_hitbox = hitbox.position.x
 	esquerda = $esquerda
 	direita = $direita
@@ -105,8 +109,6 @@ func checkFortWall():
 #var dash_dir = Vector2.ZERO
 
 func atkMove():
-
-	
 	dash_dir = Vector2(-1, 0)
 	if flipHitBox:
 		dash_dir.x = 1

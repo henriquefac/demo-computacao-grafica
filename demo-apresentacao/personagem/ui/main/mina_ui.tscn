@@ -27,7 +27,7 @@ offset_bottom = 3.936
 
 [node name="barra_dopamina" parent="Control" instance=ExtResource("2_6w0hx")]
 layout_mode = 0
-offset_left = 21.0
-offset_top = 58.0
-offset_right = 159.0
-offset_bottom = 80.0
+offset_left = 28.0
+offset_top = 38.0
+offset_right = 166.0
+offset_bottom = 60.0
