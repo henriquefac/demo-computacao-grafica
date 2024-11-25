@@ -1,5 +1,12 @@
 extends Node
 
+var posX_Metro
+var posYX_Metro
+
+var posX_TD
+var posY_TD
+
+
 # emitir sinias quando algum status forem afetados
 signal foco_auterado
 signal dopamina_auterada
