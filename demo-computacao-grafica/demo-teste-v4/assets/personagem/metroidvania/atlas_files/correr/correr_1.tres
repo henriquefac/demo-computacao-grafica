@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://c5rc4077123ul"]
+
+[ext_resource type="Texture2D" uid="uid://br6gpq6k667ku" path="res://assets/personagem/metroidvania/metroid_character.png" id="1_45wq0"]
+
+[resource]
+atlas = ExtResource("1_45wq0")
+region = Rect2(151, 240, 48, 85)

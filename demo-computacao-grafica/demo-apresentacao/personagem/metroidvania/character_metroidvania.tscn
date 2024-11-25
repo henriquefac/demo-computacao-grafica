@@ -1,0 +1,87 @@
+[gd_scene load_steps=17 format=3 uid="uid://elxv3xg4cclu"]
+
+[ext_resource type="Script" path="res://personagem/metroidvania/scripts/character_metroidvania.gd" id="1_5airw"]
+[ext_resource type="Texture2D" uid="uid://cggbwgbtfrwa4" path="res://assets/personagem/metroidvania/atlas_files/correr/correr_0.tres" id="2_8nlgo"]
+[ext_resource type="Texture2D" uid="uid://c5rc4077123ul" path="res://assets/personagem/metroidvania/atlas_files/correr/correr_1.tres" id="3_tfkhn"]
+[ext_resource type="Texture2D" uid="uid://d8bf3ffbjwci" path="res://assets/personagem/metroidvania/atlas_files/correr/correr_2.tres" id="4_ck2a2"]
+[ext_resource type="Texture2D" uid="uid://cem27hxrutabc" path="res://assets/personagem/metroidvania/atlas_files/correr/correr_3.tres" id="5_yv57r"]
+[ext_resource type="Texture2D" uid="uid://bapwi8m66672j" path="res://assets/personagem/metroidvania/atlas_files/correr/correr_4.tres" id="6_85lkk"]
+[ext_resource type="Texture2D" uid="uid://c1flisj1lkobp" path="res://assets/personagem/metroidvania/atlas_files/idle/idel_0.tres" id="6_jokk1"]
+[ext_resource type="Texture2D" uid="uid://cj4s2yyp6l5wo" path="res://assets/personagem/metroidvania/atlas_files/idle/idel_1.tres" id="7_l7q0c"]
+[ext_resource type="Texture2D" uid="uid://d1lp7apftjcbe" path="res://assets/personagem/metroidvania/atlas_files/correr/correr_5.tres" id="7_nmodu"]
+[ext_resource type="Texture2D" uid="uid://hekr8abfu2bf" path="res://assets/personagem/metroidvania/atlas_files/correr/correr_6.tres" id="8_3mpg1"]
+[ext_resource type="Texture2D" uid="uid://cxabq84i2tar7" path="res://assets/personagem/metroidvania/atlas_files/idle/idel_2.tres" id="8_h6ljk"]
+[ext_resource type="Texture2D" uid="uid://cihy0uvjtbxvh" path="res://assets/personagem/metroidvania/atlas_files/correr/correr_7.tres" id="9_fgiqn"]
+[ext_resource type="Texture2D" uid="uid://b22rbmxnklv6v" path="res://assets/personagem/metroidvania/atlas_files/idle/idel_3.tres" id="9_ysykc"]
+[ext_resource type="PackedScene" uid="uid://c64o3x36ebifx" path="res://personagem/ui/main/mina_ui.tscn" id="14_jre5q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lvqvu"]
+size = Vector2(39, 58)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_po74q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8nlgo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tfkhn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ck2a2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_yv57r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_85lkk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_nmodu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3mpg1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_fgiqn")
+}],
+"loop": true,
+"name": &"correr",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_jokk1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_l7q0c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_h6ljk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ysykc")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="character_metroidvania" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_5airw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.5, -11)
+shape = SubResource("RectangleShape2D_lvqvu")
+
+[node name="animacao" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3, -11.25)
+scale = Vector2(0.754717, 0.728916)
+sprite_frames = SubResource("SpriteFrames_po74q")
+animation = &"correr"
+frame = 2
+frame_progress = 0.45281
+
+[node name="main_ui" parent="." instance=ExtResource("14_jre5q")]

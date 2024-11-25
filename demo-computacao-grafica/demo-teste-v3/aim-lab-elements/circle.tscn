@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://csix8cr4srlsn"]
+
+[ext_resource type="Script" path="res://aim-lab-scripts/randomCircle.gd" id="1_lgse6"]
+
+[node name="Circle" type="Node2D"]
+script = ExtResource("1_lgse6")

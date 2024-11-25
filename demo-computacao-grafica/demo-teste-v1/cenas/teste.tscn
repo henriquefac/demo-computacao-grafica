@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://nnccw4462nwv"]
+
+[ext_resource type="PackedScene" uid="uid://jq22ccrppiur" path="res://elementos/left_circle.tscn" id="1_5l7xj"]
+[ext_resource type="PackedScene" uid="uid://dv3ba2vsemhr2" path="res://elementos/quadrado_vermelho.tscn" id="2_8db06"]
+
+[node name="teste" type="Node2D"]
+
+[node name="left_circle" parent="." instance=ExtResource("1_5l7xj")]
+position = Vector2(234, 109)
+
+[node name="Quadrado_azul" parent="." instance=ExtResource("2_8db06")]
+position = Vector2(423, 106)

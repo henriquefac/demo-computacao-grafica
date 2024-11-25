@@ -1,0 +1,315 @@
+[gd_scene load_steps=45 format=3 uid="uid://cflupwlg25ara"]
+
+[ext_resource type="Script" path="res://personagem/inimigos/macaco/macaco.gd" id="1_q2y7x"]
+[ext_resource type="Texture2D" uid="uid://bgcpeoteiwd7t" path="res://assets/inimigos/macaco/frames_ataque/macaco_ataque1.png" id="1_qg3hx"]
+[ext_resource type="Texture2D" uid="uid://k4s8iaq3mhgn" path="res://assets/inimigos/macaco/frames_andar/andar_do_macaco1.png" id="2_38moy"]
+[ext_resource type="Texture2D" uid="uid://3kbv504apsrh" path="res://assets/inimigos/macaco/frames_ataque/macaco_ataque2.png" id="2_ryqdc"]
+[ext_resource type="Texture2D" uid="uid://47j0e5l3q171" path="res://assets/inimigos/macaco/frames_ataque/macaco_ataque3.png" id="3_158ri"]
+[ext_resource type="Texture2D" uid="uid://uiiy85naaaio" path="res://assets/inimigos/macaco/frames_andar/andar_do_macaco2.png" id="3_uuwvc"]
+[ext_resource type="Texture2D" uid="uid://bwwn6i0ft3bcc" path="res://assets/inimigos/macaco/frames_andar/andar_do_macaco3.png" id="4_7t2sj"]
+[ext_resource type="Texture2D" uid="uid://bpgyh7wuggm7m" path="res://assets/inimigos/macaco/frames_ataque/macaco_ataque4.png" id="4_i1kpb"]
+[ext_resource type="Texture2D" uid="uid://dd4wxvyiqgm5l" path="res://assets/inimigos/macaco/frames_andar/andar_do_macaco4.png" id="5_ke0et"]
+[ext_resource type="Texture2D" uid="uid://tjcgu7tm051a" path="res://assets/inimigos/macaco/frames_ataque/macaco_ataque5.png" id="5_txd1r"]
+[ext_resource type="Texture2D" uid="uid://cbqe5l45r3vaq" path="res://assets/inimigos/macaco/frames_ataque/macaco_ataque6.png" id="6_2nd0l"]
+[ext_resource type="Texture2D" uid="uid://cryvrnvmhr3wo" path="res://assets/inimigos/macaco/frames_andar/andar_do_macaco5.png" id="6_k47pd"]
+[ext_resource type="Texture2D" uid="uid://db11narp31hrj" path="res://assets/inimigos/macaco/frames_ataque/macaco_ataque7.png" id="7_to3qt"]
+[ext_resource type="Texture2D" uid="uid://c82karxi357h4" path="res://assets/inimigos/macaco/frames_andar/andar_do_macaco6.png" id="7_y5rhx"]
+[ext_resource type="Texture2D" uid="uid://dne2ilh6rmx33" path="res://assets/inimigos/macaco/frames_ataque/macaco_ataque8.png" id="8_363vp"]
+[ext_resource type="Texture2D" uid="uid://cbn2dorgnqkaf" path="res://assets/inimigos/macaco/frames_andar/andar_do_macaco7.png" id="8_xa14a"]
+[ext_resource type="Texture2D" uid="uid://25a56qqbvysj" path="res://assets/inimigos/macaco/frames_ataque/macaco_ataque9.png" id="9_80jxx"]
+[ext_resource type="Texture2D" uid="uid://b066md3s6t415" path="res://assets/inimigos/macaco/frames_andar/andar_do_macaco8.png" id="9_g1c16"]
+[ext_resource type="Texture2D" uid="uid://bpqqcl2f4v22h" path="res://assets/inimigos/macaco/frames_ataque/macaco_ataque10.png" id="10_5eudy"]
+[ext_resource type="Texture2D" uid="uid://2edj4bmurohg" path="res://assets/inimigos/macaco/frames_andar/andar_do_macaco9.png" id="10_vtc3e"]
+[ext_resource type="Texture2D" uid="uid://dj6ip41013w7m" path="res://assets/inimigos/macaco/frames_ataque/macaco_ataque11.png" id="11_c7r51"]
+[ext_resource type="Texture2D" uid="uid://dqxfo5a6qe5jt" path="res://assets/inimigos/macaco/frames_andar/andar_do_macaco10.png" id="11_fcrbn"]
+[ext_resource type="Texture2D" uid="uid://dd353sx1tr4ba" path="res://assets/inimigos/macaco/frames_andar/andar_do_macaco11.png" id="12_6wyv6"]
+[ext_resource type="Texture2D" uid="uid://cmcl4bnhqq70r" path="res://assets/inimigos/macaco/frames_ataque/macaco_ataque12.png" id="12_s1pgq"]
+[ext_resource type="Texture2D" uid="uid://c6846vbpbn580" path="res://assets/inimigos/macaco/frames_idle/macaco_idle1.png" id="13_gctjf"]
+[ext_resource type="Texture2D" uid="uid://dd4214xs8mooo" path="res://assets/inimigos/macaco/frames_andar/andar_do_macaco12.png" id="13_ptwp6"]
+[ext_resource type="Texture2D" uid="uid://ci2vupfs6w367" path="res://assets/inimigos/macaco/frames_idle/macaco_idle2.png" id="14_ruq0y"]
+[ext_resource type="Texture2D" uid="uid://bfgbt314a4kd2" path="res://assets/inimigos/macaco/frames_idle/macaco_idle3.png" id="15_fufbg"]
+[ext_resource type="Texture2D" uid="uid://btnx0or7d4ua6" path="res://assets/inimigos/macaco/frames_idle/macaco_idle4.png" id="16_xswud"]
+[ext_resource type="Texture2D" uid="uid://445wnkx0axw0" path="res://assets/inimigos/macaco/frames_idle/macaco_idle5.png" id="17_wm4n2"]
+[ext_resource type="Texture2D" uid="uid://pmme561xnp4a" path="res://assets/inimigos/macaco/frames_idle/macaco_idle6.png" id="18_pplxg"]
+[ext_resource type="Texture2D" uid="uid://cdhy7n7h66ewe" path="res://assets/inimigos/macaco/frames_idle/macaco_idle7.png" id="19_nbfui"]
+[ext_resource type="Texture2D" uid="uid://bnh5mufn1waxm" path="res://assets/inimigos/macaco/frames_idle/macaco_idle8.png" id="20_w2p6y"]
+[ext_resource type="Texture2D" uid="uid://b3sr0o1d1xd83" path="res://assets/inimigos/macaco/frames_idle/macaco_idle9.png" id="21_pgd87"]
+[ext_resource type="Texture2D" uid="uid://jvue44n2odeo" path="res://assets/inimigos/macaco/frames_idle/macaco_idle10.png" id="22_t1fht"]
+[ext_resource type="Texture2D" uid="uid://dduqwbpgoylha" path="res://assets/inimigos/macaco/frames_idle/macaco_idle11.png" id="23_l1wa1"]
+[ext_resource type="Texture2D" uid="uid://p82vcvxm6f6v" path="res://assets/inimigos/macaco/frames_idle/macaco_idle12.png" id="24_vxwvn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qvaie"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_38moy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_uuwvc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7t2sj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ke0et")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_k47pd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_y5rhx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xa14a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_g1c16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vtc3e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_fcrbn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_6wyv6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ptwp6")
+}],
+"loop": true,
+"name": &"andar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qg3hx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ryqdc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_158ri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_i1kpb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_txd1r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2nd0l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_to3qt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_363vp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_80jxx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5eudy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_c7r51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_s1pgq")
+}],
+"loop": true,
+"name": &"ataque",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_gctjf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ruq0y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_fufbg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_xswud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_wm4n2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_pplxg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_nbfui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_w2p6y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_pgd87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_t1fht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_l1wa1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_vxwvn")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_21og3"]
+size = Vector2(40, 42)
+
+[sub_resource type="Animation" id="Animation_8otep"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("frames:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"ataque"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("frames:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_p41v3"]
+resource_name = "ataque"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("frames:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"ataque"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("frames:frame")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.966667),
+"transitions": PackedFloat32Array(2.21914, 3.3636),
+"update": 0,
+"values": [0, 11]
+}
+
+[sub_resource type="Animation" id="Animation_1mmds"]
+resource_name = "idle"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("frames:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("frames:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 0.34151),
+"update": 0,
+"values": [0, 11]
+}
+
+[sub_resource type="Animation" id="Animation_htra3"]
+resource_name = "walk"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("frames:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"andar"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("frames:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 11]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jvcrh"]
+_data = {
+"RESET": SubResource("Animation_8otep"),
+"ataque": SubResource("Animation_p41v3"),
+"idle": SubResource("Animation_1mmds"),
+"walk": SubResource("Animation_htra3")
+}
+
+[node name="Macaco_Node" type="CharacterBody2D"]
+position = Vector2(1113, 334)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_q2y7x")
+
+[node name="frames" type="AnimatedSprite2D" parent="."]
+position = Vector2(3, -3)
+sprite_frames = SubResource("SpriteFrames_qvaie")
+animation = &"ataque"
+
+[node name="box" type="CollisionShape2D" parent="."]
+position = Vector2(6, 0)
+shape = SubResource("RectangleShape2D_21og3")
+
+[node name="animacao" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jvcrh")
+}
+
+[node name="esquerda" type="RayCast2D" parent="."]
+position = Vector2(6, 0)
+target_position = Vector2(-44, 0)
+
+[node name="direita" type="RayCast2D" parent="."]
+position = Vector2(6, 0)
+target_position = Vector2(44, 0)

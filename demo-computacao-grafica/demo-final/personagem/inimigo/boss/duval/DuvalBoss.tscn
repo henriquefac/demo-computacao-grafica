@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpybyut4qe6fr"]
+
+[ext_resource type="PackedScene" uid="uid://b7pqsgf54f4g6" path="res://personagem/inimigo/boss/duval/DuvalBody.tscn" id="1_4w8dj"]
+
+[node name="DuvalBoss" type="Node2D"]
+
+[node name="DuvalBody" parent="." instance=ExtResource("1_4w8dj")]
+
+[node name="BossStateMachine" type="Node" parent="."]

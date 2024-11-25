@@ -1,0 +1,6 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://cyfbbe4bkhsfn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cad7i"]
+
+[resource]
+atlas = SubResource("AtlasTexture_cad7i")

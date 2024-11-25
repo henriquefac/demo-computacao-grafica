@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cc6rpm8vcgbiw"]
+
+[ext_resource type="Script" path="res://testes/matriz/matriz.gd" id="1_4plns"]
+
+[node name="matriz" type="Node2D"]
+script = ExtResource("1_4plns")
