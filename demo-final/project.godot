@@ -11,13 +11,15 @@ config_version=5
 [application]
 
 config/name="demo-apresentacao"
-run/main_scene="res://cenas/menu/main_menu.tscn"
+run/main_scene="res://cenas/cenario/menu/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Status="*res://script/status.gd"
+Transition="*res://cenas/cenario/special-effects/transition.gd"
+AudioPlayer="*res://assets/musica/audio_player.gd"
 
 [display]
 

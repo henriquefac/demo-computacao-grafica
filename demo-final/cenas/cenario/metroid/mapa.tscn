@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://uicscwnx327" path="res://assets/cenario/metroidvania/Sprite-0002.png" id="1_t2idf"]
 [ext_resource type="Texture2D" uid="uid://bsyrqtpy2gpqt" path="res://assets/cenario/metroidvania/Entry.png" id="3_f5pb6"]
 [ext_resource type="PackedScene" uid="uid://drjpgfg7v0147" path="res://cenas/cenario/topdown/elementos/locked_door_1.tscn" id="3_m8lwd"]
-[ext_resource type="Script" path="res://cenas/cenario/metroid/door.gd" id="4_cgxmj"]
+[ext_resource type="Script" path="res://cenas/cenario/metroid/script/door.gd" id="4_cgxmj"]
 [ext_resource type="Texture2D" uid="uid://wguqs5i8qd1s" path="res://assets/cenario/topdown/!modern-edits-doors.png" id="5_hnd2c"]
 [ext_resource type="PackedScene" uid="uid://c7t4h2y0k3irk" path="res://personagem/metroidvania/teste/personagem.tscn" id="6_12qlt"]
 [ext_resource type="PackedScene" uid="uid://db8eprcajeh73" path="res://personagem/inimigo/macaco/enemyMacaco.tscn" id="6_ncm5q"]

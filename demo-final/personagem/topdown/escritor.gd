@@ -92,4 +92,6 @@ func _on_computer_lvl_body_exited(body: Node2D) -> void:
 		player_in_computer = false
 
 func _interact_with_computer() -> void:
+	Transition.transition()
+	await Transition.on_transition_finished
 	get_tree().change_scene_to_file("res://cenas/cenario/metroid/mapa.tscn")
