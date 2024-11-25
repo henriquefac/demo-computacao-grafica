@@ -23,6 +23,7 @@ var loockedArea = $mapa/blur
 @export var circle_scene: PackedScene
 
 func _ready() -> void:
+	AudioPlayer.play_music_scene(1)
 	player = get_tree().get_first_node_in_group("PlayerMetro")
 	self.connect("player_in_enemy", Callable(self, "_on_player_in_enemy"))
 	self.connect("player_in_door", Callable(self, "_on_player_in_door"))
