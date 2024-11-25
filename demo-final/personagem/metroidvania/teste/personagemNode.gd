@@ -44,6 +44,7 @@ func _ready() -> void:
 	
 	hurtBox = $HurtBoxPlayer
 	hitBox = $HitBoxPlayer
+
 func _physics_process(delta: float) -> void:
 	if !is_atk and !is_dashing:
 		animationControl()
@@ -54,7 +55,8 @@ func _physics_process(delta: float) -> void:
 	# Aplica a gravidade quando não estiver no chão
 	if not is_on_ground:
 		velocity.y += GRAVITY * delta
-		
+		# Movimenta e verifica colisões
+	
 	move_and_slide()
 
 

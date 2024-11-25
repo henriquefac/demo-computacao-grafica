@@ -14,6 +14,12 @@ var camera := $Personagem/Camera2D
 @onready
 var lockedDoor = $"locked-door"
 
+@onready
+var lockedDoorBody = $mapa/doors
+
+@onready
+var loockedArea = $mapa/blur
+
 @export var circle_scene: PackedScene
 
 func _ready() -> void:
@@ -27,7 +33,8 @@ func _on_player_in_enemy(is_enemy: bool) -> void:
 
 func _on_player_in_door(is_in_door: bool) -> void:
 	if is_in_door:
-		_start_timer_door_locked(1)
+		#_start_timer_door_locked(1)
+		_start_timer_door_locked(.1)
 
 func _process(delta: float) -> void:
 	camera.position = player.position
@@ -57,6 +64,8 @@ func _start_mini_game():
 	
 
 func _start_mini_game_rythme():
+	lockedDoor.queue_free()
+	
 	mini_game_active = true
 	get_tree().paused = false
 	
@@ -69,4 +78,10 @@ func _start_mini_game_rythme():
 	
 	await mini_game.game_over
 	
-	lockedDoor.queue_free()
+	#TIRA A GAMBIARRA DA PAREDE INVISIVEL (UM TILE MAP ESCONDIDO)
+	lockedDoorBody.get_node("paredeInvisivel").queue_free()
+	loockedArea.get_node("secretArea").queue_free()
+	lockedDoorBody.get_node("door").play("open")
+	
+	
+	
