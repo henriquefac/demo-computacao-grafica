@@ -259,11 +259,14 @@ tracks/3/path = NodePath(".")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.266667),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.266667, 0.733333),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
 "method": &"atkMove"
+}, {
+"args": [],
+"method": &"stopAtkMove"
 }]
 }
 
@@ -333,7 +336,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_etu6n"]
-size = Vector2(25, 23)
+size = Vector2(35, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t6bdc"]
 size = Vector2(47, 30)
@@ -371,7 +374,7 @@ script = ExtResource("38_aknod")
 inimigo = NodePath("..")
 
 [node name="hitbox" type="CollisionShape2D" parent="HitBoxEnemy"]
-position = Vector2(-0.5, 0)
+position = Vector2(4.5, 0)
 shape = SubResource("RectangleShape2D_etu6n")
 disabled = true
 

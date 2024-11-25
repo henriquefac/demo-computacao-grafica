@@ -30,8 +30,7 @@ func Enter():
 	if Input.is_action_pressed("Pular") and jump:
 		playerCharacter.velocity.y = playerCharacter.faceJump()
 		jump = false
-	print(playerCharacter.is_atk)
-	print(playerCharacter.is_dashing)
+
 func Exit():
 	on = false
 
@@ -67,11 +66,12 @@ func pular():
 func transictionTrigger():
 	transictionIdle()
 	transitionAtk()
+	transitionDefend()
 	pass
 
 func transitionAtk():
 	if Input.is_action_just_pressed("Ataque"):
-		Transitioned.emit(self, "atk")
+		Transitioned.emit(self, "atk1")
 
 func transictionIdle():
 	if timer < 0 and playerCharacter.velocity.length() == 0 and jump:
@@ -83,3 +83,8 @@ func transictionDamage(area: HitBoxEnemy):
 	if typeof(area) == TYPE_OBJECT and area is HitBoxEnemy and on:
 		playerCharacter.getDamage(area)
 		Transitioned.emit(self, "damage")
+	
+		
+func transitionDefend():
+	if Input.is_action_just_pressed("Defesa"):
+		Transitioned.emit(self, "defend")

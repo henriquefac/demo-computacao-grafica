@@ -28,6 +28,7 @@ func randomize_wander():
 	flag_stop = !flag_stop
 
 func Enter():
+	
 	on = true
 	personagem = get_tree().get_first_node_in_group("PlayerMetro")
 	
@@ -66,7 +67,7 @@ func Physics_Update(_delta: float):
 
 func transitionTrigger():
 	transitionAir()
-	#transitionFollow()
+	transitionFollow()
 	
 # transição idl -> air
 func transitionAir():
@@ -74,11 +75,12 @@ func transitionAir():
 		Transitioned.emit(self, "air")
 		
 func transitionFollow():
-	if directionPlayer().length() < 400:
+	if directionPlayer().length() < 300 and enemy.is_on_floor():
 		Transitioned.emit(self, "follow")
 		
 func transictionDamage(area: HitBoxPlayer):
 	if typeof(area) == TYPE_OBJECT and area is HitBoxPlayer and on:
+		enemy.getDamage(area)
 		Transitioned.emit(self, "damage")
 func chengeDirectionToRight():
 	wander_time += 0.2

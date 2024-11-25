@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c7t4h2y0k3irk"]
+[gd_scene load_steps=11 format=3 uid="uid://c7t4h2y0k3irk"]
 
 [ext_resource type="Script" path="res://personagem/metroidvania/teste/personagem.gd" id="1_kn0gb"]
 [ext_resource type="PackedScene" uid="uid://cg0vu05n3doqo" path="res://personagem/metroidvania/teste/personagemNode.tscn" id="1_vuwep"]
@@ -8,15 +8,18 @@
 [ext_resource type="Script" path="res://personagem/metroidvania/teste/states/damageStatePlayer.gd" id="5_u271a"]
 [ext_resource type="Script" path="res://personagem/metroidvania/teste/status/recordeStatus.gd" id="6_jlaoh"]
 [ext_resource type="Script" path="res://personagem/metroidvania/teste/states/atkStatePlayer.gd" id="7_gc5hi"]
+[ext_resource type="Script" path="res://personagem/metroidvania/teste/states/atk2StatePlayer.gd" id="8_wybpk"]
+[ext_resource type="Script" path="res://personagem/metroidvania/teste/states/defendStatePlayer.gd" id="9_sp76a"]
 
 [node name="Personagem" type="Node2D"]
 script = ExtResource("1_kn0gb")
 
 [node name="PersonagemNode" parent="." groups=["PlayerMetro"] instance=ExtResource("1_vuwep")]
 
-[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("intitial_state")]
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("intitial_state", "enti")]
 script = ExtResource("2_x2r54")
 intitial_state = NodePath("idle")
+enti = NodePath("../PersonagemNode")
 
 [node name="idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("playerCharacter")]
 script = ExtResource("3_4745j")
@@ -30,8 +33,16 @@ playerCharacter = NodePath("../../PersonagemNode")
 script = ExtResource("5_u271a")
 playerCharacter = NodePath("../../PersonagemNode")
 
-[node name="atk" type="Node" parent="StateMachine" node_paths=PackedStringArray("playerCharacter")]
+[node name="atk1" type="Node" parent="StateMachine" node_paths=PackedStringArray("playerCharacter")]
 script = ExtResource("7_gc5hi")
+playerCharacter = NodePath("../../PersonagemNode")
+
+[node name="atk2" type="Node" parent="StateMachine" node_paths=PackedStringArray("playerCharacter")]
+script = ExtResource("8_wybpk")
+playerCharacter = NodePath("../../PersonagemNode")
+
+[node name="defend" type="Node" parent="StateMachine" node_paths=PackedStringArray("playerCharacter")]
+script = ExtResource("9_sp76a")
 playerCharacter = NodePath("../../PersonagemNode")
 
 [node name="RecordeStatusEfect" type="Node" parent="." node_paths=PackedStringArray("Player")]

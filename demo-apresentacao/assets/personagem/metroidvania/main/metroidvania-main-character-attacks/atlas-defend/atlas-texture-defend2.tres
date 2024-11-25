@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://d151y5jomlfvs"]
+
+[ext_resource type="Texture2D" uid="uid://bdqwyv8ycv3sh" path="res://assets/personagem/metroidvania/main/metroidvania-main-character-attacks/Attack_3.png" id="1_cjg0r"]
+
+[resource]
+atlas = ExtResource("1_cjg0r")
+region = Rect2(169, 61, 36, 67)

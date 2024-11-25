@@ -4,8 +4,8 @@ class_name PlayerCharacter
 # receber status
 signal STATUS_ON
 
-@export var SPEED:=200
-@export var JUMP:=-400
+@export var SPEED:=250
+@export var JUMP:=-500
 var aux:Array
 
 # vetor direção
@@ -30,12 +30,12 @@ var hurtBox: HurtBoxPlayer
 var hitBox: HitBoxPlayer
 
 # Propriedades para dash
-var dash_speed = 100
+var dash_speed = 200
 var dash_duration = 0.4  # Duração do dash em segundos
 var is_atk:bool = false
 var is_dashing:bool = false
 var dash_dir = Vector2.ZERO
-
+var is_defend: bool = false
 func _ready() -> void:
 	for i in range(10):
 		aux.append(0)
@@ -45,7 +45,7 @@ func _ready() -> void:
 	hurtBox = $HurtBoxPlayer
 	hitBox = $HitBoxPlayer
 func _physics_process(delta: float) -> void:
-	if !is_atk and !is_dashing:
+	if !is_atk and !is_dashing and !is_defend:
 		animationControl()
 	flipBox()
 		# Atualiza se o personagem está no chão
@@ -67,7 +67,7 @@ func animationControl():
 		frame.flip_h = false		
 		flipHitBox = true
 	if velocity.length() > 0:
-		pass
+		animation.play("run")
 	else:
 		animation.play("idle")
 
@@ -90,6 +90,13 @@ func getDamage(area: HitBoxEnemy):
 	vectorDirDamage = velocity.normalized().x
 	Status.diminuir_vida(area.dano)
 
+func getDefendDamage(area: HitBoxEnemy):
+
+	velocity = area.vectorKnock()
+	velocity.y = 0
+	velocity.x *= 0.33
+	vectorDirDamage = velocity.normalized().x
+	Status.diminuir_vida(area.dano/3)
 
 # criar funções que controlam os status do personagem
 func faceVelocity():
@@ -102,12 +109,14 @@ func faceJump():
 # funcao de atk
 # script basico de ataque
 func atkProcess():
+	is_dashing = true
 	dash_dir = Vector2(1, 0)
 	if flipHitBox:
 		dash_dir.x = -1
 	velocity = Vector2.ZERO
 	
 	velocity = velocity.move_toward(dash_dir.normalized() * dash_speed, 1000)
-	await get_tree().create_timer(dash_duration).timeout
+
+func stopAtkProcess():
 	is_dashing = false
 	velocity = Vector2()

@@ -5,6 +5,10 @@ class_name macaco
 signal wallEsquerda
 signal wallDireita
 
+var vida = 100
+@export var gravity := 900.0 
+# ver de knockback
+var vectorDirDamage: float
 
 # hitbox, area para dar dano no player
 var hitbox: HitBoxEnemy
@@ -43,6 +47,8 @@ var dash_duration = 0.4  # Duração do dash em segundos
 var is_dashing = false
 var dash_dir = Vector2.ZERO
 
+var atk_on = false
+
 func _ready() -> void:
 	hitbox = $HitBoxEnemy
 	hurtbox = $HurtBoxEnemy
@@ -56,8 +62,10 @@ func _ready() -> void:
 	
 	pass
 func _physics_process(delta: float) -> void:
+	if !is_on_floor():
+		velocity.y += gravity * delta
 	checkFortWall()
-	if !is_dashing:
+	if !is_dashing and !atk_on and is_on_floor():
 		animation()
 	flipBox()
 	move_and_slide()
@@ -109,11 +117,22 @@ func checkFortWall():
 #var dash_dir = Vector2.ZERO
 
 func atkMove():
+	is_dashing = true
 	dash_dir = Vector2(-1, 0)
 	if flipHitBox:
 		dash_dir.x = 1
 	velocity = Vector2.ZERO
 	
 	velocity = velocity.move_toward(dash_dir.normalized() * dash_speed, 300)
-	await get_tree().create_timer(dash_duration).timeout
+
+func stopAtkMove():
+	is_dashing = false
+	velocity.x = 0
+		
+func getDamage(area: HitBoxPlayer):
 	velocity = Vector2()
+	velocity = area.vectorKnock()
+	vectorDirDamage = velocity.normalized().x
+	vida -= area.dano
+
+# receber dano
