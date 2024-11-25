@@ -86,5 +86,5 @@ func transictionDamage(area: HitBoxEnemy):
 	
 		
 func transitionDefend():
-	if Input.is_action_just_pressed("Defesa"):
+	if Input.is_action_just_pressed("Defesa") and playerCharacter.is_on_floor():
 		Transitioned.emit(self, "defend")
