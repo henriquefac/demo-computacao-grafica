@@ -94,6 +94,10 @@ func _input(event: InputEvent) -> void:
 func _on_bedroomdoor_body_entered(body: Node2D) -> void:
 	get_tree().change_scene_to_file("res://cenas/cenario/topdown/Scenario_1.tscn")
 
+func _on_livingroomdoor_body_entered(body: Node2D) -> void:
+	#get_tree().change_scene_to_file("res://cenas/cenario/topdown/Scenario_2.tscn")
+	pass
+
 func _on_computer_lvl_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		player_in_computer = true
@@ -102,11 +106,11 @@ func _on_computer_lvl_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		player_in_computer = false
 
-func _on_livingroomdoor_body_entered(body: Node2D) -> void:
+func _on_bed_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		player_in_bed = true
 
-func _on_livingroomdoor_body_exited(body: Node2D) -> void:
+func _on_bed_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		player_in_bed = false
 

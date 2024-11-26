@@ -7360,7 +7360,6 @@ metadata/_edit_lock_ = true
 [node name="Living-room-door" parent="." instance=ExtResource("6_h8qua")]
 position = Vector2(152, 305)
 scale = Vector2(2, 0.505)
-metadata/_edit_lock_ = true
 
 [node name="computer_lvl" parent="." instance=ExtResource("8_n0khy")]
 position = Vector2(49, 176)
@@ -7387,6 +7386,13 @@ scale = Vector2(0.5, 0.5)
 script = null
 metadata/_edit_lock_ = true
 
+[node name="bed" parent="." instance=ExtResource("6_h8qua")]
+position = Vector2(240, 117)
+scale = Vector2(1.6, 2)
+metadata/_edit_lock_ = true
+
 [connection signal="body_entered" from="Living-room-door" to="Escritor" method="_on_livingroomdoor_body_entered"]
 [connection signal="body_entered" from="computer_lvl" to="Escritor" method="_on_computer_lvl_body_entered"]
 [connection signal="body_exited" from="computer_lvl" to="Escritor" method="_on_computer_lvl_body_exited"]
+[connection signal="body_entered" from="bed" to="Escritor" method="_on_bed_body_entered"]
+[connection signal="body_exited" from="bed" to="Escritor" method="_on_bed_body_exited"]
