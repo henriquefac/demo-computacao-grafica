@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var start_button: Button = $Button as Button
-@onready var start_scene = load("res://cenas/cenario/topdown/Scenario_1.tscn") as PackedScene
+@onready var start_scene = load("res://cenas/cenario/menu/main_menu.tscn") as PackedScene
 @onready var transition = load("res://cenas/cenario/special-effects/transition.tscn") as PackedScene
 
 var transition_instance: CanvasLayer = null

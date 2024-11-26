@@ -23,7 +23,7 @@ var vida_atual = vida_maxima
 var dopamina_bars = 3
 var dopamina_bar_atual = dopamina_bars
 
-var count_max = 10
+var count_max = 5
 var count_atual = 0
 
 # controle da camera

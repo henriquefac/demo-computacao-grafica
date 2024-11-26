@@ -5,7 +5,7 @@ class_name macaco
 signal wallEsquerda
 signal wallDireita
 
-var vida = 100
+var vida = 50
 @export var gravity := 900.0 
 # ver de knockback
 var vectorDirDamage: float
@@ -45,7 +45,7 @@ var frames: AnimatedSprite2D
 var flagFlip: bool
 
 # Propriedades para dash
-var dash_speed = 600
+var dash_speed = 700
 var dash_duration = 0.4  # Duração do dash em segundos
 var is_dashing = false
 var dash_dir = Vector2.ZERO
@@ -142,7 +142,7 @@ func stopAtkMove():
 	velocity.x = 0
 		
 func getDamage(area: HitBoxPlayer):
-	
+	print("dano1")
 	velocity = Vector2()
 	velocity = area.vectorKnock()
 	if randf() < 0.2:
@@ -155,6 +155,7 @@ func getDamage(area: HitBoxPlayer):
 
 
 func getDamage2(area: HitBoxPlayer):
+	print("dano2")
 	# Calcula a direção normalizada entre o inimigo (self) e o jogador
 	var dir = (global_position - area.player.global_position).normalized()
 	
@@ -165,8 +166,8 @@ func getDamage2(area: HitBoxPlayer):
 		print("Inimigo está à direita da área")
 	
 	# Ajusta a direção para o vetor oposto e define a velocidade
-	dir *= 600  # Amplia o vetor
-	dir.y = -400  # Ajusta o componente vertical para um impulso
+	dir *= 200  # Amplia o vetor
+	dir.y = -600  # Ajusta o componente vertical para um impulso
 	velocity = dir  # Aplica a nova velocidade
 	
 	# Reduz a vida do inimigo com base no dano da área

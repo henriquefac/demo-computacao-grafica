@@ -33,6 +33,7 @@ func transitionIdle(algo):
 		Transitioned.emit(self, "idle")
 
 func transictionDamage(area: Area2D):
+	print("área")
 	if area.is_in_group("hitboxPlayer") and area is HitBoxPlayer and on:
 		enemy.getDamage(area)
 		Transitioned.emit(self, "damage")

@@ -32,6 +32,7 @@ func Exit():
 	playerCharacter.hitBoxArea.disabled = true
 func Update(_delta: float):
 	transitionGameStart()
+	transitionDefend()
 	if Input.is_action_just_pressed("Ataque"):
 		secondAttk = true
 	
@@ -55,3 +56,7 @@ func transictionDamage(area: HitBoxEnemy):
 func transitionGameStart():
 	if playerCharacter.pause:
 		Transitioned.emit(self, "gameStart")
+		
+func transitionDefend():
+	if Input.is_action_pressed("Defesa"):
+		Transitioned.emit(self, "defend")

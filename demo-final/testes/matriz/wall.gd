@@ -11,7 +11,7 @@ var direita:Node2D
 # ajusta a distância entre quadrados
 const DISTANCIA_ENTRE_QUADRADOS: int = 60
 # posicão inicial
-var firstPosition:Vector2 = Vector2(-105, 70)  + global_position
+var firstPosition:Vector2 = Vector2(-105, 0)  + global_position
 
 var matrizCelulas:Array[Array] = []
 

@@ -2,7 +2,7 @@ class_name HitBoxPlayer
 extends Area2D
 
 @export var player: PlayerCharacter
-@export var dano:= randf_range(5, 10)
+@export var dano: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

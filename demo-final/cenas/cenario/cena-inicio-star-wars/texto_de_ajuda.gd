@@ -25,8 +25,6 @@ func _process(delta: float) -> void:
 	
 	# Verifica se 20 segundos já se passaram.
 	if elapsed_time >= 20.0:
-		transition_instance.transition()
-		await transition_instance.on_transition_finished
 		get_tree().change_scene_to_packed(start_scene)
 
 func _on_transition_complete() -> void:

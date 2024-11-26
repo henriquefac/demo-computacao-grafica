@@ -33,7 +33,7 @@ func Update(_delta: float):
 func Physics_Update(_delta: float):
 	directionPlayer()
 	if direction.length() < 400:
-		enemy.velocity = vectorMove
+		enemy.velocity.x = vectorMove.x
 	if direction.length() < 60:
 		enemy.velocity = Vector2()
 		
@@ -59,7 +59,7 @@ func transitionIdle():
 	if direction.length() > 600:
 		Transitioned.emit(self, "follow")
 func transitionAtk():
-	if direction.length() < 150 and minTimer < 0:
+	if direction.length() < 100 and minTimer < 0:
 		Transitioned.emit(self, "atk")
 		
 func transictionDamage(area: HitBoxPlayer):
@@ -68,6 +68,6 @@ func transictionDamage(area: HitBoxPlayer):
 		enemy.getDamage(area)
 		Transitioned.emit(self, "damage")
 	if area.is_in_group("hitBoxPlayer2") and area is HitBoxPlayer and on:
-		print("damage:atk")
+		print("damage:follow")
 		enemy.getDamage2(area)
 		Transitioned.emit(self, "damage")

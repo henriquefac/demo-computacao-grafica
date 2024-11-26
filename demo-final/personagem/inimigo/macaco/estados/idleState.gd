@@ -84,9 +84,8 @@ func transictionDamage(area: Area2D):
 		print("damage:idle")
 		enemy.getDamage(area)
 		Transitioned.emit(self, "damage")
-	if area.is_in_group("hitBoxPlayer2") and on:
-		print("Aqui")
-		print("damage:atk")
+	if area.is_in_group("hitBoxPlayer2") and area is HitBoxPlayer and on:
+		print("damage:idle")
 		enemy.getDamage2(area)
 		Transitioned.emit(self, "damage")
 		

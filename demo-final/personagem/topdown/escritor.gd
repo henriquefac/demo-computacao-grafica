@@ -4,6 +4,7 @@ extends CharacterBody2D
 var velocidade: float = 100
 var player_in_computer: bool = false
 var player_in_bed: bool = false
+var paused: bool = false
 
 # Frames de animação
 var animation_player: AnimatedSprite2D
@@ -39,23 +40,30 @@ func _physics_process(delta: float) -> void:
 		_interact_with_computer()
 
 	if player_in_bed and Input.is_action_just_pressed("interagir"):
+		paused = !paused
 		transition_instance.transition()
 		Status.restaurar_vida(100)
+
+		movimentacao(delta)
+
 		await transition_instance.on_transition_finished
+		await get_tree().create_timer(0.69444).timeout
+		paused = !paused
 
 # Lógica de movimentação do personagem
 func movimentacao(delta: float) -> void:
 	var movimento = Vector2.ZERO  # Inicializa o vetor de movimento com zero
 	
 	# Verifica as direções e ajusta o vetor de movimento
-	if Input.is_action_pressed("Cima"):
-		movimento.y -= 1
-	elif Input.is_action_pressed("Baixo"):
-		movimento.y += 1
-	if Input.is_action_pressed("Esquerda"):
-		movimento.x -= 1
-	elif Input.is_action_pressed("Direita"):
-		movimento.x += 1
+	if !paused:
+		if Input.is_action_pressed("Cima"):
+			movimento.y -= 1
+		elif Input.is_action_pressed("Baixo"):
+			movimento.y += 1
+		if Input.is_action_pressed("Esquerda"):
+			movimento.x -= 1
+		elif Input.is_action_pressed("Direita"):
+			movimento.x += 1
 
 	# Normaliza o vetor de movimento para evitar velocidades diferentes ao mover diagonalmente
 	if movimento != Vector2.ZERO:

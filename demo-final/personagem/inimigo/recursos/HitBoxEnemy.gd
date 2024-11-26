@@ -2,7 +2,7 @@ class_name HitBoxEnemy
 extends Area2D
 
 @export var inimigo: macaco
-@export var dano:=5
+@export var dano:=15
 
 
 var efeitoStatus: StatusEfect
