@@ -7,14 +7,21 @@ var player_in_computer: bool = false
 # Frames de animação
 var animation_player: AnimatedSprite2D
 
-@onready
-var pause_menu: Control = $"../PauseMenu" # Certifique-se de que PauseMenu existe no caminho correto.
+@onready var pause_menu: Control = $"../PauseMenu" # Certifique-se de que PauseMenu existe no caminho correto.
+
+@onready var transition = load("res://cenas/cenario/special-effects/transition.tscn") as PackedScene
+
+var transition_instance: CanvasLayer = null
 
 var pausado = false
 
 func _ready() -> void:
 	animation_player = $frames  # Referência ao AnimatedSprite2D
 	pause_menu.visible = false  # Esconde o menu de pausa inicialmente
+	
+	transition_instance = transition.instantiate() as CanvasLayer
+	add_child(transition_instance)
+	transition_instance.on_transition_finished.connect(_on_transition_complete)
 
 # Atualiza a física e movimento do personagem
 func _physics_process(delta: float) -> void:
@@ -26,6 +33,8 @@ func _physics_process(delta: float) -> void:
 
 	# Interagir com o computador
 	if player_in_computer == true and Input.is_action_just_pressed("interagir"):
+	#DESCOMENTAR SOMENTE QUANDO O JOGADOR FINALMENTE CONSEGUIR SE CURAR
+	#if player_in_computer == true and Input.is_action_just_pressed("interagir") and Status.esta_vivo():
 		_interact_with_computer()
 
 # Lógica de movimentação do personagem
@@ -92,6 +101,9 @@ func _on_computer_lvl_body_exited(body: Node2D) -> void:
 		player_in_computer = false
 
 func _interact_with_computer() -> void:
-	Transition.transition()
-	await Transition.on_transition_finished
+	transition_instance.transition()
+	await transition_instance.on_transition_finished
 	get_tree().change_scene_to_file("res://cenas/cenario/metroid/mapa.tscn")
+
+func _on_transition_complete() -> void:
+	pass

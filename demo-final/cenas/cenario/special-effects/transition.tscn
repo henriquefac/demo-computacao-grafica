@@ -1,9 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ceq8xayng24kg"]
+[gd_scene load_steps=6 format=3 uid="uid://bjn8flx71u5s6"]
 
 [ext_resource type="Script" path="res://cenas/cenario/special-effects/transition.gd" id="1_e6u4g"]
 
-[sub_resource type="Animation" id="Animation_vq3ha"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_x57jl"]
+resource_name = "RESET"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -17,7 +17,7 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_434yp"]
+[sub_resource type="Animation" id="Animation_ejhkb"]
 resource_name = "fade_in"
 length = 0.5
 tracks/0/type = "value"
@@ -33,7 +33,7 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_2uuh6"]
+[sub_resource type="Animation" id="Animation_30p6m"]
 resource_name = "fade_out"
 length = 0.5
 tracks/0/type = "value"
@@ -49,11 +49,11 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_m15b0"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c734e"]
 _data = {
-"RESET": SubResource("Animation_vq3ha"),
-"fade_in": SubResource("Animation_434yp"),
-"fade_out": SubResource("Animation_2uuh6")
+"RESET": SubResource("Animation_x57jl"),
+"fade_in": SubResource("Animation_ejhkb"),
+"fade_out": SubResource("Animation_30p6m")
 }
 
 [node name="Transition" type="CanvasLayer"]
@@ -67,9 +67,9 @@ anchor_bottom = 1.0
 offset_left = -308.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.159039, 0.068871, 0.208752, 1)
+color = Color(0.160784, 0.0705882, 0.207843, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_m15b0")
+"": SubResource("AnimationLibrary_c734e")
 }

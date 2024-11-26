@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 Status="*res://script/status.gd"
-Transition="*res://cenas/cenario/special-effects/transition.gd"
 AudioPlayer="*res://assets/musica/audio_player.gd"
 
 [display]

@@ -9,6 +9,8 @@ var is_on_ground: bool = false
 
 @onready
 var camera := $Camera2D
+@onready 
+var punch_effect = preload("res://assets/musica/493914__damnsatinist__light-punch.wav")
 
 func _ready() -> void:
 	animacao = $animacao
@@ -19,6 +21,7 @@ func animated_(vetor_movimento: Vector2):
 	
 	if Input.is_action_pressed("Ataque"):
 		animacao.play("attack")
+		AudioPlayer.play_FX(punch_effect, -12)
 		animacao.flip_h = vetor_movimento.x < 0
 		return
 	

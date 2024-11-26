@@ -885,7 +885,7 @@ drag_left_margin = 0.55
 
 [node name="EnemyMacaco" parent="." instance=ExtResource("6_ncm5q")]
 z_index = 2
-position = Vector2(683, 822)
+position = Vector2(625, 506)
 
 [connection signal="body_entered" from="aim_lab" to="Personagem" method="_on_aim_lab_body_entered"]
 [connection signal="body_entered" from="locked-door" to="Personagem" method="_on_lockeddoor_body_entered"]
