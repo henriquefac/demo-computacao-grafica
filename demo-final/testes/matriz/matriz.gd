@@ -75,7 +75,7 @@ func isValid(co: Vector2):
 
 func Walk():
 	# quando começa, escolhe uma co
-	initialCord = Vector2(5,0)
+	initialCord = RandonCord()
 	matriz[initialCord.x][initialCord.y] = 5
 	# adiciona como coordenada inicial
 	cords.append(initialCord)
