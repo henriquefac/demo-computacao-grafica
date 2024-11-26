@@ -111,7 +111,7 @@ func flipBox():
 		
 
 func getDamage(area: HitBoxEnemy):
-	
+	print("Dano normal")
 	var statusAply = area.getStatus()
 	if statusAply:
 		STATUS_ON.emit(statusAply)
@@ -121,12 +121,12 @@ func getDamage(area: HitBoxEnemy):
 	Status.diminuir_vida(area.dano)
 
 func getDefendDamage(area: HitBoxEnemy):
-
+	print("Dano na defesa")
 	velocity = area.vectorKnock()
 	velocity.y = 0
 	velocity.x *= 0.33
 	vectorDirDamage = velocity.normalized().x
-	Status.diminuir_vida(area.dano/3)
+	Status.diminuir_vida(area.dano/2)
 
 # criar funções que controlam os status do personagem
 func faceVelocity():

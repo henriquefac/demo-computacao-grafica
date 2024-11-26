@@ -62,7 +62,7 @@ func Physics_Update(_delta: float):
 
 		
 	if enemy and enemy.is_on_floor():
-		enemy.velocity = velocity
+		enemy.velocity.x = velocity.x
 
 	transitionTrigger()
 

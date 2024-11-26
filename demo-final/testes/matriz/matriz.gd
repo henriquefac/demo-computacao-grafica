@@ -79,7 +79,7 @@ func Walk():
 	matriz[initialCord.x][initialCord.y] = 5
 	# adiciona como coordenada inicial
 	cords.append(initialCord)
-	# vizinhos cordenadas
+	# vizinhos cordenadasaadaaaaaa  adaasd
 	var neighbors = getNeighbor(initialCord)
 	
 

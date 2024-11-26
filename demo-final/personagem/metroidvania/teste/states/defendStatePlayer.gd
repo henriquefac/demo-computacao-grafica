@@ -12,9 +12,6 @@ var timerDamage = 0.3
 
 func Enter():
 	
-		
-
-	print("Defend")
 	playerCharacter.velocity = Vector2()
 	playerCharacter.is_defend = true
 	playerCharacter.animation.play("defend")
@@ -36,7 +33,7 @@ func Update(_delta):
 	transitionGameStart()
 
 func damageDefend(area: HitBoxEnemy):
-	if area.is_in_group("HitBoxEnemy") and area is HitBoxEnemy:
+	if area.is_in_group("HitBoxEnemy") and area is HitBoxEnemy and on:
 		timerDamage = 0.3
 		playerCharacter.getDefendDamage(area)
 

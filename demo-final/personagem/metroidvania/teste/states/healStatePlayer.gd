@@ -10,8 +10,13 @@ var on:bool
 var animation: AnimationPlayer
 
 func Enter():
+	on = true
+	if Status.dopamina_bar_atual < 0:
+		Transitioned.emit(self, "idle")
+	else:
+		Status.diminuir_dopamina(1)
 	
-
+	
 	playerCharacter.is_heal = true
 	playerCharacter.velocity = Vector2()
 	
@@ -44,7 +49,7 @@ func transitionDamage(area: Area2D):
 		Transitioned.emit(self, "damage")
 
 func transitionIdle(animation):
-	if animation == "heal1":
+	if animation == "heal":
 		Status.restaurar_vida(20)
 		Transitioned.emit(self, "idle")
 

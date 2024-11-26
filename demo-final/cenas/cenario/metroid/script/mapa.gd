@@ -80,7 +80,7 @@ func _start_mini_game_rythme():
 	
 	mini_game.global_position = camera.global_position
 	mini_game.position.y += -275
-	mini_game.z_index = 3
+	mini_game.z_index = 10
 	
 	await mini_game.game_over
 	player.pause = false

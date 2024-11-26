@@ -8,6 +8,7 @@ var hurtBox : HurtBoxEnemy
 var on = true
 
 func Enter():
+	Status.aumentar_count(1)
 	enemy.playSound()
 	timer = randf_range(0,3)
 	on = true

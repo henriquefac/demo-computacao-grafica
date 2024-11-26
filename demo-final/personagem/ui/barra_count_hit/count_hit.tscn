@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://6otagd5evse7"]
+
+[ext_resource type="Script" path="res://personagem/ui/barra_count_hit/count_hit.gd" id="1_4i4ac"]
+
+[node name="count_hit" type="HBoxContainer"]
+offset_right = 170.0
+offset_bottom = 6.0
+script = ExtResource("1_4i4ac")
+
+[node name="count" type="ColorRect" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 0)
+
+[node name="ColorRect2" type="ColorRect" parent="count"]
+layout_mode = 1
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 168.0
+offset_bottom = 5.0
+color = Color(0, 0, 0, 0)
+
+[node name="ColorRect" type="ColorRect" parent="count"]
+layout_mode = 1
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 168.0
+offset_bottom = 5.0
+color = Color(0.740494, 0.104353, 0.793411, 1)

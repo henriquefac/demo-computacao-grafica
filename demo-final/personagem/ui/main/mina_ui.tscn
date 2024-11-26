@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c64o3x36ebifx"]
+[gd_scene load_steps=4 format=3 uid="uid://c64o3x36ebifx"]
 
 [ext_resource type="PackedScene" uid="uid://crlht0i6a4nhm" path="res://personagem/ui/barra_de_foco/barra_de_foco.tscn" id="1_rlglu"]
 [ext_resource type="PackedScene" uid="uid://0483ch74swy" path="res://personagem/ui/barra_dopamina/barra_dopamina.tscn" id="2_6w0hx"]
+[ext_resource type="PackedScene" uid="uid://6otagd5evse7" path="res://personagem/ui/barra_count_hit/count_hit.tscn" id="3_lensm"]
 
 [node name="main_ui" type="CanvasLayer"]
 
@@ -27,7 +28,14 @@ offset_bottom = 3.936
 
 [node name="barra_dopamina" parent="Control" instance=ExtResource("2_6w0hx")]
 layout_mode = 0
-offset_left = 62.0
+offset_left = 44.0
+offset_top = 77.0
+offset_right = 182.0
+offset_bottom = 99.0
+
+[node name="count_hit" parent="Control" instance=ExtResource("3_lensm")]
+layout_mode = 0
+offset_left = 42.0
 offset_top = 72.0
-offset_right = 200.0
-offset_bottom = 94.0
+offset_right = 214.0
+offset_bottom = 81.0
