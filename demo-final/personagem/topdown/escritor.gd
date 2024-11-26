@@ -3,6 +3,7 @@ extends CharacterBody2D
 # Variável de velocidade do personagem
 var velocidade: float = 100
 var player_in_computer: bool = false
+var player_in_bed: bool = false
 
 # Frames de animação
 var animation_player: AnimatedSprite2D
@@ -32,10 +33,15 @@ func _physics_process(delta: float) -> void:
 	movimentacao(delta)
 
 	# Interagir com o computador
-	if player_in_computer == true and Input.is_action_just_pressed("interagir"):
-	#DESCOMENTAR SOMENTE QUANDO O JOGADOR FINALMENTE CONSEGUIR SE CURAR
-	#if player_in_computer == true and Input.is_action_just_pressed("interagir") and Status.esta_vivo():
+	#DESCOMENTAR SOMENTE SE O QUE EU FIZ ESTIVER QUEBRADO KKKKKK
+	#if player_in_computer and Input.is_action_just_pressed("interagir"):
+	if player_in_computer and Input.is_action_just_pressed("interagir") and Status.esta_vivo():
 		_interact_with_computer()
+
+	if player_in_bed and Input.is_action_just_pressed("interagir"):
+		transition_instance.transition()
+		Status.restaurar_vida(100)
+		await transition_instance.on_transition_finished
 
 # Lógica de movimentação do personagem
 func movimentacao(delta: float) -> void:
@@ -85,10 +91,6 @@ func _input(event: InputEvent) -> void:
 		pause_menu.visible = pausado
 		get_tree().paused = pausado
 
-func _on_livingroomdoor_body_entered(body: Node2D) -> void:
-	#get_tree().change_scene_to_file("res://cenas/cenario/topdown/Scenario_2.tscn")
-	pass
-
 func _on_bedroomdoor_body_entered(body: Node2D) -> void:
 	get_tree().change_scene_to_file("res://cenas/cenario/topdown/Scenario_1.tscn")
 
@@ -99,6 +101,14 @@ func _on_computer_lvl_body_entered(body: Node2D) -> void:
 func _on_computer_lvl_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		player_in_computer = false
+
+func _on_livingroomdoor_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		player_in_bed = true
+
+func _on_livingroomdoor_body_exited(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		player_in_bed = false
 
 func _interact_with_computer() -> void:
 	transition_instance.transition()
