@@ -4,7 +4,7 @@ class_name MatrizRandoWalk
 # matriz
 var matriz: Array = []
 
-@export var medida:=4
+@export var medida:=6
 
 var altura := medida
 var largura := medida - 2
@@ -75,7 +75,7 @@ func isValid(co: Vector2):
 
 func Walk():
 	# quando começa, escolhe uma co
-	initialCord = RandonCord()
+	initialCord = Vector2(5,0)
 	matriz[initialCord.x][initialCord.y] = 5
 	# adiciona como coordenada inicial
 	cords.append(initialCord)

@@ -12,23 +12,31 @@ var vectorMove: Vector2
 # tempo mínimo no estado follow para entrar no estado ataque
 var minTimer = 0.4
 
-func Enter():
-	minTimer = 0.6
-	personagem = get_tree().get_first_node_in_group("PlayerMetro")
+var hurtBox : HurtBoxEnemy
+var on = false
 
+func Enter():
+	on = true
+	minTimer = 0.4
+	personagem = get_tree().get_first_node_in_group("PlayerMetro").playerNode
+	
+	if hurtBox == null:
+		hurtBox = enemy.hurtbox
+	if not hurtBox.is_connected("area_entered", transictionDamage):
+		hurtBox.connect("area_entered", transictionDamage)
 func Exit():
-	pass
+	on = false
 
 func Update(_delta: float):
 	minTimer -= _delta
 	
 func Physics_Update(_delta: float):
 	directionPlayer()
-	
 	if direction.length() < 400:
 		enemy.velocity = vectorMove
-	else:
+	if direction.length() < 60:
 		enemy.velocity = Vector2()
+		
 	transitionTrigger()
 	
 	
@@ -36,6 +44,8 @@ func directionPlayer():
 	direction = (personagem.global_position - enemy.global_position)
 	vectorMove = direction.normalized() * speed
 	vectorMove.y = 0
+
+	
 
 func transitionTrigger():
 	transitionAir()
@@ -51,3 +61,13 @@ func transitionIdle():
 func transitionAtk():
 	if direction.length() < 150 and minTimer < 0:
 		Transitioned.emit(self, "atk")
+		
+func transictionDamage(area: HitBoxPlayer):
+	if area.is_in_group("hitboxPlayer") and area is HitBoxPlayer and on:
+		print("damage:follow")
+		enemy.getDamage(area)
+		Transitioned.emit(self, "damage")
+	if area.is_in_group("hitBoxPlayer2") and area is HitBoxPlayer and on:
+		print("damage:atk")
+		enemy.getDamage2(area)
+		Transitioned.emit(self, "damage")

@@ -5,8 +5,10 @@ var score = 0
 
 signal player_in_door
 signal player_in_enemy
+signal game_start
 
-var player: Node2D
+var playerInterface: Node2D
+var player: PlayerCharacter
 
 @onready
 var camera := $Personagem/Camera2D
@@ -24,7 +26,8 @@ var loockedArea = $mapa/blur
 
 func _ready() -> void:
 	AudioPlayer.play_music_scene(1)
-	player = get_tree().get_first_node_in_group("PlayerMetro")
+	playerInterface = get_tree().get_first_node_in_group("PlayerMetro")
+	player = playerInterface.playerNode
 	self.connect("player_in_enemy", Callable(self, "_on_player_in_enemy"))
 	self.connect("player_in_door", Callable(self, "_on_player_in_door"))
 
@@ -53,6 +56,8 @@ func _start_timer_door_locked(timer):
 		await _start_mini_game_rythme()
 
 func _start_mini_game():
+	print("playerPausar")
+	player.pause = true
 	mini_game_active = true
 	get_tree().paused = true
 	
@@ -62,10 +67,11 @@ func _start_mini_game():
 	await mini_game.game_over
 	
 	get_tree().paused = false
+	player.pause = false
 
 func _start_mini_game_rythme():
 	lockedDoor.queue_free()
-	
+	player.pause = true
 	mini_game_active = true
 	get_tree().paused = false
 	
@@ -77,7 +83,7 @@ func _start_mini_game_rythme():
 	mini_game.z_index = 3
 	
 	await mini_game.game_over
-	
+	player.pause = false
 	#TIRA A GAMBIARRA DA PAREDE INVISIVEL (UM TILE MAP ESCONDIDO)
 	lockedDoorBody.get_node("paredeInvisivel").queue_free()
 	loockedArea.get_node("secretArea").queue_free()

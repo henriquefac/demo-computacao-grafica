@@ -56,6 +56,7 @@ func orbit(delta: float) -> void:
 # Verifica se o botão foi pressionado
 func is_pressed():
 	if flag_in_area and girar:
+		print(new_position)
 		girar = false
 		position = new_position
 		continueCircle.emit()
@@ -71,12 +72,14 @@ func _process(delta: float) -> void:
 	
 # Detecta entrada em uma área
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	flag_in_area = true
-	new_position = area.get_parent().position
+	if area.is_in_group("Celula"):
+		flag_in_area = true
+		new_position = area.get_parent().position
 
 # Detecta saída de uma área
 func _on_area_2d_area_exited(area: Area2D) -> void:
-	flag_in_area = false
+	if area.is_in_group("Celula"):
+		flag_in_area = false
 
 
 

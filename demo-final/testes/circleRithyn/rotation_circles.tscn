@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://qkylf12ca3s2" path="res://testes/circleRithyn/circle.tscn" id="2_2yaat"]
 
 [node name="RotationCircles" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_avlwp")
 
 [node name="right" parent="." instance=ExtResource("2_2yaat")]

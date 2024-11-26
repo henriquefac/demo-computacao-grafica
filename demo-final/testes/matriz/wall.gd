@@ -11,12 +11,13 @@ var direita:Node2D
 # ajusta a distância entre quadrados
 const DISTANCIA_ENTRE_QUADRADOS: int = 60
 # posicão inicial
-const firstPosition:Vector2 = Vector2(-105, 70) 
+var firstPosition:Vector2 = Vector2(-105, 70)  + global_position
 
 var matrizCelulas:Array[Array] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
 	GenRandonWalks()
 	bolas = $RotationCircles
 	esquerda = $RotationCircles/left

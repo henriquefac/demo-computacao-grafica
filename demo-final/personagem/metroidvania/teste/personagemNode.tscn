@@ -1,23 +1,43 @@
-[gd_scene load_steps=27 format=3 uid="uid://cg0vu05n3doqo"]
+[gd_scene load_steps=52 format=3 uid="uid://cg0vu05n3doqo"]
 
 [ext_resource type="Script" path="res://personagem/metroidvania/teste/personagemNode.gd" id="1_hu51n"]
-[ext_resource type="Texture2D" uid="uid://bt3t7ugq75nhv" path="res://assets/personagem/metroidvania/main-character/metroidvania-main-character-attacks/atlas-atack/atlas-atack-1/atlas-texture-atack-1.tres" id="2_ajtuu"]
+[ext_resource type="Texture2D" uid="uid://bt3t7ugq75nhv" path="res://assets/personagem/metroidvania/main/metroidvania-main-character-attacks/atlas-atack/atlas-atack-1/atlas-texture-atack-1.tres" id="2_ajtuu"]
 [ext_resource type="PackedScene" uid="uid://c64o3x36ebifx" path="res://personagem/ui/main/mina_ui.tscn" id="2_sgjys"]
-[ext_resource type="Texture2D" uid="uid://c7cqygrs3ivhu" path="res://assets/personagem/metroidvania/main-character/metroidvania-main-character-attacks/atlas-atack/atlas-atack-1/atlas-texture-atack-2.tres" id="3_7as2g"]
-[ext_resource type="Texture2D" uid="uid://cycxgav18kece" path="res://assets/personagem/metroidvania/main-character/metroidvania-main-character-attacks/atlas-atack/atlas-atack-1/atlas-texture-atack-3.tres" id="4_xdj8t"]
-[ext_resource type="Texture2D" uid="uid://y046y6enni0w" path="res://assets/personagem/metroidvania/main-character/metroidvania-main-character-attacks/atlas-atack/atlas-atack-1/atlas-texture-atack-4.tres" id="5_a6unf"]
-[ext_resource type="Texture2D" uid="uid://vpd5fb5ppehl" path="res://assets/personagem/metroidvania/main-character/metroidvania-main-character-attacks/atlas-atack/atlas-atack-1/atlas-texture-atack-5.tres" id="6_dbgbu"]
-[ext_resource type="Texture2D" uid="uid://ct4x4e37smb2v" path="res://assets/personagem/metroidvania/main-character/metroidvania-main-character-attacks/atlas-atack/atlas-atack-1/atlas-texture-atack-6.tres" id="7_d1dgt"]
+[ext_resource type="Texture2D" uid="uid://c7cqygrs3ivhu" path="res://assets/personagem/metroidvania/main/metroidvania-main-character-attacks/atlas-atack/atlas-atack-1/atlas-texture-atack-2.tres" id="3_7as2g"]
+[ext_resource type="Texture2D" uid="uid://cycxgav18kece" path="res://assets/personagem/metroidvania/main/metroidvania-main-character-attacks/atlas-atack/atlas-atack-1/atlas-texture-atack-3.tres" id="4_xdj8t"]
+[ext_resource type="Texture2D" uid="uid://y046y6enni0w" path="res://assets/personagem/metroidvania/main/metroidvania-main-character-attacks/atlas-atack/atlas-atack-1/atlas-texture-atack-4.tres" id="5_a6unf"]
+[ext_resource type="Texture2D" uid="uid://vpd5fb5ppehl" path="res://assets/personagem/metroidvania/main/metroidvania-main-character-attacks/atlas-atack/atlas-atack-1/atlas-texture-atack-5.tres" id="6_dbgbu"]
+[ext_resource type="Texture2D" uid="uid://ct4x4e37smb2v" path="res://assets/personagem/metroidvania/main/metroidvania-main-character-attacks/atlas-atack/atlas-atack-1/atlas-texture-atack-6.tres" id="7_d1dgt"]
 [ext_resource type="Script" path="res://personagem/metroidvania/recursos/HurtBoxPlayer.gd" id="7_kkjeo"]
-[ext_resource type="Texture2D" uid="uid://bt30i8bikyvaq" path="res://assets/personagem/metroidvania/main-character/metroidvania-main-character-idle/atlas-idle/atlas-texture-idle5.tres" id="8_oyb5u"]
-[ext_resource type="Texture2D" uid="uid://keqoi664vg8n" path="res://assets/personagem/metroidvania/main-character/metroidvania-main-character-idle/atlas-idle/atlas-texture-idle6.tres" id="9_i0mk8"]
-[ext_resource type="Texture2D" uid="uid://b1l0jfonk0wdi" path="res://assets/personagem/metroidvania/main-character/metroidvania-main-character-idle/atlas-idle/atlas-texture-idle7.tres" id="10_blrb4"]
-[ext_resource type="Texture2D" uid="uid://be0cjdnqlsw0a" path="res://assets/personagem/metroidvania/main-character/metroidvania-main-character-idle/atlas-idle/atlas-texture-idle8.tres" id="11_0hvoh"]
-[ext_resource type="Texture2D" uid="uid://bi3mmso8t1227" path="res://assets/personagem/metroidvania/main-character/metroidvania-main-character-idle/atlas-idle/atlas-texture-idle9.tres" id="12_mou1j"]
-[ext_resource type="Texture2D" uid="uid://brkfh2xtnn1p6" path="res://assets/personagem/metroidvania/main-character/metroidvania-main-character-idle/atlas-idle/atlas-texture-idle10.tres" id="13_ohw1e"]
-[ext_resource type="Texture2D" uid="uid://cajxjy0x4f3u0" path="res://assets/personagem/metroidvania/main-character/metroidvania-main-character-idle/atlas-idle/atlas-texture-idle12.tres" id="14_pjghi"]
+[ext_resource type="Texture2D" uid="uid://bt30i8bikyvaq" path="res://assets/personagem/metroidvania/main/metroidvania-main-character-idle/atlas-idle/atlas-texture-idle5.tres" id="8_oyb5u"]
+[ext_resource type="Texture2D" uid="uid://jod1kjelr43" path="res://assets/personagem/metroidvania/main/metroidvania-main-character-attacks/atlas-atack/atlas-atack-2/atlas-texture-atk1.tres" id="8_uy6as"]
+[ext_resource type="Texture2D" uid="uid://ctou8j1rb72h" path="res://assets/personagem/metroidvania/main/metroidvania-main-character-attacks/atlas-atack/atlas-atack-2/atlas-texture-atk2.tres" id="9_d4vov"]
+[ext_resource type="Texture2D" uid="uid://keqoi664vg8n" path="res://assets/personagem/metroidvania/main/metroidvania-main-character-idle/atlas-idle/atlas-texture-idle6.tres" id="9_i0mk8"]
+[ext_resource type="Texture2D" uid="uid://derv5nxj2ec8s" path="res://assets/personagem/metroidvania/main/metroidvania-main-character-attacks/atlas-atack/atlas-atack-2/atlas-texture-atk3.tres" id="10_2rmnb"]
+[ext_resource type="Texture2D" uid="uid://b1l0jfonk0wdi" path="res://assets/personagem/metroidvania/main/metroidvania-main-character-idle/atlas-idle/atlas-texture-idle7.tres" id="10_blrb4"]
+[ext_resource type="Texture2D" uid="uid://be0cjdnqlsw0a" path="res://assets/personagem/metroidvania/main/metroidvania-main-character-idle/atlas-idle/atlas-texture-idle8.tres" id="11_0hvoh"]
+[ext_resource type="Texture2D" uid="uid://bdtlwd222hdjm" path="res://assets/personagem/metroidvania/main/metroidvania-main-character-attacks/atlas-atack/atlas-atack-2/atlas-texture-atk4.tres" id="11_b4u3k"]
+[ext_resource type="Texture2D" uid="uid://cxtgwf7wiqh7o" path="res://assets/personagem/metroidvania/main/metroidvania-main-character-attacks/atlas-defend/atlas-texture-defend1.tres" id="12_1p7wt"]
+[ext_resource type="Texture2D" uid="uid://bi3mmso8t1227" path="res://assets/personagem/metroidvania/main/metroidvania-main-character-idle/atlas-idle/atlas-texture-idle9.tres" id="12_mou1j"]
+[ext_resource type="Texture2D" uid="uid://brkfh2xtnn1p6" path="res://assets/personagem/metroidvania/main/metroidvania-main-character-idle/atlas-idle/atlas-texture-idle10.tres" id="13_ohw1e"]
+[ext_resource type="Texture2D" uid="uid://d151y5jomlfvs" path="res://assets/personagem/metroidvania/main/metroidvania-main-character-attacks/atlas-defend/atlas-texture-defend2.tres" id="13_vm6ss"]
+[ext_resource type="Texture2D" uid="uid://di3dh6afaddyh" path="res://assets/personagem/metroidvania/main/metroidvania-main-character-attacks/atlas-atack/atlas-atack-3/atlas-texture-atk1.tres" id="14_6iu31"]
+[ext_resource type="Texture2D" uid="uid://cajxjy0x4f3u0" path="res://assets/personagem/metroidvania/main/metroidvania-main-character-idle/atlas-idle/atlas-texture-idle12.tres" id="14_pjghi"]
+[ext_resource type="Texture2D" uid="uid://b4u80agk2v7x0" path="res://assets/personagem/metroidvania/main/metroidvania-main-character-attacks/atlas-atack/atlas-atack-3/atlas-texture-atk6.tres" id="15_0ih4v"]
+[ext_resource type="Texture2D" uid="uid://cj6qmvneiqye5" path="res://assets/personagem/metroidvania/main/metroidvania-main-character-run/atlas-run/atlas-texture-run1.tres" id="15_uki3d"]
 [ext_resource type="Script" path="res://personagem/metroidvania/teste/frameOffset.gd" id="15_v1cp1"]
+[ext_resource type="Texture2D" uid="uid://crole3ckx7fn6" path="res://assets/personagem/metroidvania/main/metroidvania-main-character-attacks/atlas-atack/atlas-atack-3/atlas-texture-atk3.tres" id="15_v45r5"]
+[ext_resource type="Texture2D" uid="uid://bbu68aaprobps" path="res://assets/personagem/metroidvania/main/metroidvania-main-character-run/atlas-run/atlas-texture-run2.tres" id="16_3caqi"]
+[ext_resource type="Texture2D" uid="uid://doop58m0lwq3i" path="res://assets/personagem/metroidvania/main/metroidvania-main-character-attacks/atlas-atack/atlas-atack-3/atlas-texture-atk4.tres" id="16_ofobl"]
+[ext_resource type="Texture2D" uid="uid://c61sqmioi8d0y" path="res://assets/personagem/metroidvania/main/metroidvania-main-character-run/atlas-run/atlas-texture-run3.tres" id="17_0jlh5"]
+[ext_resource type="Texture2D" uid="uid://bvf4vu2v5107j" path="res://assets/personagem/metroidvania/main/metroidvania-main-character-run/atlas-run/atlas-texture-run4.tres" id="18_ku6bb"]
 [ext_resource type="Script" path="res://personagem/metroidvania/recursos/HitBoxPLayer.gd" id="18_rm8lb"]
+[ext_resource type="Texture2D" uid="uid://bnmna80rktk0i" path="res://assets/personagem/metroidvania/main/metroidvania-main-character-run/atlas-run/atlas-texture-run5.tres" id="19_c7vs4"]
+[ext_resource type="Texture2D" uid="uid://bsyrxng523hp7" path="res://assets/personagem/metroidvania/main/metroidvania-main-character-run/atlas-run/atlas-texture-run6.tres" id="20_uxv33"]
+[ext_resource type="Texture2D" uid="uid://dr52mi4qa8487" path="res://assets/personagem/metroidvania/main/metroidvania-main-character-run/atlas-run/atlas-texture-run7.tres" id="21_eaw7p"]
+[ext_resource type="Texture2D" uid="uid://bbyhu8hlhh8jf" path="res://assets/personagem/metroidvania/main/metroidvania-main-character-run/atlas-run/atlas-texture-run8.tres" id="22_p2xjg"]
+[ext_resource type="Texture2D" uid="uid://bbqo5gsaqv27j" path="res://assets/personagem/metroidvania/main/metroidvania-main-character-run/atlas-run/atlas-texture-run9.tres" id="23_c74wi"]
+[ext_resource type="Texture2D" uid="uid://bw7acufm1rcef" path="res://assets/personagem/metroidvania/main/metroidvania-main-character-run/atlas-run/atlas-texture-run10.tres" id="24_2bou4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ol6k"]
 size = Vector2(32, 75)
@@ -44,12 +64,57 @@ animations = [{
 "texture": ExtResource("7_d1dgt")
 }],
 "loop": true,
-"name": &"atk",
+"name": &"atk1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_uy6as")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_d4vov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2rmnb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_b4u3k")
+}],
+"loop": true,
+"name": &"atk2",
 "speed": 5.0
 }, {
 "frames": [],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_1p7wt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_vm6ss")
+}],
+"loop": true,
+"name": &"defend",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_6iu31")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_v45r5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ofobl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_0ih4v")
+}],
+"loop": true,
+"name": &"heal",
 "speed": 5.0
 }, {
 "frames": [{
@@ -76,6 +141,41 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_uki3d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_3caqi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_0jlh5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ku6bb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_c7vs4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_uxv33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_eaw7p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_p2xjg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_c74wi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_2bou4")
+}],
+"loop": true,
+"name": &"run",
 "speed": 5.0
 }]
 
@@ -105,9 +205,45 @@ tracks/1/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HitBoxPlayer/hitbox:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HitBoxPlayer2/hitBox2:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HurtBoxPlayer/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_y33v1"]
-resource_name = "atk"
+resource_name = "atk1"
 length = 0.5
 step = 0.0033
 tracks/0/type = "value"
@@ -120,7 +256,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"atk"]
+"values": [&"atk1"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -161,6 +297,142 @@ tracks/3/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_uxw5n"]
+resource_name = "atk2"
+length = 0.4
+step = 0.0033
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.00330033),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"atk2"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.00660066, 0.356436),
+"transitions": PackedFloat32Array(1.36604, 1),
+"update": 0,
+"values": [0, 3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HitBoxPlayer/hitbox:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.148515, 0.283828),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.141914),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"atkProcess"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_5hx70"]
+resource_name = "defend"
+length = 0.8
+step = 0.0033
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.00330033),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"defend"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.00660066, 0.0924092),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_3xria"]
+resource_name = "heal"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"heal"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.766667),
+"transitions": PackedFloat32Array(5.85634, 1),
+"update": 0,
+"values": [0, 3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HitBoxPlayer2/hitBox2:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.633333, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HurtBoxPlayer/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.3, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
 [sub_resource type="Animation" id="Animation_pvcp2"]
 resource_name = "idle"
 loop_mode = 1
@@ -189,17 +461,53 @@ tracks/1/keys = {
 "values": [0, 5]
 }
 
+[sub_resource type="Animation" id="Animation_kbv2r"]
+resource_name = "run"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"run"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 9]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y2s30"]
 _data = {
 "RESET": SubResource("Animation_g3nkr"),
-"atk": SubResource("Animation_y33v1"),
-"idle": SubResource("Animation_pvcp2")
+"atk1": SubResource("Animation_y33v1"),
+"atk2": SubResource("Animation_uxw5n"),
+"defend": SubResource("Animation_5hx70"),
+"heal": SubResource("Animation_3xria"),
+"idle": SubResource("Animation_pvcp2"),
+"run": SubResource("Animation_kbv2r")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mbba3"]
 size = Vector2(19, 58.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u41o7"]
+size = Vector2(51, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7sbpi"]
+size = Vector2(101, 34)
 
 [node name="PersonagemNode" type="CharacterBody2D"]
 script = ExtResource("1_hu51n")
@@ -217,7 +525,9 @@ centered = false
 flip_h = true
 flip_v = true
 script = ExtResource("15_v1cp1")
-last_frame_width_atk = 36
+last_frame_width_atk1 = 36
+last_frame_width_atk2 = 37
+last_frame_width_run = 39
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -233,12 +543,25 @@ script = ExtResource("7_kkjeo")
 position = Vector2(-0.5, -2.25)
 shape = SubResource("RectangleShape2D_mbba3")
 
-[node name="HitBoxPlayer" type="Area2D" parent="."]
-position = Vector2(36, -15)
+[node name="HitBoxPlayer" type="Area2D" parent="." node_paths=PackedStringArray("player") groups=["hitboxPlayer"]]
+position = Vector2(20, -10)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("18_rm8lb")
+player = NodePath("..")
 
 [node name="hitbox" type="CollisionShape2D" parent="HitBoxPlayer"]
 shape = SubResource("RectangleShape2D_u41o7")
+disabled = true
+
+[node name="HitBoxPlayer2" type="Area2D" parent="." node_paths=PackedStringArray("player") groups=["hitBoxPlayer2"]]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("18_rm8lb")
+player = NodePath("..")
+dano = 20.0
+
+[node name="hitBox2" type="CollisionShape2D" parent="HitBoxPlayer2"]
+position = Vector2(-0.5, -7)
+shape = SubResource("RectangleShape2D_7sbpi")
 disabled = true

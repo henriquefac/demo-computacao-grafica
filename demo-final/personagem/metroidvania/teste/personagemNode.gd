@@ -6,13 +6,18 @@ signal STATUS_ON
 
 @export var SPEED:=200
 @export var JUMP:=-400
+
 var aux:Array
+
+var on:= false
+
+var pause:=false
 
 # vetor direção
 var vectorDirDamage: int
 
 # direção da hitbox
-const x_value_hitbox = 36
+const x_value_hitbox = 20
 var flipHitBox:bool = false
 
 # animacao
@@ -26,15 +31,24 @@ var is_on_ground: bool
 
 # registrar ataks inimigos no player
 var hurtBox: HurtBoxPlayer
+var hurtboxArea: CollisionShape2D
 
 var hitBox: HitBoxPlayer
+var hitBoxArea: CollisionShape2D
+
+var hitBox2: HitBoxPlayer
+var hitBoxArea2: CollisionShape2D
 
 # Propriedades para dash
-var dash_speed = 100
+var dash_speed = 200
 var dash_duration = 0.4  # Duração do dash em segundos
+var dash_dir = Vector2.ZERO
+
+# flags para estados controlarem
 var is_atk:bool = false
 var is_dashing:bool = false
-var dash_dir = Vector2.ZERO
+var is_defend: bool = false
+var is_heal: bool = false
 
 @onready var transition = load("res://cenas/cenario/special-effects/transition.tscn") as PackedScene
 @onready var start_scene = load("res://cenas/cenario/topdown/Scenario_1.tscn") as PackedScene
@@ -48,14 +62,20 @@ func _ready() -> void:
 	frame = $AnimatedSprite2D
 	
 	hurtBox = $HurtBoxPlayer
+	hurtboxArea = $HurtBoxPlayer/CollisionShape2D
+	
 	hitBox = $HitBoxPlayer
+	hitBoxArea = $HitBoxPlayer/hitbox
+	
+	hitBox2 = $HitBoxPlayer2
+	hitBoxArea2 = $HitBoxPlayer2/hitBox2
 	
 	transition_instance = transition.instantiate() as CanvasLayer
 	add_child(transition_instance)
 	transition_instance.on_transition_finished.connect(_on_transition_complete)
-
+	
 func _physics_process(delta: float) -> void:
-	if !is_atk and !is_dashing:
+	if !is_atk and !is_dashing and !is_defend and !is_heal:
 		animationControl()
 	flipBox()
 		# Atualiza se o personagem está no chão
@@ -64,9 +84,8 @@ func _physics_process(delta: float) -> void:
 	# Aplica a gravidade quando não estiver no chão
 	if not is_on_ground:
 		velocity.y += GRAVITY * delta
-		# Movimenta e verifica colisões
-	
-	move_and_slide()
+	if not pause:
+		move_and_slide()
 
 
 
@@ -78,7 +97,7 @@ func animationControl():
 		frame.flip_h = false		
 		flipHitBox = true
 	if velocity.length() > 0:
-		pass
+		animation.play("run")
 	else:
 		animation.play("idle")
 
@@ -100,12 +119,14 @@ func getDamage(area: HitBoxEnemy):
 	velocity = area.vectorKnock()
 	vectorDirDamage = velocity.normalized().x
 	Status.diminuir_vida(area.dano)
-	
-	if Status.esta_vivo() == false:
-		transition_instance.transition()
-		await transition_instance.on_transition_finished
-		get_tree().change_scene_to_packed(start_scene)
 
+func getDefendDamage(area: HitBoxEnemy):
+
+	velocity = area.vectorKnock()
+	velocity.y = 0
+	velocity.x *= 0.33
+	vectorDirDamage = velocity.normalized().x
+	Status.diminuir_vida(area.dano/3)
 
 # criar funções que controlam os status do personagem
 func faceVelocity():
@@ -118,15 +139,18 @@ func faceJump():
 # funcao de atk
 # script basico de ataque
 func atkProcess():
+	is_dashing = true
 	dash_dir = Vector2(1, 0)
 	if flipHitBox:
 		dash_dir.x = -1
 	velocity = Vector2.ZERO
 	
 	velocity = velocity.move_toward(dash_dir.normalized() * dash_speed, 1000)
-	await get_tree().create_timer(dash_duration).timeout
+
+func stopAtkProcess():
 	is_dashing = false
 	velocity = Vector2()
+	
 
 func _on_transition_complete() -> void:
 	pass

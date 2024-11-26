@@ -17,6 +17,7 @@ func _ready() -> void:
 # Chamado a cada quadro. 'delta' é o tempo decorrido desde o quadro anterior
 func _process(delta: float) -> void:
 	if is_inside and Input.is_action_just_pressed("interagir"):
+		print("Emitir")
 		get_parent().emit_signal("player_in_door", true)
 
 func _on_aim_lab_body_entered(body: Node2D) -> void:

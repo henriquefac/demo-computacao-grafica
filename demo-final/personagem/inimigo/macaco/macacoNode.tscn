@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://b54fbbad2kf87"]
+[gd_scene load_steps=50 format=3 uid="uid://b54fbbad2kf87"]
 
 [ext_resource type="Script" path="res://personagem/inimigo/macaco/macaco.gd" id="1_t5tt3"]
 [ext_resource type="Texture2D" uid="uid://bnajaauyv5cxq" path="res://assets/personagem/inimigo/macaco/frames_ataque/macaco_ataque1.png" id="2_jlro7"]
@@ -38,6 +38,8 @@
 [ext_resource type="Texture2D" uid="uid://d2qv5aq25oty3" path="res://assets/personagem/inimigo/macaco/andar_macaco/andar_do_macaco11.png" id="36_rvl8v"]
 [ext_resource type="Texture2D" uid="uid://dj5tdnjv3mjt3" path="res://assets/personagem/inimigo/macaco/andar_macaco/andar_do_macaco12.png" id="37_h4wku"]
 [ext_resource type="Script" path="res://personagem/inimigo/recursos/HitBoxEnemy.gd" id="38_aknod"]
+[ext_resource type="Script" path="res://personagem/inimigo/recursos/HurtBoxEnemy.gd" id="39_lgxpx"]
+[ext_resource type="AudioStream" uid="uid://dqp4wa14a8k3l" path="res://assets/musica/493914__damnsatinist__light-punch.wav" id="40_s68ku"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qvaie"]
 animations = [{
@@ -172,7 +174,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_21og3"]
-size = Vector2(51, 42)
+size = Vector2(34, 39)
 
 [sub_resource type="Animation" id="Animation_8otep"]
 length = 0.001
@@ -258,11 +260,14 @@ tracks/3/path = NodePath(".")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.266667),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.266667, 0.733333),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
 "method": &"atkMove"
+}, {
+"args": [],
+"method": &"stopAtkMove"
 }]
 }
 
@@ -332,11 +337,14 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_etu6n"]
-size = Vector2(25, 23)
+size = Vector2(35, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t6bdc"]
+size = Vector2(47, 30)
 
 [node name="Macaco_Node" type="CharacterBody2D"]
 position = Vector2(497, 311)
-collision_layer = 2
+collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_t5tt3")
 
@@ -345,7 +353,7 @@ sprite_frames = SubResource("SpriteFrames_qvaie")
 animation = &"ataque"
 
 [node name="box" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 3)
+position = Vector2(2, 4.5)
 shape = SubResource("RectangleShape2D_21og3")
 
 [node name="animacao" type="AnimationPlayer" parent="."]
@@ -367,6 +375,18 @@ script = ExtResource("38_aknod")
 inimigo = NodePath("..")
 
 [node name="hitbox" type="CollisionShape2D" parent="HitBoxEnemy"]
-position = Vector2(-0.5, 0)
+position = Vector2(4.5, 0)
 shape = SubResource("RectangleShape2D_etu6n")
 disabled = true
+
+[node name="HurtBoxEnemy" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("39_lgxpx")
+
+[node name="hurtbox" type="CollisionShape2D" parent="HurtBoxEnemy"]
+position = Vector2(3.5, 5)
+shape = SubResource("RectangleShape2D_t6bdc")
+
+[node name="soundDamage" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("40_s68ku")

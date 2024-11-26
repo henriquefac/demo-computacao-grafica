@@ -12,7 +12,7 @@ position = Vector2(0, 245)
 scale = Vector2(3, 3)
 
 [node name="RotationCircles" parent="." instance=ExtResource("2_4uc0k")]
-process_mode = 3
+process_mode = 0
 z_index = 2
 
 [connection signal="troca" from="RotationCircles" to="." method="_on_rotation_circles_troca"]

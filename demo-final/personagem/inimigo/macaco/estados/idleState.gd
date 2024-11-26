@@ -17,6 +17,8 @@ var flag_stop : bool = true
 
 var velocity: Vector2
 
+var hurtBox : HurtBoxEnemy
+var on = true
 
 
 func randomize_wander():
@@ -26,7 +28,14 @@ func randomize_wander():
 	flag_stop = !flag_stop
 
 func Enter():
-	personagem = get_tree().get_first_node_in_group("PlayerMetro")
+	
+	on = true
+	personagem = get_tree().get_first_node_in_group("PlayerMetro").playerNode
+	
+	if hurtBox == null:
+		hurtBox = enemy.hurtbox
+	if not hurtBox.is_connected("area_entered", transictionDamage):
+		hurtBox.connect("area_entered", transictionDamage)
 	
 	if init:
 		enemy.wallEsquerda.connect(chengeDirectionToRight)
@@ -35,23 +44,24 @@ func Enter():
 	randomize_wander()
 
 func Update(delta : float):
-	if wander_time > 0:
-		wander_time -= delta
-	elif stop_time > 0:
-		stop_time -= delta
-		if flag_stop:
-			move_direction = Vector2(0,0)
-			flag_stop = !flag_stop
-			
-	else:
-		randomize_wander()
+	if enemy.is_on_floor():
+		if wander_time > 0:
+			wander_time -= delta
+		elif stop_time > 0:
+			stop_time -= delta
+			if flag_stop:
+				move_direction = Vector2(0,0)
+				flag_stop = !flag_stop
+				
+		else:
+			randomize_wander()
 		
 func Physics_Update(_delta: float):
-	velocity = move_direction * speed
+	velocity.x = move_direction.x * speed
 	
 
 		
-	if enemy:
+	if enemy and enemy.is_on_floor():
 		enemy.velocity = velocity
 
 	transitionTrigger()
@@ -66,8 +76,20 @@ func transitionAir():
 		Transitioned.emit(self, "air")
 		
 func transitionFollow():
-	if directionPlayer().length() < 400:
+	if directionPlayer().length() < 300 and enemy.is_on_floor():
 		Transitioned.emit(self, "follow")
+		
+func transictionDamage(area: Area2D):
+	if area.is_in_group("hitboxPlayer") and area is HitBoxPlayer and on:
+		print("damage:idle")
+		enemy.getDamage(area)
+		Transitioned.emit(self, "damage")
+	if area.is_in_group("hitBoxPlayer2") and on:
+		print("Aqui")
+		print("damage:atk")
+		enemy.getDamage2(area)
+		Transitioned.emit(self, "damage")
+		
 func chengeDirectionToRight():
 	wander_time += 0.2
 	if move_direction.x < 0:
@@ -81,3 +103,6 @@ func chengeDirectionToLeft():
 	wander_time += 0.2
 	if move_direction.x > 0:
 		move_direction.x = -1
+		
+func Exit():
+	on = false

@@ -3,25 +3,23 @@
 [ext_resource type="PackedScene" uid="uid://b54fbbad2kf87" path="res://personagem/inimigo/macaco/macacoNode.tscn" id="1_fummm"]
 [ext_resource type="Script" path="res://personagem/inimigo/macaco/sate_machine.gd" id="2_uoik2"]
 [ext_resource type="Script" path="res://personagem/inimigo/macaco/estados/idleState.gd" id="3_fv5kj"]
-[ext_resource type="Script" path="res://personagem/inimigo/macaco/estados/airState.gd" id="4_fsomh"]
 [ext_resource type="Script" path="res://personagem/inimigo/macaco/estados/followState.gd" id="5_4l513"]
 [ext_resource type="Script" path="res://personagem/inimigo/macaco/estados/atkState.gd" id="6_skkdj"]
+[ext_resource type="Script" path="res://personagem/inimigo/macaco/estados/damageState.gd" id="7_5coro"]
 
 [node name="EnemyMacaco" type="Node2D"]
 
 [node name="Macaco_Node2" parent="." instance=ExtResource("1_fummm")]
 position = Vector2(-4, 6)
+scale = Vector2(0.6, 0.6)
 
-[node name="SateMachine2" type="Node" parent="." node_paths=PackedStringArray("intitial_state")]
+[node name="SateMachine2" type="Node" parent="." node_paths=PackedStringArray("intitial_state", "enti")]
 script = ExtResource("2_uoik2")
 intitial_state = NodePath("idle")
+enti = NodePath("../Macaco_Node2")
 
 [node name="idle" type="Node" parent="SateMachine2" node_paths=PackedStringArray("enemy")]
 script = ExtResource("3_fv5kj")
-enemy = NodePath("../../Macaco_Node2")
-
-[node name="air" type="Node" parent="SateMachine2" node_paths=PackedStringArray("enemy")]
-script = ExtResource("4_fsomh")
 enemy = NodePath("../../Macaco_Node2")
 
 [node name="follow" type="Node" parent="SateMachine2" node_paths=PackedStringArray("enemy")]
@@ -30,4 +28,8 @@ enemy = NodePath("../../Macaco_Node2")
 
 [node name="atk" type="Node" parent="SateMachine2" node_paths=PackedStringArray("enemy")]
 script = ExtResource("6_skkdj")
+enemy = NodePath("../../Macaco_Node2")
+
+[node name="damage" type="Node" parent="SateMachine2" node_paths=PackedStringArray("enemy")]
+script = ExtResource("7_5coro")
 enemy = NodePath("../../Macaco_Node2")

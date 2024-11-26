@@ -11,6 +11,8 @@ var posY_TD
 signal foco_auterado
 signal dopamina_auterada
 
+signal foco_zero
+
 var vida_maxima = 100
 var vida_atual = vida_maxima
 

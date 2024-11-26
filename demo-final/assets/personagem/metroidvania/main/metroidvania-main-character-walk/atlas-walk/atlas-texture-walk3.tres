@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://wdrkon1dc14d"]
+
+[ext_resource type="Texture2D" uid="uid://f7myg2mw2dha" path="res://assets/personagem/metroidvania/main/metroidvania-main-character-walk/Walk.png" id="1_u5drq"]
+
+[resource]
+atlas = ExtResource("1_u5drq")
+region = Rect2(300, 60, 30, 68)
