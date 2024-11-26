@@ -44,23 +44,24 @@ func Enter():
 	randomize_wander()
 
 func Update(delta : float):
-	if wander_time > 0:
-		wander_time -= delta
-	elif stop_time > 0:
-		stop_time -= delta
-		if flag_stop:
-			move_direction = Vector2(0,0)
-			flag_stop = !flag_stop
-			
-	else:
-		randomize_wander()
+	if enemy.is_on_floor():
+		if wander_time > 0:
+			wander_time -= delta
+		elif stop_time > 0:
+			stop_time -= delta
+			if flag_stop:
+				move_direction = Vector2(0,0)
+				flag_stop = !flag_stop
+				
+		else:
+			randomize_wander()
 		
 func Physics_Update(_delta: float):
 	velocity = move_direction * speed
 	
 
 		
-	if enemy:
+	if enemy and enemy.is_on_floor():
 		enemy.velocity = velocity
 
 	transitionTrigger()
@@ -78,10 +79,17 @@ func transitionFollow():
 	if directionPlayer().length() < 300 and enemy.is_on_floor():
 		Transitioned.emit(self, "follow")
 		
-func transictionDamage(area: HitBoxPlayer):
-	if typeof(area) == TYPE_OBJECT and area is HitBoxPlayer and on:
+func transictionDamage(area: Area2D):
+	if area.is_in_group("hitboxPlayer") and area is HitBoxPlayer and on:
+		print("damage:idle")
 		enemy.getDamage(area)
 		Transitioned.emit(self, "damage")
+	if area.is_in_group("hitBoxPlayer2") and on:
+		print("Aqui")
+		print("damage:atk")
+		enemy.getDamage2(area)
+		Transitioned.emit(self, "damage")
+		
 func chengeDirectionToRight():
 	wander_time += 0.2
 	if move_direction.x < 0:

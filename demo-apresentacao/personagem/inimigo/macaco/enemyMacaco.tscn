@@ -11,6 +11,7 @@
 
 [node name="Macaco_Node2" parent="." instance=ExtResource("1_fummm")]
 position = Vector2(-4, 6)
+scale = Vector2(0.6, 0.6)
 
 [node name="SateMachine2" type="Node" parent="." node_paths=PackedStringArray("intitial_state", "enti")]
 script = ExtResource("2_uoik2")

@@ -67,11 +67,16 @@ func transictionTrigger():
 	transictionIdle()
 	transitionAtk()
 	transitionDefend()
+	transitionHeal()
 	pass
 
 func transitionAtk():
 	if Input.is_action_just_pressed("Ataque"):
 		Transitioned.emit(self, "atk1")
+
+func transitionHeal():
+	if Input.is_action_just_pressed("Cura") and Status.dopamina_bar_atual > 0:
+		Transitioned.emit(self, "heal")
 
 func transictionIdle():
 	if timer < 0 and playerCharacter.velocity.length() == 0 and jump:
@@ -86,5 +91,5 @@ func transictionDamage(area: HitBoxEnemy):
 	
 		
 func transitionDefend():
-	if Input.is_action_just_pressed("Defesa") and playerCharacter.is_on_floor():
+	if Input.is_action_pressed("Defesa") and playerCharacter.is_on_floor():
 		Transitioned.emit(self, "defend")

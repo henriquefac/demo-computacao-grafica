@@ -8,11 +8,13 @@ signal STATUS_ON
 @export var JUMP:=-500
 var aux:Array
 
+var on:= false
+
 # vetor direção
 var vectorDirDamage: int
 
 # direção da hitbox
-const x_value_hitbox = 36
+const x_value_hitbox = 20
 var flipHitBox:bool = false
 
 # animacao
@@ -26,8 +28,13 @@ var is_on_ground: bool
 
 # registrar ataks inimigos no player
 var hurtBox: HurtBoxPlayer
+var hurtboxArea: CollisionShape2D
 
 var hitBox: HitBoxPlayer
+var hitBoxArea: CollisionShape2D
+
+var hitBox2: HitBoxPlayer
+var hitBoxArea2: CollisionShape2D
 
 # Propriedades para dash
 var dash_speed = 200
@@ -36,6 +43,8 @@ var is_atk:bool = false
 var is_dashing:bool = false
 var dash_dir = Vector2.ZERO
 var is_defend: bool = false
+var is_heal: bool = false
+
 func _ready() -> void:
 	for i in range(10):
 		aux.append(0)
@@ -43,9 +52,15 @@ func _ready() -> void:
 	frame = $AnimatedSprite2D
 	
 	hurtBox = $HurtBoxPlayer
+	hurtboxArea = $HurtBoxPlayer/CollisionShape2D
+	
 	hitBox = $HitBoxPlayer
+	hitBoxArea = $HitBoxPlayer/hitbox
+	
+	hitBox2 = $HitBoxPlayer2
+	hitBoxArea2 = $HitBoxPlayer2/hitBox2
 func _physics_process(delta: float) -> void:
-	if !is_atk and !is_dashing and !is_defend:
+	if !is_atk and !is_dashing and !is_defend and !is_heal:
 		animationControl()
 	flipBox()
 		# Atualiza se o personagem está no chão

@@ -32,16 +32,23 @@ func transitionIdle(algo):
 	if algo == "ataque":
 		Transitioned.emit(self, "idle")
 
-func transictionDamage(area: HitBoxPlayer):
-	if typeof(area) == TYPE_OBJECT and area is HitBoxPlayer and on:
+func transictionDamage(area: Area2D):
+	if area.is_in_group("hitboxPlayer") and area is HitBoxPlayer and on:
+		print("damage:atk")
 		enemy.getDamage(area)
 		Transitioned.emit(self, "damage")
+	if area.is_in_group("hitBoxPlayer2") and area is HitBoxPlayer and on:
+		print("damage:atk")
+		enemy.getDamage2(area)
+		Transitioned.emit(self, "damage")
+
 
 func Exit():
 	on = false
 	animationNode.stop()
 	enemy.atk_on = false
 	enemy.is_dashing = false
+	enemy.hitBoxArea.disabled = true
 
 func Update(_delta: float):
 	pass

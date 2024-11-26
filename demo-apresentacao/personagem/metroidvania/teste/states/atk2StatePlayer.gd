@@ -28,7 +28,7 @@ func Exit():
 	on = false
 	playerCharacter.is_atk = false
 	playerCharacter.is_dashing = false
-	
+	playerCharacter.hitBoxArea.disabled = true
 func Update(_delta: float):
 	pass
 	

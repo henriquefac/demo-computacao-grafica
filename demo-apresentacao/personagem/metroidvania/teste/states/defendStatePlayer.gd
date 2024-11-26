@@ -31,5 +31,6 @@ func Update(_delta):
 		playerCharacter.velocity = Vector2()
 
 func damageDefend(area: HitBoxEnemy):
-	timerDamage = 0.3
-	playerCharacter.getDefendDamage(area)
+	if area.is_in_group("HitBoxEnemy") and area is HitBoxEnemy:
+		timerDamage = 0.3
+		playerCharacter.getDefendDamage(area)

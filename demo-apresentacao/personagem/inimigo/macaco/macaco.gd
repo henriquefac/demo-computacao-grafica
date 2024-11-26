@@ -5,7 +5,7 @@ class_name macaco
 signal wallEsquerda
 signal wallDireita
 
-var vida = 100
+var vida = 50
 @export var gravity := 900.0 
 # ver de knockback
 var vectorDirDamage: float
@@ -30,7 +30,7 @@ var RightWall: bool = true
 
 # vai armazenar instancia do personagem
 var personagem = null
-
+var hitBoxArea: CollisionShape2D
 
 var state_machine: StateMachine
 var states: Dictionary = {}
@@ -60,6 +60,7 @@ func _ready() -> void:
 	flagFlip = true
 	flipHitBox = false
 	
+	hitBoxArea = $HitBoxEnemy/hitbox
 	pass
 func _physics_process(delta: float) -> void:
 	if !is_on_floor():
@@ -130,9 +131,32 @@ func stopAtkMove():
 	velocity.x = 0
 		
 func getDamage(area: HitBoxPlayer):
+	
 	velocity = Vector2()
 	velocity = area.vectorKnock()
+	if randf() < 0.2:
+		velocity.y = 0
+		velocity.x *= 0.5
 	vectorDirDamage = velocity.normalized().x
 	vida -= area.dano
 
 # receber dano
+
+
+func getDamage2(area: HitBoxPlayer):
+	# Calcula a direção normalizada entre o inimigo (self) e o jogador
+	var dir = (global_position - area.player.global_position).normalized()
+	
+	# Determina se o inimigo está à esquerda ou à direita da área do jogador
+	if position.x < area.player.position.x:
+		print("Inimigo está à esquerda da área")
+	else:
+		print("Inimigo está à direita da área")
+	
+	# Ajusta a direção para o vetor oposto e define a velocidade
+	dir *= 600  # Amplia o vetor
+	dir.y = -400  # Ajusta o componente vertical para um impulso
+	velocity = dir  # Aplica a nova velocidade
+	
+	# Reduz a vida do inimigo com base no dano da área
+	vida -= area.dano

@@ -31,6 +31,7 @@ func transitionTrigger():
 	transitionWalk()
 	transitionAtk()
 	transitionDefend()
+	transitionHeal()
 	
 func transitionWalk():
 	if Input.is_action_pressed("Direita") or Input.is_action_pressed("Esquerda") or Input.is_action_just_pressed("Pular"):
@@ -40,11 +41,15 @@ func transitionAtk():
 	if Input.is_action_just_pressed("Ataque"):
 		Transitioned.emit(self, "atk1")
 
+func transitionHeal():
+	if Input.is_action_just_pressed("Cura") and Status.dopamina_bar_atual > 0:
+		Transitioned.emit(self, "heal")
+
 func transictionDamage(area: HitBoxEnemy):
 	if typeof(area) == TYPE_OBJECT and area is HitBoxEnemy and on:
 		playerCharacter.getDamage(area)
 		Transitioned.emit(self, "damage")
 		
 func transitionDefend():
-	if Input.is_action_just_pressed("Defesa"):
+	if Input.is_action_pressed("Defesa"):
 		Transitioned.emit(self, "defend")

@@ -8,7 +8,7 @@ var hurtBox : HurtBoxEnemy
 var on = true
 
 func Enter():
-	timer = 0.4	
+	timer = randf_range(0,3)
 	on = true
 	if hurtBox == null:
 		hurtBox = enemy.hurtbox
@@ -17,12 +17,14 @@ func Enter():
 	
 
 func Exit():
+	on = false
 	if enemy.vida <= 0:
 		enemy.queue_free()
 	
 func Update(_delta: float):
-	timer -= _delta
-	if timer < 0 and enemy.is_on_floor():
+	if enemy.is_on_floor():
+		timer -= _delta
+	if timer <= 0:
 		Transitioned.emit(self, "idle")
 	
 func Physics_Update(_delta: float):
@@ -33,6 +35,6 @@ func Physics_Update(_delta: float):
 	pass
 	
 func transictionDamage(area: HitBoxPlayer):
-	if typeof(area) == TYPE_OBJECT and area is HitBoxPlayer and on:
+	if area.is_in_group("hitboxPlayer") and area is HitBoxPlayer and on:
 		enemy.getDamage(area)
 		Transitioned.emit(self, "damage")

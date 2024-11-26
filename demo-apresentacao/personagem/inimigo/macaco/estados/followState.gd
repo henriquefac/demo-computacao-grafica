@@ -10,14 +10,14 @@ var direction: Vector2
 var vectorMove: Vector2
 
 # tempo mínimo no estado follow para entrar no estado ataque
-var minTimer = 0.3
+var minTimer = 0.4
 
 var hurtBox : HurtBoxEnemy
 var on = false
 
 func Enter():
 	on = true
-	minTimer = 0.3
+	minTimer = 0.4
 	personagem = get_tree().get_first_node_in_group("PlayerMetro")
 	
 	if hurtBox == null:
@@ -34,7 +34,7 @@ func Physics_Update(_delta: float):
 	directionPlayer()
 	if direction.length() < 400:
 		enemy.velocity = vectorMove
-	if direction.length() < 40:
+	if direction.length() < 60:
 		enemy.velocity = Vector2()
 		
 	transitionTrigger()
@@ -63,6 +63,11 @@ func transitionAtk():
 		Transitioned.emit(self, "atk")
 		
 func transictionDamage(area: HitBoxPlayer):
-	if typeof(area) == TYPE_OBJECT and area is HitBoxPlayer and on:
+	if area.is_in_group("hitboxPlayer") and area is HitBoxPlayer and on:
+		print("damage:follow")
 		enemy.getDamage(area)
+		Transitioned.emit(self, "damage")
+	if area.is_in_group("hitBoxPlayer2") and area is HitBoxPlayer and on:
+		print("damage:atk")
+		enemy.getDamage2(area)
 		Transitioned.emit(self, "damage")

@@ -2,7 +2,7 @@ class_name HitBoxPlayer
 extends Area2D
 
 @export var player: PlayerCharacter
-@export var dano:=5
+@export var dano:= randf_range(15, 20)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,4 +14,4 @@ func _process(delta: float) -> void:
 	pass
 
 func vectorKnock():
-	return player.dash_dir * 200  + Vector2(0, -200)
+	return player.dash_dir * randf_range(150, 300)  + Vector2(0, -200)
