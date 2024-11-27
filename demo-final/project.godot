@@ -99,6 +99,10 @@ Cura={
 ]
 }
 
+[navigation]
+
+2d/size/viewport_width=1920
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=3

@@ -1,14 +1,12 @@
-[gd_scene load_steps=43 format=4 uid="uid://ccq5vmokimplc"]
+[gd_scene load_steps=41 format=4 uid="uid://cqp5lwv6lpeph"]
 
 [ext_resource type="Texture2D" uid="uid://cy1le73bny84y" path="res://assets/cenario/topdown/modern-edits-a4.png" id="1_0lr5v"]
-[ext_resource type="Script" path="res://cenas/cenario/controles/cena_de_ajuda.gd" id="1_61ewo"]
+[ext_resource type="Script" path="res://cenas/cenario/tutorial/tutorial.gd" id="1_y2dyl"]
 [ext_resource type="Texture2D" uid="uid://p8ee4iltqe0c" path="res://assets/cenario/topdown/modern-edits-a2.png" id="2_dyuls"]
 [ext_resource type="Texture2D" uid="uid://wguqs5i8qd1s" path="res://assets/cenario/topdown/!modern-edits-doors.png" id="3_d0qa8"]
 [ext_resource type="Texture2D" uid="uid://bsr2ocueiyxp2" path="res://assets/cenario/topdown/modern-edits-b.png" id="4_1eqkg"]
 [ext_resource type="Texture2D" uid="uid://ct23npy4v2thq" path="res://assets/cenario/topdown/modern-edits-a5.png" id="5_ndywl"]
-[ext_resource type="PackedScene" uid="uid://bexjpkq151srg" path="res://cenas/cenario/topdown/elementos/living-room-door.tscn" id="7_n6my6"]
 [ext_resource type="Texture2D" uid="uid://bl3rajxrcn60s" path="res://assets/personagem/topdown/player_sprites.png" id="8_dqilx"]
-[ext_resource type="PackedScene" uid="uid://cxx0axkr03etu" path="res://cenas/cenario/topdown/elementos/computer_lvl.tscn" id="8_ocst6"]
 [ext_resource type="PackedScene" uid="uid://bd0ivq4uqp4b8" path="res://cenas/cenario/menu/pause_menu_1.tscn" id="9_mu884"]
 [ext_resource type="Texture2D" uid="uid://bcvvfs7716tpo" path="res://cenas/cenario/topdown/elementos/directional-arrow.png" id="10_xmgfr"]
 [ext_resource type="FontFile" uid="uid://chny6dp0c5v1" path="res://assets/font/m5x7.ttf" id="11_s5d0m"]
@@ -7356,9 +7354,9 @@ outline_size = 4
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_aerjj"]
 
-[node name="scenario_1" type="Node2D"]
+[node name="controles" type="Node2D"]
 process_mode = 1
-script = ExtResource("1_61ewo")
+script = ExtResource("1_y2dyl")
 
 [node name="Como-jogar" type="Label" parent="."]
 z_index = 5
@@ -7393,15 +7391,6 @@ tile_map_data = PackedByteArray("AAACAAoABAAJABcAAGACAAsABAAIABcAAGABAAoABAAJABY
 tile_set = SubResource("TileSet_xgr4i")
 metadata/_edit_lock_ = true
 
-[node name="Living-room-door" parent="." instance=ExtResource("7_n6my6")]
-position = Vector2(152, 305)
-scale = Vector2(2, 0.505)
-metadata/_edit_lock_ = true
-
-[node name="computer_lvl" parent="." instance=ExtResource("8_ocst6")]
-position = Vector2(49, 176)
-metadata/_edit_lock_ = true
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(150, 276)
 scale = Vector2(0.118902, 0.10625)
@@ -7417,7 +7406,6 @@ limit_top = 0
 limit_right = 304
 limit_bottom = 304
 editor_draw_limits = true
-metadata/_edit_lock_ = true
 
 [node name="PauseMenu" parent="." instance=ExtResource("9_mu884")]
 visible = false

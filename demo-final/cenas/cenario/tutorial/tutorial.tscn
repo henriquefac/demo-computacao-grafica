@@ -1,0 +1,436 @@
+[gd_scene load_steps=18 format=3 uid="uid://ccq5vmokimplc"]
+
+[ext_resource type="Script" path="res://cenas/cenario/tutorial/tutorial.gd" id="1_t5ppw"]
+[ext_resource type="FontFile" uid="uid://chny6dp0c5v1" path="res://assets/font/m5x7.ttf" id="2_xj633"]
+[ext_resource type="Texture2D" uid="uid://7xi1ihyffad7" path="res://assets/cenario/tutorial/metroidvania.jpg" id="5_uiiwx"]
+[ext_resource type="Texture2D" uid="uid://cddsmobtet63n" path="res://assets/cenario/tutorial/cama_morto.jpg" id="7_udaaq"]
+[ext_resource type="Texture2D" uid="uid://m38c0odfcxbk" path="res://assets/cenario/tutorial/cama_vivo.jpg" id="8_kjxrd"]
+[ext_resource type="Texture2D" uid="uid://cjj8x4pfav50e" path="res://assets/cenario/tutorial/WASD.jpg" id="9_t6uay"]
+[ext_resource type="Texture2D" uid="uid://dabs17dvasv1c" path="res://assets/cenario/tutorial/mouse.jpg" id="10_70l55"]
+[ext_resource type="Texture2D" uid="uid://b4hyb3u1raify" path="res://assets/cenario/tutorial/barra_de_espaco.jpg" id="11_xcjgf"]
+[ext_resource type="Texture2D" uid="uid://clhh14jdlr0qb" path="res://assets/cenario/tutorial/pc.jpg" id="12_1lv5f"]
+[ext_resource type="Texture2D" uid="uid://bcvvfs7716tpo" path="res://cenas/cenario/topdown/elementos/directional-arrow.png" id="12_fsepd"]
+[ext_resource type="Texture2D" uid="uid://cgdgxy7fevn14" path="res://assets/cenario/tutorial/tecla_c.jpg" id="12_k83jx"]
+[ext_resource type="Texture2D" uid="uid://bshcnu5dj7652" path="res://assets/cenario/tutorial/cama.jpg" id="12_sms84"]
+[ext_resource type="FontFile" uid="uid://3ce7vyw1417g" path="res://cenas/cenario/cena-inicio-star-wars/m5x7.ttf" id="13_8xuo7"]
+[ext_resource type="Texture2D" uid="uid://cynbvxq2scfg5" path="res://assets/cenario/tutorial/macacos.jpg" id="14_4dwvx"]
+[ext_resource type="Texture2D" uid="uid://bivwugnultlwv" path="res://assets/cenario/tutorial/mini_game_portaFechada.jpg" id="15_0dst0"]
+[ext_resource type="Texture2D" uid="uid://dtisobg83nv13" path="res://assets/cenario/tutorial/porta_fechada.jpg" id="16_8n4ak"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_aerjj"]
+
+[node name="tutorial" type="Node2D"]
+process_mode = 1
+script = ExtResource("1_t5ppw")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -842.0
+offset_top = -369.0
+offset_right = 1038.0
+offset_bottom = 671.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="fowards" type="Button" parent="."]
+process_mode = 3
+self_modulate = Color(1, 0.941176, 0, 1)
+top_level = true
+light_mask = 3
+visibility_layer = 3
+z_index = 25
+layout_direction = 1
+offset_left = 353.0
+offset_top = 129.0
+offset_right = 580.0
+offset_bottom = 206.0
+scale = Vector2(0.4, 0.3)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("13_8xuo7")
+theme_override_font_sizes/font_size = 86
+text = "Avançar"
+icon = SubResource("ViewportTexture_aerjj")
+language = "Por_BR"
+
+[node name="backwards" type="Button" parent="."]
+process_mode = 3
+self_modulate = Color(1, 0.941176, 0, 1)
+top_level = true
+z_index = 25
+layout_direction = 1
+offset_left = -102.0
+offset_top = 129.0
+offset_right = 77.0
+offset_bottom = 206.0
+scale = Vector2(0.4, 0.3)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("13_8xuo7")
+theme_override_font_sizes/font_size = 86
+text = "Voltar"
+icon = SubResource("ViewportTexture_aerjj")
+language = "Por_BR"
+
+[node name="continuar" type="Button" parent="."]
+process_mode = 3
+visible = false
+self_modulate = Color(1, 0.941176, 0, 1)
+top_level = true
+z_index = 25
+layout_direction = 1
+offset_left = 338.0
+offset_top = 278.0
+offset_right = 613.0
+offset_bottom = 355.0
+scale = Vector2(0.4, 0.3)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("13_8xuo7")
+theme_override_font_sizes/font_size = 86
+text = "Continuar"
+icon = SubResource("ViewportTexture_aerjj")
+language = "Por_BR"
+
+[node name="cenas" type="Label" parent="."]
+top_level = true
+z_index = 10
+offset_left = 134.0
+offset_top = 289.0
+offset_right = 206.0
+offset_bottom = 312.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_xj633")
+text = "PLACE_HOLDER"
+
+[node name="Primeira_Cena_Tutorial" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="texto-ajuda-1" type="Label" parent="Primeira_Cena_Tutorial"]
+top_level = true
+layout_mode = 0
+offset_left = -66.0
+offset_top = 12.0
+offset_right = 385.0
+offset_bottom = 121.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_xj633")
+theme_override_font_sizes/font_size = 16
+text = "No jogo, você alternará entre dois mundos. Um deles é o seu quarto, onde você pode
+interagir com eles apertando a tecla \"E\". 
+
+No quarto, será possível:
+
+* Usar o computador para escrever o seu livro.
+* Usar a cama para recuperar energia e avançar o tempo."
+
+[node name="cama" type="Sprite2D" parent="Primeira_Cena_Tutorial"]
+z_index = 5
+position = Vector2(260, 206)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_sms84")
+
+[node name="pc" type="Sprite2D" parent="Primeira_Cena_Tutorial"]
+z_index = 5
+position = Vector2(50, 209)
+rotation = 1.5708
+scale = Vector2(0.301481, 0.291197)
+texture = ExtResource("12_1lv5f")
+
+[node name="Segunda_Cena_Tutorial" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="texto-ajuda-1" type="Label" parent="Segunda_Cena_Tutorial"]
+top_level = true
+layout_mode = 0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 349.0
+offset_bottom = 140.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_xj633")
+theme_override_font_sizes/font_size = 16
+text = "No seu quarto e no mundo do livro, a movimentação e a mesma:
+Movimenta-se: Apertando \"W A S D\"
+
+Já no mundo do Livro, você terá várias opções de controle, como:
+
+Atacar: Apertando o Botão Esquerdo do Mouse.
+Defender: Apertando o Botão Direito do Mouse.
+Pular: Apertando a \"Barra de Espaco\".
+Recuperar vida: Apertando a tecla \"C\"."
+
+[node name="Wasd" type="Sprite2D" parent="Segunda_Cena_Tutorial"]
+position = Vector2(-4, 171)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("9_t6uay")
+
+[node name="texto-ajuda-2" type="Label" parent="Segunda_Cena_Tutorial/Wasd"]
+top_level = true
+offset_left = -18.0
+offset_top = 187.0
+offset_right = 33.0
+offset_bottom = 216.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_xj633")
+theme_override_font_sizes/font_size = 16
+text = "Andar"
+metadata/_edit_use_anchors_ = true
+
+[node name="Mouse" type="Sprite2D" parent="Segunda_Cena_Tutorial"]
+position = Vector2(109, 178)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("10_70l55")
+
+[node name="texto-ajuda-3" type="Label" parent="Segunda_Cena_Tutorial/Mouse"]
+top_level = true
+offset_left = 35.0
+offset_top = 161.0
+offset_right = 69.0
+offset_bottom = 178.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_xj633")
+theme_override_font_sizes/font_size = 16
+text = "Bater"
+metadata/_edit_use_anchors_ = true
+
+[node name="Directional-arrow" type="Sprite2D" parent="Segunda_Cena_Tutorial/Mouse"]
+position = Vector2(-340, -80)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_fsepd")
+
+[node name="texto-ajuda-4" type="Label" parent="Segunda_Cena_Tutorial/Mouse"]
+top_level = true
+offset_left = 138.0
+offset_top = 161.0
+offset_right = 184.0
+offset_bottom = 178.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_xj633")
+theme_override_font_sizes/font_size = 16
+text = "Defender"
+
+[node name="Directional-arrow2" type="Sprite2D" parent="Segunda_Cena_Tutorial/Mouse"]
+position = Vector2(170, -80)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_fsepd")
+
+[node name="BarraDeEspaco" type="Sprite2D" parent="Segunda_Cena_Tutorial"]
+position = Vector2(307, 174)
+scale = Vector2(0.205137, 0.205137)
+texture = ExtResource("11_xcjgf")
+
+[node name="texto-ajuda-4" type="Label" parent="Segunda_Cena_Tutorial/BarraDeEspaco"]
+top_level = true
+offset_left = 292.0
+offset_top = 189.0
+offset_right = 338.0
+offset_bottom = 206.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_xj633")
+theme_override_font_sizes/font_size = 16
+text = "Pular"
+
+[node name="TeclaC" type="Sprite2D" parent="Segunda_Cena_Tutorial"]
+position = Vector2(220, 175)
+scale = Vector2(0.368116, 0.368116)
+texture = ExtResource("12_k83jx")
+
+[node name="texto-ajuda-4" type="Label" parent="Segunda_Cena_Tutorial/TeclaC"]
+top_level = true
+offset_left = 197.0
+offset_top = 200.0
+offset_right = 243.0
+offset_bottom = 217.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_xj633")
+theme_override_font_sizes/font_size = 16
+text = "  Curar
+    e
+Uppercut"
+
+[node name="Terceira_Cena_Tutorial" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="texto-ajuda-1" type="Label" parent="Terceira_Cena_Tutorial"]
+top_level = true
+layout_mode = 0
+offset_left = -66.0
+offset_top = 3.0
+offset_right = 386.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_xj633")
+theme_override_font_sizes/font_size = 16
+text = "Interagindo com a Cama:
+
+Ao usar a Cama, você vai dormir e recuperar sua barra de foco.
+
+Sem foco, você não pode voltar para o mundo do seu Livro para continuar a história!"
+
+[node name="Directional-arrow" type="Sprite2D" parent="Terceira_Cena_Tutorial"]
+position = Vector2(232, 179)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("12_fsepd")
+
+[node name="Cama" type="Sprite2D" parent="Terceira_Cena_Tutorial"]
+position = Vector2(163, 184)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_sms84")
+
+[node name="CamaMorto" type="Sprite2D" parent="Terceira_Cena_Tutorial"]
+position = Vector2(27.375, 184)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_udaaq")
+
+[node name="CamaVivo" type="Sprite2D" parent="Terceira_Cena_Tutorial"]
+position = Vector2(300, 184)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_kjxrd")
+
+[node name="Directional-arrow2" type="Sprite2D" parent="Terceira_Cena_Tutorial"]
+position = Vector2(97, 179)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("12_fsepd")
+
+[node name="Quarta_Cena_Tutorial" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="texto-ajuda-1" type="Label" parent="Quarta_Cena_Tutorial"]
+top_level = true
+layout_mode = 0
+offset_left = -23.0
+offset_top = 54.0
+offset_right = 361.0
+offset_bottom = 93.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_xj633")
+theme_override_font_sizes/font_size = 16
+text = "Ao interagir com o Pc, você será transportado para o mundo do Livro"
+
+[node name="metroidvania" type="Sprite2D" parent="Quarta_Cena_Tutorial"]
+z_index = 5
+position = Vector2(246, 166)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_uiiwx")
+
+[node name="pc" type="Sprite2D" parent="Quarta_Cena_Tutorial"]
+z_index = 5
+position = Vector2(41, 158)
+rotation = 1.5708
+scale = Vector2(0.301481, 0.291197)
+texture = ExtResource("12_1lv5f")
+
+[node name="Directional-arrow" type="Sprite2D" parent="Quarta_Cena_Tutorial"]
+position = Vector2(126, 167)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("12_fsepd")
+
+[node name="Quinta_Cena_Tutorial" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="texto-ajuda-1" type="Label" parent="Quinta_Cena_Tutorial"]
+top_level = true
+layout_mode = 0
+offset_left = -37.0
+offset_top = 14.0
+offset_right = 375.0
+offset_bottom = 91.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_xj633")
+theme_override_font_sizes/font_size = 16
+text = "No Mundo do Livro, você poderá:
+
+* Interagir com portas, que necessitam de um Mini-game para serem abertas.
+
+* Enfrentar hordas de inimigos, que machucam bastante."
+
+[node name="Directional-arrow" type="Sprite2D" parent="Quinta_Cena_Tutorial"]
+position = Vector2(74, 156)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("12_fsepd")
+
+[node name="Macacos" type="Sprite2D" parent="Quinta_Cena_Tutorial"]
+position = Vector2(260, 154)
+scale = Vector2(0.250831, 0.250831)
+texture = ExtResource("14_4dwvx")
+
+[node name="MiniGamePortaFechada" type="Sprite2D" parent="Quinta_Cena_Tutorial"]
+position = Vector2(123, 154)
+scale = Vector2(0.0953846, 0.0953846)
+texture = ExtResource("15_0dst0")
+
+[node name="PortaFechada" type="Sprite2D" parent="Quinta_Cena_Tutorial"]
+position = Vector2(15, 155)
+scale = Vector2(0.187192, 0.187192)
+texture = ExtResource("16_8n4ak")
+
+[node name="Sexta_Cena_Final_Tutorial" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="texto-ajuda-1" type="Label" parent="Sexta_Cena_Final_Tutorial"]
+top_level = true
+offset_left = -23.0
+offset_top = 29.0
+offset_right = 373.0
+offset_bottom = 113.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_xj633")
+theme_override_font_sizes/font_size = 32
+text = "Com essas informações em mãos,
+desejo-lhe boa sorte na sua jornada,
+jovem escritor!"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+process_mode = 3
+offset = Vector2(150, 0)
+zoom = Vector2(3.5, 3.5)
+limit_left = 0
+limit_top = 0
+limit_right = 304
+limit_bottom = 304
+editor_draw_limits = true

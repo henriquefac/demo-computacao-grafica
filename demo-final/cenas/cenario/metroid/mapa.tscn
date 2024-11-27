@@ -893,12 +893,12 @@ drag_left_margin = 0.55
 
 [node name="EnemyMacaco" parent="Node" instance=ExtResource("8_3ojlf")]
 z_index = 3
-position = Vector2(596, 393)
+position = Vector2(487, 983)
 scale = Vector2(1.4, 1.4)
 
 [node name="EnemyMacaco5" parent="Node" instance=ExtResource("8_3ojlf")]
 z_index = 3
-position = Vector2(879, 501)
+position = Vector2(828, 1013)
 scale = Vector2(1.4, 1.4)
 
 [node name="EnemyMacaco2" parent="Node" instance=ExtResource("8_3ojlf")]

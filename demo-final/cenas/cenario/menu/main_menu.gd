@@ -2,9 +2,11 @@ class_name MainMenu
 extends Control
 
 @onready var start_button: Button = $MarginContainer/HBoxContainer/VBoxContainer/Start_Button as Button
+@onready var tutorial_button: Button = $MarginContainer/HBoxContainer/VBoxContainer/Tutorial_Button as Button
 @onready var controls_button: Button = $MarginContainer/HBoxContainer/VBoxContainer/Controls_Button as Button
 @onready var quit_button: Button = $MarginContainer/HBoxContainer/VBoxContainer/Quit_Button as Button
-@onready var start = load("res://cenas/cenario/cena-inicio-star-wars/texto-de-ajuda.tscn") as PackedScene
+@onready var start = load ("res://cenas/cenario/cena-inicio-star-wars/texto-de-ajuda.tscn") as PackedScene
+@onready var tutorial = load("res://cenas/cenario/tutorial/tutorial.tscn") as PackedScene
 @onready var controls = load("res://cenas/cenario/controles/Cena-de-ajuda.tscn") as PackedScene
 @onready var transition = load("res://cenas/cenario/special-effects/transition.tscn") as PackedScene
 
@@ -16,6 +18,7 @@ func _ready() -> void:
 	start_button.pressed.connect(on_start_pressed)
 	controls_button.pressed.connect(on_controls_pressed)
 	quit_button.pressed.connect(on_quit_pressed)
+	tutorial_button.pressed.connect(on_tutorial_pressed)
 	
 	transition_instance = transition.instantiate() as CanvasLayer
 	add_child(transition_instance)
@@ -23,6 +26,9 @@ func _ready() -> void:
 
 func on_start_pressed() -> void:
 	play_transition_and_change_scene(start)
+
+func on_tutorial_pressed() -> void:
+	play_transition_and_change_scene(tutorial)
 
 func on_controls_pressed() -> void:
 	play_transition_and_change_scene(controls)
