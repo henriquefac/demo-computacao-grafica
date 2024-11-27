@@ -24,7 +24,7 @@ process_mode = 1
 script = ExtResource("1_t5ppw")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -842.0
@@ -44,10 +44,10 @@ light_mask = 3
 visibility_layer = 3
 z_index = 25
 layout_direction = 1
-offset_left = 353.0
-offset_top = 129.0
-offset_right = 580.0
-offset_bottom = 206.0
+offset_left = 340.0
+offset_top = 130.0
+offset_right = 567.0
+offset_bottom = 207.0
 scale = Vector2(0.4, 0.3)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
@@ -73,26 +73,6 @@ theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("13_8xuo7")
 theme_override_font_sizes/font_size = 86
 text = "Voltar"
-icon = SubResource("ViewportTexture_aerjj")
-language = "Por_BR"
-
-[node name="continuar" type="Button" parent="."]
-process_mode = 3
-visible = false
-self_modulate = Color(1, 0.941176, 0, 1)
-top_level = true
-z_index = 25
-layout_direction = 1
-offset_left = 338.0
-offset_top = 278.0
-offset_right = 613.0
-offset_bottom = 355.0
-scale = Vector2(0.4, 0.3)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("13_8xuo7")
-theme_override_font_sizes/font_size = 86
-text = "Continuar"
 icon = SubResource("ViewportTexture_aerjj")
 language = "Por_BR"
 
@@ -296,12 +276,12 @@ Ao usar a Cama, você vai dormir e recuperar sua barra de foco.
 Sem foco, você não pode voltar para o mundo do seu Livro para continuar a história!"
 
 [node name="Directional-arrow" type="Sprite2D" parent="Terceira_Cena_Tutorial"]
-position = Vector2(232, 179)
+position = Vector2(221, 179)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("12_fsepd")
 
 [node name="Cama" type="Sprite2D" parent="Terceira_Cena_Tutorial"]
-position = Vector2(163, 184)
+position = Vector2(155, 184)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("12_sms84")
 
@@ -311,12 +291,12 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("7_udaaq")
 
 [node name="CamaVivo" type="Sprite2D" parent="Terceira_Cena_Tutorial"]
-position = Vector2(300, 184)
+position = Vector2(286, 185)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("8_kjxrd")
 
 [node name="Directional-arrow2" type="Sprite2D" parent="Terceira_Cena_Tutorial"]
-position = Vector2(97, 179)
+position = Vector2(91, 180)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("12_fsepd")
 
@@ -343,19 +323,19 @@ text = "Ao interagir com o Pc, você será transportado para o mundo do Livro"
 
 [node name="metroidvania" type="Sprite2D" parent="Quarta_Cena_Tutorial"]
 z_index = 5
-position = Vector2(246, 166)
+position = Vector2(235, 166)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("5_uiiwx")
 
 [node name="pc" type="Sprite2D" parent="Quarta_Cena_Tutorial"]
 z_index = 5
-position = Vector2(41, 158)
+position = Vector2(39, 158)
 rotation = 1.5708
 scale = Vector2(0.301481, 0.291197)
 texture = ExtResource("12_1lv5f")
 
 [node name="Directional-arrow" type="Sprite2D" parent="Quarta_Cena_Tutorial"]
-position = Vector2(126, 167)
+position = Vector2(118, 167)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("12_fsepd")
 
@@ -385,17 +365,17 @@ text = "No Mundo do Livro, você poderá:
 * Enfrentar hordas de inimigos, que machucam bastante."
 
 [node name="Directional-arrow" type="Sprite2D" parent="Quinta_Cena_Tutorial"]
-position = Vector2(74, 156)
+position = Vector2(69, 157)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("12_fsepd")
 
 [node name="Macacos" type="Sprite2D" parent="Quinta_Cena_Tutorial"]
-position = Vector2(260, 154)
+position = Vector2(246, 154)
 scale = Vector2(0.250831, 0.250831)
 texture = ExtResource("14_4dwvx")
 
 [node name="MiniGamePortaFechada" type="Sprite2D" parent="Quinta_Cena_Tutorial"]
-position = Vector2(123, 154)
+position = Vector2(117, 154)
 scale = Vector2(0.0953846, 0.0953846)
 texture = ExtResource("15_0dst0")
 
@@ -413,6 +393,7 @@ offset_bottom = 40.0
 
 [node name="texto-ajuda-1" type="Label" parent="Sexta_Cena_Final_Tutorial"]
 top_level = true
+layout_mode = 0
 offset_left = -23.0
 offset_top = 29.0
 offset_right = 373.0
