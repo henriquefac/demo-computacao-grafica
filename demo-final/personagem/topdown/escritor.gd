@@ -9,7 +9,7 @@ var paused: bool = false
 # Frames de animação
 var animation_player: AnimatedSprite2D
 
-@onready var pause_menu: Control = $"../PauseMenu" # Certifique-se de que PauseMenu existe no caminho correto.
+@onready var pause_menu: Control = $main_ui/PauseMenu
 
 @onready var transition = load("res://cenas/cenario/special-effects/transition.tscn") as PackedScene
 
@@ -24,18 +24,21 @@ func _ready() -> void:
 	transition_instance = transition.instantiate() as CanvasLayer
 	add_child(transition_instance)
 	transition_instance.on_transition_finished.connect(_on_transition_complete)
+	
+	self.global_position.x = Status.posX_TD
+	self.global_position.y = Status.posY_TD
 
 # Atualiza a física e movimento do personagem
 func _physics_process(delta: float) -> void:
+	Status.posX_TD = self.global_position.x
+	Status.posY_TD = self.global_position.y
+	
 	if pausado:
 		atualizar_animacao(Vector2.ZERO, true)  # Para a animação enquanto pausado
 		return # Não processa movimentação enquanto o jogo está pausado
 
 	movimentacao(delta)
 
-	# Interagir com o computador
-	#DESCOMENTAR SOMENTE SE O QUE EU FIZ ESTIVER QUEBRADO KKKKKK
-	#if player_in_computer and Input.is_action_just_pressed("interagir"):
 	if player_in_computer and Input.is_action_just_pressed("interagir") and Status.esta_vivo():
 		_interact_with_computer()
 

@@ -39,6 +39,9 @@ var hitBoxArea: CollisionShape2D
 var hitBox2: HitBoxPlayer
 var hitBoxArea2: CollisionShape2D
 
+# Menu de Pause
+@onready var pause_menu: Control = $main_ui/PauseMenu
+
 # Propriedades para dash
 var dash_speed = 200
 var dash_duration = 0.4  # Duração do dash em segundos
@@ -74,6 +77,8 @@ func _ready() -> void:
 	add_child(transition_instance)
 	transition_instance.on_transition_finished.connect(_on_transition_complete)
 	
+	pause_menu.visible = false
+
 func _physics_process(delta: float) -> void:
 	if !is_atk and !is_dashing and !is_defend and !is_heal:
 		animationControl()
@@ -149,6 +154,13 @@ func stopAtkProcess():
 	is_dashing = false
 	velocity = Vector2()
 	
+
+# Lida com a pausa do jogo
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("Pausar"):
+		pause = !pause
+		pause_menu.visible = pause
+		get_tree().paused = pause
 
 func _on_transition_complete() -> void:
 	pass

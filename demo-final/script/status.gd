@@ -1,10 +1,10 @@
 extends Node
 
-var posX_Metro
-var posYX_Metro
+var posX_Metro = 55
+var posY_Metro = 383
 
-var posX_TD
-var posY_TD
+var posX_TD = 152
+var posY_TD = 269
 
 
 # emitir sinias quando algum status forem afetados

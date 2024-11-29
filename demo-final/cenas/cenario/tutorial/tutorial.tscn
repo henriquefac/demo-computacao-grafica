@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ccq5vmokimplc"]
+[gd_scene load_steps=19 format=3 uid="uid://ccq5vmokimplc"]
 
 [ext_resource type="Script" path="res://cenas/cenario/tutorial/tutorial.gd" id="1_t5ppw"]
 [ext_resource type="FontFile" uid="uid://chny6dp0c5v1" path="res://assets/font/m5x7.ttf" id="2_xj633"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cynbvxq2scfg5" path="res://assets/cenario/tutorial/macacos.jpg" id="14_4dwvx"]
 [ext_resource type="Texture2D" uid="uid://bivwugnultlwv" path="res://assets/cenario/tutorial/mini_game_portaFechada.jpg" id="15_0dst0"]
 [ext_resource type="Texture2D" uid="uid://dtisobg83nv13" path="res://assets/cenario/tutorial/porta_fechada.jpg" id="16_8n4ak"]
+[ext_resource type="Texture2D" uid="uid://dwlqup6n6wshm" path="res://assets/cenario/tutorial/seta_avancar.png" id="17_qayaw"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_aerjj"]
 
@@ -38,41 +39,57 @@ metadata/_edit_lock_ = true
 
 [node name="fowards" type="Button" parent="."]
 process_mode = 3
-self_modulate = Color(1, 0.941176, 0, 1)
+self_modulate = Color(1, 0.941176, 0, 0)
 top_level = true
 light_mask = 3
 visibility_layer = 3
 z_index = 25
 layout_direction = 1
-offset_left = 340.0
-offset_top = 130.0
-offset_right = 567.0
-offset_bottom = 207.0
+offset_left = 390.0
+offset_top = 127.0
+offset_right = 470.0
+offset_bottom = 234.0
 scale = Vector2(0.4, 0.3)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("13_8xuo7")
 theme_override_font_sizes/font_size = 86
-text = "Avançar"
 icon = SubResource("ViewportTexture_aerjj")
 language = "Por_BR"
 
 [node name="backwards" type="Button" parent="."]
 process_mode = 3
-self_modulate = Color(1, 0.941176, 0, 1)
+self_modulate = Color(1, 0.941176, 0, 0)
 top_level = true
 z_index = 25
 layout_direction = 1
-offset_left = -102.0
-offset_top = 129.0
-offset_right = 77.0
-offset_bottom = 206.0
+offset_left = -80.0
+offset_top = 126.0
+offset_bottom = 233.0
 scale = Vector2(0.4, 0.3)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("13_8xuo7")
 theme_override_font_sizes/font_size = 86
-text = "Voltar"
+icon = SubResource("ViewportTexture_aerjj")
+language = "Por_BR"
+
+[node name="close" type="Button" parent="."]
+process_mode = 3
+self_modulate = Color(1, 0, 0, 1)
+top_level = true
+z_index = 25
+layout_direction = 1
+offset_left = 422.0
+offset_top = 5.0
+offset_right = 490.0
+offset_bottom = 82.0
+scale = Vector2(0.4, 0.3)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("13_8xuo7")
+theme_override_font_sizes/font_size = 86
+text = "X"
 icon = SubResource("ViewportTexture_aerjj")
 language = "Por_BR"
 
@@ -415,3 +432,12 @@ limit_top = 0
 limit_right = 304
 limit_bottom = 304
 editor_draw_limits = true
+
+[node name="Seta_Tras" type="Sprite2D" parent="."]
+position = Vector2(-64, 142)
+rotation = 3.14159
+texture = ExtResource("17_qayaw")
+
+[node name="Seta_Frente" type="Sprite2D" parent="."]
+position = Vector2(406, 143)
+texture = ExtResource("17_qayaw")

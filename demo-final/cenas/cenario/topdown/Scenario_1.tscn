@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://bgo35fky8mm0d"]
+[gd_scene load_steps=33 format=4 uid="uid://bgo35fky8mm0d"]
 
 [ext_resource type="Texture2D" uid="uid://cy1le73bny84y" path="res://assets/cenario/topdown/modern-edits-a4.png" id="1_nv3vm"]
 [ext_resource type="Texture2D" uid="uid://p8ee4iltqe0c" path="res://assets/cenario/topdown/modern-edits-a2.png" id="2_xy5cf"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://bexjpkq151srg" path="res://cenas/cenario/topdown/elementos/living-room-door.tscn" id="6_h8qua"]
 [ext_resource type="PackedScene" uid="uid://b3f81lsifuyps" path="res://personagem/topdown/escritor.tscn" id="7_ratf0"]
 [ext_resource type="PackedScene" uid="uid://cxx0axkr03etu" path="res://cenas/cenario/topdown/elementos/computer_lvl.tscn" id="8_n0khy"]
-[ext_resource type="PackedScene" uid="uid://bd0ivq4uqp4b8" path="res://cenas/cenario/menu/pause_menu_1.tscn" id="9_dyh70"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gnnl6"]
 texture = ExtResource("1_nv3vm")
@@ -7374,16 +7373,6 @@ limit_top = 0
 limit_right = 304
 limit_bottom = 304
 editor_draw_limits = true
-metadata/_edit_lock_ = true
-
-[node name="PauseMenu" parent="." instance=ExtResource("9_dyh70")]
-visible = false
-offset_left = 152.0
-offset_top = 161.0
-offset_right = 152.0
-offset_bottom = 161.0
-scale = Vector2(0.5, 0.5)
-script = null
 metadata/_edit_lock_ = true
 
 [node name="bed" parent="." instance=ExtResource("6_h8qua")]
