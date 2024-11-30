@@ -6,22 +6,16 @@ var score = 0
 signal player_in_door
 signal player_in_enemy
 signal game_start
+signal game_paused
 
 var playerInterface: Node2D
 var player: PlayerCharacter
 
-@onready
-var camera := $Personagem/Camera2D
-
-@onready
-var lockedDoor = $"locked-door"
-
-@onready
-var lockedDoorBody = $mapa/doors
-
-@onready
-var loockedArea = $mapa/blur
-
+@onready var camera := $Personagem/Camera2D
+@onready var lockedDoor = $"locked-door"
+@onready var lockedDoorBody = $mapa/doors
+@onready var loockedArea = $mapa/blur
+@onready var enemys: Array[Node] = $Node.get_children()
 @export var circle_scene: PackedScene
 
 func _ready() -> void:
@@ -30,6 +24,19 @@ func _ready() -> void:
 	player = playerInterface.playerNode
 	self.connect("player_in_enemy", Callable(self, "_on_player_in_enemy"))
 	self.connect("player_in_door", Callable(self, "_on_player_in_door"))
+	self.connect("game_paused", Callable(self, "_on_paused_pressed"))
+
+func _on_paused_pressed(paused: bool) -> void:
+	if paused:
+		if len(enemys) > 0:
+			for enemy in enemys:
+				if is_instance_of(enemy.get_child(0), CharacterBody2D):
+					enemy.get_child(0).paused_ = true
+	else:
+		if len(enemys) > 0:
+			for enemy in enemys:
+				if is_instance_of(enemy.get_child(0), CharacterBody2D):
+					enemy.get_child(0).paused_ = false
 
 func _on_player_in_enemy(is_enemy: bool) -> void:
 	if is_enemy:

@@ -5,7 +5,10 @@ var playerNode:PlayerCharacter
 var stateMachine:StateMachine
 var recordeStatus:RecordeStatusEfect
 
+signal game_paused
+
 var is_inside = false
+var paused_Monkey: bool = false
 
 @onready var start = load("res://cenas/cenario/topdown/Scenario_1.tscn") as PackedScene
 @onready var transition = load("res://cenas/cenario/special-effects/transition.tscn") as PackedScene
@@ -21,6 +24,7 @@ func _ready() -> void:
 	add_child(transition_instance)
 	transition_instance.on_transition_finished.connect(_on_transition_complete)
 	
+	self.connect("game_paused", Callable(self, "_on_paused_pressed"))
 	#DESCOMENTE ISSO PARA SALVAR A POSICAO DO JOGADOR
 	#playerNode.global_position.x = Status.posX_Metro
 	#playerNode.global_position.y = Status.posY_Metro
@@ -39,6 +43,11 @@ func _physics_process (delta: float) -> void:
 		transition_instance.transition()
 		get_tree().change_scene_to_packed(start)
 		await transition_instance.on_transition_finished
+
+func _on_paused_pressed(paused_: bool):
+	paused_Monkey = !paused_Monkey
+	if paused_:
+		get_parent().emit_signal("game_paused", paused_Monkey)
 
 func _on_lockeddoor_body_entered(body: Node2D) -> void:
 	if body.is_in_group("PlayerMetro"):

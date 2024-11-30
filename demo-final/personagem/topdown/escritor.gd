@@ -10,6 +10,7 @@ var paused: bool = false
 var animation_player: AnimatedSprite2D
 
 @onready var pause_menu: Control = $main_ui/PauseMenu
+@onready var close_button: Button = $main_ui/close
 
 @onready var transition = load("res://cenas/cenario/special-effects/transition.tscn") as PackedScene
 
@@ -100,6 +101,8 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Pausar"):
 		pausado = !pausado
 		pause_menu.visible = pausado
+		close_button.visible = false
+		
 		get_tree().paused = pausado
 
 func _on_bedroomdoor_body_entered(body: Node2D) -> void:

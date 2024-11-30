@@ -1,12 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://c64o3x36ebifx"]
+[gd_scene load_steps=9 format=3 uid="uid://c64o3x36ebifx"]
 
+[ext_resource type="Script" path="res://personagem/ui/main/mina_ui.gd" id="1_582xl"]
 [ext_resource type="PackedScene" uid="uid://crlht0i6a4nhm" path="res://personagem/ui/barra_de_foco/barra_de_foco.tscn" id="1_rlglu"]
 [ext_resource type="PackedScene" uid="uid://0483ch74swy" path="res://personagem/ui/barra_dopamina/barra_dopamina.tscn" id="2_6w0hx"]
 [ext_resource type="Texture2D" uid="uid://catjfdb6tofqy" path="res://assets/personagem/hud/energy.png" id="3_e7tsu"]
 [ext_resource type="PackedScene" uid="uid://6otagd5evse7" path="res://personagem/ui/barra_count_hit/count_hit.tscn" id="3_lensm"]
 [ext_resource type="PackedScene" uid="uid://bd0ivq4uqp4b8" path="res://cenas/cenario/menu/pause_menu_1.tscn" id="5_hr08n"]
+[ext_resource type="FontFile" uid="uid://3ce7vyw1417g" path="res://cenas/cenario/cena-inicio-star-wars/m5x7.ttf" id="6_fffcw"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_yegyn"]
 
 [node name="main_ui" type="CanvasLayer"]
+script = ExtResource("1_582xl")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -63,3 +68,22 @@ offset_right = 46.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = null
+
+[node name="close" type="Button" parent="."]
+process_mode = 3
+visible = false
+self_modulate = Color(1, 0, 0, 1)
+top_level = true
+z_index = 25
+layout_direction = 1
+offset_left = 1877.0
+offset_top = 52.0
+offset_right = 1945.0
+offset_bottom = 129.0
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_fffcw")
+theme_override_font_sizes/font_size = 86
+text = "X"
+icon = SubResource("ViewportTexture_yegyn")
+language = "Por_BR"

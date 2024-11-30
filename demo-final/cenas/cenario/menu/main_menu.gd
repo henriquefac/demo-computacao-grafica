@@ -5,7 +5,6 @@ extends Control
 @onready var quit_button: Button = $MarginContainer/HBoxContainer/VBoxContainer/Quit_Button as Button
 @onready var start = load ("res://cenas/cenario/cena-inicio-star-wars/texto-de-ajuda.tscn") as PackedScene
 @onready var tutorial = load("res://cenas/cenario/tutorial/tutorial.tscn") as PackedScene
-@onready var controls = load("res://cenas/cenario/controles/Cena-de-ajuda.tscn") as PackedScene
 @onready var transition = load("res://cenas/cenario/special-effects/transition.tscn") as PackedScene
 
 var transition_instance: CanvasLayer = null
