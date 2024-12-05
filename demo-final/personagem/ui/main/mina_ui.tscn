@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c64o3x36ebifx"]
+[gd_scene load_steps=10 format=3 uid="uid://c64o3x36ebifx"]
 
 [ext_resource type="Script" path="res://personagem/ui/main/mina_ui.gd" id="1_582xl"]
 [ext_resource type="PackedScene" uid="uid://crlht0i6a4nhm" path="res://personagem/ui/barra_de_foco/barra_de_foco.tscn" id="1_rlglu"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://catjfdb6tofqy" path="res://assets/personagem/hud/energy.png" id="3_e7tsu"]
 [ext_resource type="PackedScene" uid="uid://6otagd5evse7" path="res://personagem/ui/barra_count_hit/count_hit.tscn" id="3_lensm"]
 [ext_resource type="PackedScene" uid="uid://bd0ivq4uqp4b8" path="res://cenas/cenario/menu/pause_menu_1.tscn" id="5_hr08n"]
+[ext_resource type="FontFile" uid="uid://chny6dp0c5v1" path="res://assets/font/m5x7.ttf" id="6_6yhag"]
 [ext_resource type="FontFile" uid="uid://3ce7vyw1417g" path="res://cenas/cenario/cena-inicio-star-wars/m5x7.ttf" id="6_fffcw"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_yegyn"]
@@ -55,6 +56,37 @@ offset_top = 72.0
 offset_right = 214.0
 offset_bottom = 81.0
 metadata/_edit_lock_ = true
+
+[node name="Pages" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.859375
+anchor_top = 0.0564815
+anchor_right = 0.915625
+anchor_bottom = 0.0824074
+offset_left = -40.0
+offset_bottom = 23.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("6_6yhag")
+theme_override_font_sizes/font_size = 64
+metadata/_edit_use_anchors_ = true
+
+[node name="Erro" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 972.0
+offset_right = 477.0
+offset_bottom = 1068.0
+color = Color(0.827451, 0.184314, 0.2, 0.180392)
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="Control/Erro"]
+z_index = 5
+layout_mode = 0
+offset_right = 471.0
+offset_bottom = 79.0
+theme_override_fonts/font = ExtResource("6_6yhag")
+theme_override_font_sizes/font_size = 48
 
 [node name="PauseMenu" parent="." instance=ExtResource("5_hr08n")]
 visible = false

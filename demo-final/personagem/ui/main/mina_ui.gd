@@ -6,6 +6,8 @@ extends CanvasLayer
 
 var transition_instance: CanvasLayer = null
 
+var max_pages = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	close.pressed.connect(on_close_pressed)
@@ -17,7 +19,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if max_pages > 0:
+		$Control/Pages.set_text("Páginas: {qtdPaginas} / {max_pages}".format({"qtdPaginas": Status.pages, "max_pages": max_pages}))
+	else:
+		$Control/Pages.set_text("Páginas: {qtdPaginas}".format({"qtdPaginas": Status.pages}))
 
 func on_close_pressed() -> void:
 	transition_instance.transition()

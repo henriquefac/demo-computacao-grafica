@@ -7376,9 +7376,8 @@ editor_draw_limits = true
 metadata/_edit_lock_ = true
 
 [node name="bed" parent="." instance=ExtResource("6_h8qua")]
-position = Vector2(240, 117)
-scale = Vector2(1.6, 2)
-metadata/_edit_lock_ = true
+position = Vector2(242, 108)
+scale = Vector2(1, 2)
 
 [connection signal="body_entered" from="Living-room-door" to="Escritor" method="_on_livingroomdoor_body_entered"]
 [connection signal="body_entered" from="computer_lvl" to="Escritor" method="_on_computer_lvl_body_entered"]
