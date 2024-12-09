@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cd6o0f1r3wjj1"]
 
 [ext_resource type="Script" path="res://events/aim_lab/red_random_circle.gd" id="1_6gf5n"]
-[ext_resource type="Texture2D" uid="uid://dmsclh4vlm6oj" path="res://pngtree-red-ball-clipart-vector-eps-and-png-png-image_6121931.png" id="2_ooga0"]
+[ext_resource type="Texture2D" uid="uid://dmsclh4vlm6oj" path="res://mini-games/pngtree-red-ball-clipart-vector-eps-and-png-png-image_6121931.png" id="2_ooga0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qsnwn"]
 radius = 50.0

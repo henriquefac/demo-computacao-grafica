@@ -160,7 +160,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Pausar"):
 		pause = !pause
 		pause_menu.visible = pause
-		get_tree().paused = pause
+		#get_tree().paused = pause
 
 func _on_transition_complete() -> void:
 	pass
