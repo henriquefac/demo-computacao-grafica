@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpgcsvy7ewc7o"]
+[gd_scene load_steps=4 format=3 uid="uid://cpgcsvy7ewc7o"]
 
 [ext_resource type="Script" path="res://cenas/cenario/menu/main_menu.gd" id="1_gktv0"]
 [ext_resource type="Texture2D" uid="uid://c051pypgyrrh3" path="res://assets/menu/background.jpg" id="2_ghrsw"]
+[ext_resource type="FontFile" uid="uid://chny6dp0c5v1" path="res://assets/font/m5x7.ttf" id="3_8iku5"]
 
 [node name="Main_Menu" type="Control"]
 layout_mode = 3
@@ -49,7 +50,8 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 6
 theme_override_constants/shadow_offset_y = 6
 theme_override_constants/outline_size = 12
-theme_override_font_sizes/font_size = 64
+theme_override_fonts/font = ExtResource("3_8iku5")
+theme_override_font_sizes/font_size = 256
 text = "Last day!"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -69,11 +71,13 @@ layout_mode = 2
 [node name="Start_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
+theme_override_fonts/font = ExtResource("3_8iku5")
+theme_override_font_sizes/font_size = 64
 text = "Começar"
 
 [node name="Quit_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
+theme_override_fonts/font = ExtResource("3_8iku5")
+theme_override_font_sizes/font_size = 64
 text = "Sair"

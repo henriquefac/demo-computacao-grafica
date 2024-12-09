@@ -10,6 +10,9 @@ var paused: bool = false
 var animation_player: AnimatedSprite2D
 
 @onready var pause_menu: Control = $main_ui/PauseMenu
+@onready var close_button: Button = $main_ui/close
+@onready var erros: ColorRect = $main_ui/Control/Erro
+@onready var erros_text: Label = $main_ui/Control/Erro/Label
 
 @onready var transition = load("res://cenas/cenario/special-effects/transition.tscn") as PackedScene
 
@@ -25,6 +28,8 @@ func _ready() -> void:
 	add_child(transition_instance)
 	transition_instance.on_transition_finished.connect(_on_transition_complete)
 	
+	erros.visible = false
+	
 	self.global_position.x = Status.posX_TD
 	self.global_position.y = Status.posY_TD
 
@@ -39,10 +44,30 @@ func _physics_process(delta: float) -> void:
 
 	movimentacao(delta)
 
-	if player_in_computer and Input.is_action_just_pressed("interagir") and Status.esta_vivo():
+	if player_in_computer and Input.is_action_just_pressed("interagir") and Status.esta_vivo() and Status.pages < Status.max_pages:
+		erros.visible = false
 		_interact_with_computer()
+		
+	elif player_in_computer and Input.is_action_just_pressed("interagir") and !Status.esta_vivo():
+		
+		# MEXENDO NO ALPHA DA COR (TRANSPARENCIA) e na SATURACAO
+		erros.set_color(Color(.7, .1, .1, .35))
+		erros.visible = true
+		erros_text.set_text("Sem foco. Você não consegue
+		se concentrar, tente relaxar...");
+		
+	elif player_in_computer and Input.is_action_just_pressed("interagir") and Status.esta_vivo() and Status.pages == Status.max_pages:
+		
+		# MEXENDO NO ALPHA DA COR (TRANSPARENCIA) e na SATURACAO
+		erros.set_color(Color(.7, .1, .1, .35))
+		erros.visible = true
+		erros_text.set_text("O livro está pronto, tire um
+		tempo para relaxar...");
+		
+	
 
 	if player_in_bed and Input.is_action_just_pressed("interagir"):
+		erros.visible = false
 		paused = !paused
 		transition_instance.transition()
 		Status.restaurar_vida(100)
@@ -100,6 +125,8 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Pausar"):
 		pausado = !pausado
 		pause_menu.visible = pausado
+		close_button.visible = false
+		
 		get_tree().paused = pausado
 
 func _on_bedroomdoor_body_entered(body: Node2D) -> void:

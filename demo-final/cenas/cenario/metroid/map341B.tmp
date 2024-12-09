@@ -888,7 +888,7 @@ metadata/_edit_lock_ = true
 
 [node name="Personagem" parent="." instance=ExtResource("6_12qlt")]
 z_index = 2
-position = Vector2(45, 384)
+position = Vector2(50, 386)
 scale = Vector2(0.8, 0.8)
 
 [node name="Camera2D" type="Camera2D" parent="Personagem"]
@@ -911,12 +911,12 @@ drag_left_margin = 0.55
 
 [node name="EnemyMacaco" parent="enemys" instance=ExtResource("8_3ojlf")]
 z_index = 3
-position = Vector2(521, 509)
+position = Vector2(522, 503)
 scale = Vector2(1.4, 1.4)
 
 [node name="EnemyMacaco5" parent="enemys" instance=ExtResource("8_3ojlf")]
 z_index = 3
-position = Vector2(816, 507)
+position = Vector2(800, 505)
 scale = Vector2(1.4, 1.4)
 
 [node name="EnemyMacaco2" parent="enemys" instance=ExtResource("8_3ojlf")]
@@ -958,23 +958,23 @@ scale = Vector2(1.4, 1.4)
 
 [node name="Paper" parent="pages" instance=ExtResource("9_nxmxo")]
 z_index = 1
-position = Vector2(1017, 452)
+position = Vector2(767, 500)
 
 [node name="Paper2" parent="pages" instance=ExtResource("9_nxmxo")]
 z_index = 1
-position = Vector2(623, 448)
+position = Vector2(161, 384)
 
 [node name="Paper3" parent="pages" instance=ExtResource("9_nxmxo")]
 z_index = 1
-position = Vector2(1633, 368)
+position = Vector2(1632, 382)
 
 [node name="Paper4" parent="pages" instance=ExtResource("9_nxmxo")]
 z_index = 1
-position = Vector2(2688, 323)
+position = Vector2(2687, 322)
 
 [node name="Paper5" parent="pages" instance=ExtResource("9_nxmxo")]
 z_index = 1
-position = Vector2(2877, 321)
+position = Vector2(2827, 319)
 
 [node name="endGame_text" type="Label" parent="."]
 visible = false

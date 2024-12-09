@@ -1,10 +1,15 @@
 extends Node
 
+# variaveis de posicoes padroes de cada mapa
 var posX_Metro = 55
 var posY_Metro = 383
 
 var posX_TD = 152
 var posY_TD = 269
+
+#  Quantia de paginas para controlar a pontuacao.
+var pages = 0
+var max_pages = 1
 
 
 # emitir sinias quando algum status forem afetados
@@ -15,7 +20,7 @@ signal count_alterado
 signal foco_zero
 
 var vida_maxima = 100
-var vida_atual = vida_maxima
+var vida_atual = 0
 
 
 

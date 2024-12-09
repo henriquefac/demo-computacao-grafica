@@ -50,6 +50,8 @@ var dash_duration = 0.4  # Duração do dash em segundos
 var is_dashing = false
 var dash_dir = Vector2.ZERO
 
+var paused_: bool = false
+
 var atk_on = false
 
 func _ready() -> void:
@@ -74,7 +76,9 @@ func _physics_process(delta: float) -> void:
 	if !is_dashing and !atk_on and is_on_floor():
 		animation()
 	flipBox()
-	move_and_slide()
+	
+	if not paused_:
+		move_and_slide()
 	
 	if is_on_floor() and vida <= 0:
 		queue_free()
