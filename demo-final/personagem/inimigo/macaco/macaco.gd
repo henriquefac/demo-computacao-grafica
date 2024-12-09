@@ -56,7 +56,6 @@ var atk_on = false
 
 func _ready() -> void:
 	soudPlayerHit = $soundDamage
-	
 	hitbox = $HitBoxEnemy
 	hurtbox = $HurtBoxEnemy
 	x_value_hitbox = hitbox.position.x
@@ -69,6 +68,7 @@ func _ready() -> void:
 	
 	hitBoxArea = $HitBoxEnemy/hitbox
 	pass
+
 func _physics_process(delta: float) -> void:
 	if !is_on_floor():
 		velocity.y += gravity * delta
@@ -154,7 +154,7 @@ func getDamage(area: HitBoxPlayer):
 		velocity.x *= 0.5
 	vectorDirDamage = velocity.normalized().x
 	vida -= area.dano
-
+	
 # receber dano
 
 

@@ -5,7 +5,7 @@ class_name PlayerCharacter
 signal STATUS_ON
 
 @export var SPEED:=200
-@export var JUMP:=-400
+@export var JUMP:=-500
 
 var aux:Array
 

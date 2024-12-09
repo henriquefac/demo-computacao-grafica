@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxmfa360pd6th"]
+
+[ext_resource type="PackedScene" uid="uid://b7pqsgf54f4g6" path="res://personagem/inimigo/boss/duval/DuvalNode.tscn" id="1_wciif"]
+[ext_resource type="FontFile" uid="uid://chny6dp0c5v1" path="res://assets/font/m5x7.ttf" id="2_a6oyu"]
+[ext_resource type="PackedScene" uid="uid://lf6evy1kvuj5" path="res://personagem/inimigo/boss/duval/projetil/Projetil.tscn" id="3_ney4q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1j2mk"]
+bg_color = Color(0.586447, 0, 0.0602193, 1)
+
+[node name="BossDuval" type="Node2D"]
+
+[node name="DuvalNode" parent="." instance=ExtResource("1_wciif")]
+
+[node name="BossInfo" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="BossInfo"]
+z_index = 1
+offset_left = 29.0
+offset_top = 958.0
+offset_right = 1988.0
+offset_bottom = 1030.0
+theme_override_fonts/font = ExtResource("2_a6oyu")
+theme_override_font_sizes/font_size = 53
+theme_override_styles/fill = SubResource("StyleBoxFlat_1j2mk")
+max_value = 300.0
+value = 300.0
+
+[node name="Label" type="Label" parent="BossInfo"]
+z_index = 1
+offset_left = 824.0
+offset_top = 883.0
+offset_right = 1204.0
+offset_bottom = 946.0
+theme_override_fonts/font = ExtResource("2_a6oyu")
+theme_override_font_sizes/font_size = 79
+text = "Capitão Duval"
+uppercase = true
+
+[node name="BossStateMachine" type="Node" parent="."]
+
+[node name="Idle" type="Node" parent="BossStateMachine"]
+
+[node name="Attack_1" type="Node" parent="BossStateMachine"]
+
+[node name="Attack_2" type="Node" parent="BossStateMachine"]
+
+[node name="Follow" type="Node" parent="BossStateMachine"]
+
+[node name="Death" type="Node" parent="BossStateMachine"]
+
+[node name="Projetil" parent="." instance=ExtResource("3_ney4q")]
+position = Vector2(186, 226)

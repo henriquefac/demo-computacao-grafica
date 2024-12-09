@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://brecvutg86yr7"]
+
+[ext_resource type="PackedScene" uid="uid://c66wco1nen6mo" path="res://personagem/inimigo/boss/rainha_aquatica/rainha_aquatica_node.tscn" id="1_bh0g2"]
+[ext_resource type="Script" path="res://personagem/inimigo/macaco/sate_machine.gd" id="2_4pcec"]
+
+[node name="RainhaAquaticaBoss" type="Node2D"]
+
+[node name="RainhaAquaticaNode" parent="." instance=ExtResource("1_bh0g2")]
+
+[node name="BossStateMachine2" type="Node" parent="."]
+script = ExtResource("2_4pcec")
+
+[node name="Idle" type="Node" parent="BossStateMachine2"]
+
+[node name="Attack" type="Node" parent="BossStateMachine2"]
+
+[node name="Follow" type="Node" parent="BossStateMachine2"]
+
+[node name="Death" type="Node" parent="BossStateMachine2"]

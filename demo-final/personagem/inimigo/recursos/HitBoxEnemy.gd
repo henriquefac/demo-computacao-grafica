@@ -21,5 +21,6 @@ func getStatus():
 	efeitoStatus = StatusSlow.new()
 	efeitoStatus.SetDuration(0.8)
 	return efeitoStatus
+	
 func vectorKnock():
 	return inimigo.dash_dir * 400  + Vector2(0, -400)
