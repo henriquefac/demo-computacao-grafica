@@ -28,6 +28,7 @@ func Update(_delta: float):
 	if timer <= 0:
 		Transitioned.emit(self, "idle")
 	
+	
 func Physics_Update(_delta: float):
 	if not enemy.is_on_floor():
 		enemy.velocity.x += enemy.vectorDirDamage * 100 * _delta

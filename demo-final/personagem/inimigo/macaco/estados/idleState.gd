@@ -58,8 +58,6 @@ func Update(delta : float):
 		
 func Physics_Update(_delta: float):
 	velocity.x = move_direction.x * speed
-	
-
 		
 	if enemy and enemy.is_on_floor():
 		enemy.velocity.x = velocity.x

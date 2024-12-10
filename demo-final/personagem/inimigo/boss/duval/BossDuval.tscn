@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://cyr8sxeou2aws"]
+
+[ext_resource type="PackedScene" uid="uid://dgenrromaqu5l" path="res://personagem/inimigo/boss/duval/DuvalNode.tscn" id="1_wciif"]
+[ext_resource type="Script" path="res://personagem/inimigo/macaco/sate_machine.gd" id="2_j42y3"]
+[ext_resource type="Script" path="res://personagem/inimigo/boss/duval/estados/idleBoss1.gd" id="3_tdrna"]
+[ext_resource type="Script" path="res://personagem/inimigo/boss/duval/estados/AttackBoss.gd" id="4_drh34"]
+[ext_resource type="Script" path="res://personagem/inimigo/boss/duval/estados/FollowBoss1.gd" id="6_okqao"]
+[ext_resource type="Script" path="res://personagem/inimigo/boss/duval/estados/DamageBoss1.gd" id="7_i7fi5"]
+[ext_resource type="Script" path="res://personagem/inimigo/boss/duval/estados/DeathBoss1.gd" id="7_k6lwj"]
+
+[node name="BossDuval" type="Node2D"]
+
+[node name="DuvalNode" parent="." instance=ExtResource("1_wciif")]
+
+[node name="BossStateMachine" type="Node" parent="." node_paths=PackedStringArray("intitial_state", "enti")]
+script = ExtResource("2_j42y3")
+intitial_state = NodePath("idle")
+enti = NodePath("../DuvalNode")
+
+[node name="idle" type="Node" parent="BossStateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("3_tdrna")
+enemy = NodePath("../../DuvalNode")
+
+[node name="follow" type="Node" parent="BossStateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("6_okqao")
+enemy = NodePath("../../DuvalNode")
+
+[node name="attack" type="Node" parent="BossStateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("4_drh34")
+enemy = NodePath("../../DuvalNode")
+
+[node name="death" type="Node" parent="BossStateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("7_k6lwj")
+enemy = NodePath("../../DuvalNode")
+
+[node name="damage" type="Node" parent="BossStateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("7_i7fi5")
+enemy = NodePath("../../DuvalNode")

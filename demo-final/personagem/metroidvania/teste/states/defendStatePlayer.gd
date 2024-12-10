@@ -32,8 +32,11 @@ func Update(_delta):
 		playerCharacter.velocity = Vector2()
 	transitionGameStart()
 
-func damageDefend(area: HitBoxEnemy):
-	if area.is_in_group("HitBoxEnemy") and area is HitBoxEnemy and on:
+
+func damageDefend(area: Area2D):
+	if area is not HitBoxBoss1 and area is not HitBoxEnemy:
+		return
+	if area.is_in_group("HitBoxEnemy") and on:
 		timerDamage = 0.3
 		playerCharacter.getDefendDamage(area)
 

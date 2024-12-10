@@ -17,7 +17,6 @@ func _ready() -> void:
 	if intitial_state:
 		intitial_state.Enter()
 		current_state = intitial_state
-	
 
 func _process(delta: float) -> void:
 	if current_state and is_instance_valid(enti):
@@ -29,6 +28,7 @@ func _physics_process(delta: float) -> void:
 		current_state.Physics_Update(delta)
 
 func on_child_transitioned(state: State, new_state_name: String):
+	
 	if state != current_state:
 		return
 		
@@ -38,6 +38,5 @@ func on_child_transitioned(state: State, new_state_name: String):
 	if current_state:
 		current_state.Exit()
 	new_state.Enter()
-	
 	current_state = new_state
 	

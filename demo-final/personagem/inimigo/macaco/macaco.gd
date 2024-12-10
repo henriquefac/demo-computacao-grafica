@@ -56,7 +56,6 @@ var atk_on = false
 
 func _ready() -> void:
 	soudPlayerHit = $soundDamage
-	
 	hitbox = $HitBoxEnemy
 	hurtbox = $HurtBoxEnemy
 	x_value_hitbox = hitbox.position.x
@@ -157,7 +156,6 @@ func getDamage(area: HitBoxPlayer):
 	vectorDirDamage = velocity.normalized().x
 	vida -= area.dano
 	
-
 # receber dano
 func getDamage2(area: HitBoxPlayer):
 	# Calcula a direção normalizada entre o inimigo (self) e o jogador

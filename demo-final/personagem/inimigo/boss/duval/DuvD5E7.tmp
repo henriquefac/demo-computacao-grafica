@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpybyut4qe6fr"]
+
+[ext_resource type="PackedScene" uid="uid://b7pqsgf54f4g6" path="res://personagem/inimigo/boss/duval/DuvalNode.tscn" id="1_4w8dj"]
+[ext_resource type="Script" path="res://personagem/inimigo/macaco/sate_machine.gd" id="2_fddou"]
+
+[node name="DuvalBoss" type="Node2D"]
+
+[node name="DuvalBody" parent="." instance=ExtResource("1_4w8dj")]
+
+[node name="BossStateMachine" type="Node" parent="."]
+script = ExtResource("2_fddou")
+
+[node name="idle" type="Node" parent="BossStateMachine"]
+
+[node name="attack_1" type="Node" parent="BossStateMachine"]

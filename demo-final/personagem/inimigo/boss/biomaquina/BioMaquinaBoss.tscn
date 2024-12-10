@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0e2sj3e3w2nu"]
+
+[ext_resource type="PackedScene" uid="uid://cwkxrpimo3dgk" path="res://personagem/inimigo/boss/biomaquina/BioMaquinaNode.tscn" id="1_bimr7"]
+[ext_resource type="Script" path="res://personagem/inimigo/macaco/sate_machine.gd" id="2_vk2it"]
+
+[node name="BioMaquinaBoss" type="Node2D"]
+
+[node name="BioMaquinaNode" parent="." instance=ExtResource("1_bimr7")]
+
+[node name="BossStateMachine2" type="Node" parent="."]
+script = ExtResource("2_vk2it")
+
+[node name="Idle" type="Node" parent="BossStateMachine2"]
+
+[node name="Attack" type="Node" parent="BossStateMachine2"]
+
+[node name="Follow" type="Node" parent="BossStateMachine2"]
+
+[node name="Death" type="Node" parent="BossStateMachine2"]

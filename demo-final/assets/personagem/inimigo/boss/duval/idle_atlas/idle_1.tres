@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://4mg0nrj8g5o"]
+
+[ext_resource type="Texture2D" uid="uid://bdebj0aropftr" path="res://assets/personagem/inimigo/boss/duval/idle_pirate.png" id="1_2lf78"]
+
+[resource]
+atlas = ExtResource("1_2lf78")
+region = Rect2(8, 3, 44, 57)
