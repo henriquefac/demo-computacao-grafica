@@ -7,10 +7,10 @@ var animationNode: AnimationPlayer
 var on = false
 
 func Enter():
+	enemy.morte = true
 	on = true
 	enemy.velocity = Vector2()
 	enemy.is_dashing = false
-
 	# Configura o AnimationPlayer
 	if not animationNode:
 		animationNode = enemy.animationPLayer
@@ -22,7 +22,6 @@ func Enter():
 
 	# Desativa colisões
 	enemy.hitBoxArea.disabled = true
-	enemy.hurtbox.disabled = true
 
 	print("Enemy has died.")
 

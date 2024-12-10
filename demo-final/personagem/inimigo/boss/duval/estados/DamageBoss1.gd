@@ -8,7 +8,8 @@ var hurtBox : HurtBoxBoss1
 var on = true
 
 func Enter():
-	print("damage")
+	if enemy.morte:
+		Transitioned.emit(self, "death")
 	Status.aumentar_count(1)
 	enemy.playSound()
 	timer = randf_range(0,1)
@@ -25,7 +26,6 @@ func Exit():
 
 	
 func Update(_delta: float):
-	print(timer)
 	if enemy.is_on_floor():
 		timer -= _delta
 	if timer <= 0:

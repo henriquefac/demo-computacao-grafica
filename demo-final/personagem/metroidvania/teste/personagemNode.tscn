@@ -522,7 +522,6 @@ rotation = 3.14159
 sprite_frames = SubResource("SpriteFrames_df4qo")
 animation = &"idle"
 centered = false
-flip_h = true
 flip_v = true
 script = ExtResource("15_v1cp1")
 last_frame_width_atk1 = 36

@@ -48,8 +48,10 @@ func transitionHeal():
 	if Input.is_action_just_pressed("Cura") and Status.dopamina_bar_atual > 0:
 		Transitioned.emit(self, "heal")
 
-func transictionDamage(area: HitBoxEnemy):
-	if typeof(area) == TYPE_OBJECT and area is HitBoxEnemy and on:
+func transictionDamage(area: Area2D):
+	if area is not HitBoxBoss1 and area is not HitBoxEnemy:
+		return
+	if typeof(area) == TYPE_OBJECT and on:
 		playerCharacter.getDamage(area)
 		Transitioned.emit(self, "damage")
 		

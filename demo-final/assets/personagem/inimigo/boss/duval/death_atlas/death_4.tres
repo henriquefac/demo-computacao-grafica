@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://cwu8fhss2a8q7"]
+
+[ext_resource type="Texture2D" uid="uid://b3aehtosphrd5" path="res://assets/personagem/inimigo/boss/duval/death_pirate.png" id="1_hmtyk"]
+
+[resource]
+atlas = ExtResource("1_hmtyk")
+region = Rect2(144, 5, 45, 54)

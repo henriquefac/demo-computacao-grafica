@@ -8,11 +8,16 @@ var animationNode: AnimationPlayer
 var hurtBox : HurtBoxBoss1
 var on = true
 
+# porcesso de atacar
 
+# randomizar escolha entre ataques
 func choose_atk1_or_atk2() -> int:
 	return randi() % 2 + 1
 
 func Enter():
+	if enemy.morte:
+		Transitioned.emit(self, "death")
+	enemy.velocity = Vector2(0,0)
 	enemy.atk_on = true
 	animationNode = enemy.animationPLayer
 	on = true
@@ -26,9 +31,7 @@ func Enter():
 	if not hurtBox.is_connected("area_entered", transictionDamage):
 		hurtBox.connect("area_entered", transictionDamage)
 	
-	
-	enemy.velocity = Vector2()
-	enemy.is_dashing = false
+
 	var choosen_atk = choose_atk1_or_atk2()
 	
 	if choosen_atk == 1:
@@ -37,12 +40,10 @@ func Enter():
 		animationNode.play("distance_attack")
 
 func transitionIdle(algo):
-	
-	if algo == "ataque":
+	if algo == "attack" or algo == "distance_attack":
 		Transitioned.emit(self, "idle")
 
 func transictionDamage(area: Area2D):
-	print("área")
 	if area.is_in_group("hitboxPlayer") and area is HitBoxPlayer and on:
 		enemy.getDamage(area)
 		if enemy.vida <= 0:  # Verifica se a vida do inimigo chegou a zero

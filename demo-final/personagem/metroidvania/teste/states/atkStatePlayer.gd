@@ -47,8 +47,10 @@ func transitionIdle(arg):
 		else:
 			Transitioned.emit(self, "idle")
 
-func transictionDamage(area: HitBoxEnemy):
-	if typeof(area) == TYPE_OBJECT and area is HitBoxEnemy and on:
+func transictionDamage(area: Area2D):
+	if area is not HitBoxBoss1 and area is not HitBoxEnemy:
+		return
+	if typeof(area) == TYPE_OBJECT and on:
 		playerCharacter.getDamage(area)
 		Transitioned.emit(self, "damage")
 

@@ -117,7 +117,7 @@ func flipBox():
 		hitBox.position.x = x_value_hitbox
 		
 
-func getDamage(area: HitBoxEnemy):
+func getDamage(area):
 	var statusAply = area.getStatus()
 	if statusAply:
 		STATUS_ON.emit(statusAply)
@@ -126,7 +126,7 @@ func getDamage(area: HitBoxEnemy):
 	vectorDirDamage = velocity.normalized().x
 	Status.diminuir_vida(area.dano)
 
-func getDefendDamage(area: HitBoxEnemy):
+func getDefendDamage(area):
 	velocity = area.vectorKnock()
 	velocity.y = 0
 	velocity.x *= 0.33

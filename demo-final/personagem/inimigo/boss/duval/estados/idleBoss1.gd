@@ -28,10 +28,10 @@ func randomize_wander():
 	flag_stop = !flag_stop
 
 func Enter():
-	print("idle")
+	if enemy.morte:
+		Transitioned.emit(self, "death")
 	on = true
 	personagem = get_tree().get_first_node_in_group("PlayerMetro").playerNode
-	print(personagem)
 	if hurtBox == null:
 		hurtBox = enemy.hurtbox
 	if not hurtBox.is_connected("area_entered", transictionDamage):
@@ -44,7 +44,6 @@ func Enter():
 	randomize_wander()
 
 func Update(delta : float):
-	print("aqui")
 	if enemy.is_on_floor():
 		if wander_time > 0:
 			wander_time -= delta
@@ -58,12 +57,13 @@ func Update(delta : float):
 			randomize_wander()
 		
 func Physics_Update(_delta: float):
+	transitionTrigger()
 	velocity.x = move_direction.x * speed
 		
 	if enemy and enemy.is_on_floor():
 		enemy.velocity.x = velocity.x
 
-	transitionTrigger()
+	
 
 func transitionTrigger():
 	transitionAir()
@@ -75,16 +75,14 @@ func transitionAir():
 		Transitioned.emit(self, "air")
 		
 func transitionFollow():
-	if directionPlayer().length() < 300 and enemy.is_on_floor():
+	if directionPlayer().length() < 600 and enemy.is_on_floor():
 		Transitioned.emit(self, "follow")
 		
 func transictionDamage(area: Area2D):
 	if area.is_in_group("hitboxPlayer") and area is HitBoxPlayer and on:
-		print("damage:idle")
 		enemy.getDamage(area)
 		Transitioned.emit(self, "damage")
 	if area.is_in_group("hitBoxPlayer2") and area is HitBoxPlayer and on:
-		print("damage:idle")
 		enemy.getDamage2(area)
 		Transitioned.emit(self, "damage")
 		
