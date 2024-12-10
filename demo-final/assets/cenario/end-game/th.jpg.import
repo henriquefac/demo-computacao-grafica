@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmsclh4vlm6oj"
-path="res://.godot/imported/pngtree-red-ball-clipart-vector-eps-and-png-png-image_6121931.png-a283697108d7cb927e569e537d8b0dfd.ctex"
+uid="uid://by8a4g7w0q8uf"
+path="res://.godot/imported/th.jpg-f82a85ce47c7caff0913375a3a0b8b1c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/mini-games/pngtree-red-ball-clipart-vector-eps-and-png-png-image_6121931.png"
-dest_files=["res://.godot/imported/pngtree-red-ball-clipart-vector-eps-and-png-png-image_6121931.png-a283697108d7cb927e569e537d8b0dfd.ctex"]
+source_file="res://assets/cenario/end-game/th.jpg"
+dest_files=["res://.godot/imported/th.jpg-f82a85ce47c7caff0913375a3a0b8b1c.ctex"]
 
 [params]
 

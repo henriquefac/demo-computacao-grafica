@@ -2,7 +2,7 @@ class_name HitBoxEnemy
 extends Area2D
 
 @export var inimigo: macaco
-@export var dano:=15
+@export var dano:=20
 
 
 var efeitoStatus: StatusEfect
@@ -21,6 +21,6 @@ func getStatus():
 	efeitoStatus = StatusSlow.new()
 	efeitoStatus.SetDuration(0.8)
 	return efeitoStatus
-	
+
 func vectorKnock():
 	return inimigo.dash_dir * 400  + Vector2(0, -400)

@@ -60,5 +60,5 @@ func _on_rotation_circles_troca() -> void:
 	
 	if esquerda.orbit_speed < 6:
 		var dif = 3/esquerda.orbit_speed 
-		esquerda.orbit_speed += 0.2 * dif
-		direita.orbit_speed -= 0.2 * dif
+		esquerda.orbit_speed += 0.4 * dif
+		direita.orbit_speed -= 0.4 * dif

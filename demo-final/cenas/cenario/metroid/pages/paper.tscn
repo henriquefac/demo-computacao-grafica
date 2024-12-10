@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bk2kbyl1d7rna"]
+
+[ext_resource type="Texture2D" uid="uid://bwlugiuv1hk0m" path="res://assets/cenario/metroidvania/paper.png" id="1_8parl"]
+[ext_resource type="Script" path="res://cenas/cenario/metroid/pages/paper.gd" id="1_km08w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rls8q"]
+size = Vector2(17.7094, 21.926)
+
+[node name="Paper" type="Area2D"]
+script = ExtResource("1_km08w")
+
+[node name="Paper" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(3.63798e-12, 2.38419e-07)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_8parl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+position = Vector2(-0.414679, 1.04308)
+shape = SubResource("RectangleShape2D_rls8q")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

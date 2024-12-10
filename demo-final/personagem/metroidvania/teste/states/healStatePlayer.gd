@@ -9,7 +9,6 @@ class_name HealStatePlayer
 var animation: AnimationPlayer
 
 func Enter():
-
 	if Status.dopamina_bar_atual < 0:
 		Transitioned.emit(self, "idle")
 	else:
