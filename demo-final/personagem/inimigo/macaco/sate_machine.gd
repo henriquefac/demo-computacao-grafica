@@ -21,13 +21,13 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if current_state and is_instance_valid(enti):
 		current_state.Update(delta)
-	print(current_state.name)
 	
 func _physics_process(delta: float) -> void:
 	if current_state and is_instance_valid(enti):
 		current_state.Physics_Update(delta)
 
 func on_child_transitioned(state: State, new_state_name: String):
+	
 	if state != current_state:
 		return
 		

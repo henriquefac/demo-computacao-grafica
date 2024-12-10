@@ -6,7 +6,7 @@ class_name IdleBoss1
 @export var speed := 170.0
 
 var persRef = preload("res://personagem/metroidvania/character_metroidvania.tscn")
-var personagem: Node 
+var personagem: CharacterBody2D 
 
 var init: bool = true
 
@@ -28,9 +28,10 @@ func randomize_wander():
 	flag_stop = !flag_stop
 
 func Enter():
-	
+	print("idle")
 	on = true
 	personagem = get_tree().get_first_node_in_group("PlayerMetro").playerNode
+	print(personagem)
 	if hurtBox == null:
 		hurtBox = enemy.hurtbox
 	if not hurtBox.is_connected("area_entered", transictionDamage):
@@ -43,6 +44,7 @@ func Enter():
 	randomize_wander()
 
 func Update(delta : float):
+	print("aqui")
 	if enemy.is_on_floor():
 		if wander_time > 0:
 			wander_time -= delta

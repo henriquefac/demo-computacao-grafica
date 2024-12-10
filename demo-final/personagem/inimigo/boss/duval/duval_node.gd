@@ -7,7 +7,7 @@ class_name duval
 signal wallEsquerda
 signal wallDireita
 
-var vida = 5
+var vida = 50
 @export var gravity := 900.0 
 # ver de knockback
 var vectorDirDamage: float
@@ -17,7 +17,9 @@ var soudPlayerHit: AudioStreamPlayer2D
 
 # hitbox, area para dar dano no player
 var hitbox: HitBoxBoss1
+# posição da hitbox
 var x_value_hitbox
+# se a hitbox virou ou não
 var flipHitBox: bool
 
 # area para inimigo levar dano
@@ -44,6 +46,7 @@ var states: Dictionary = {}
 var animationPLayer:AnimationPlayer = null
 var frames: AnimatedSprite2D 
 
+# rodar o inimigo
 var flagFlip: bool
 
 # Propriedades para dash
@@ -52,8 +55,10 @@ var dash_duration = 0.4  # Duração do dash em segundos
 var is_dashing = false
 var dash_dir = Vector2.ZERO
 
+# se está pausado
 var paused_: bool = false
 
+# se está atacando
 var atk_on = false
 
 func _ready() -> void:

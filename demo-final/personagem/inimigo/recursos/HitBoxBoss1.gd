@@ -3,7 +3,9 @@ extends Area2D
 
 @export var inimigo: duval
 @export var dano = 30
-
+@export var dano2 = 35
+@export var x_val_knockBack = 600
+@export var y_val_knockBack = 600
 
 var efeitoStatus: StatusEfect
 
@@ -24,4 +26,4 @@ func getStatus():
 
 	
 func vectorKnock():
-	return inimigo.dash_dir * 600  + Vector2(0, -600)
+	return inimigo.dash_dir * x_val_knockBack  + Vector2(0, -y_val_knockBack)

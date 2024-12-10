@@ -1,9 +1,9 @@
-[gd_scene load_steps=19 format=4 uid="uid://bxlfuedcswpva"]
+[gd_scene load_steps=19 format=4 uid="uid://d03u6q3mm25xf"]
 
 [ext_resource type="Script" path="res://cenas/cenario/metroid/mapa_boss_1.gd" id="1_2vu80"]
 [ext_resource type="Texture2D" uid="uid://uicscwnx327" path="res://assets/cenario/metroidvania/Sprite-0002.png" id="1_pn5ma"]
 [ext_resource type="PackedScene" uid="uid://c7t4h2y0k3irk" path="res://personagem/metroidvania/teste/personagem.tscn" id="2_qk616"]
-[ext_resource type="PackedScene" uid="uid://cxmfa360pd6th" path="res://personagem/inimigo/boss/duval/BossDuval.tscn" id="4_pdfnp"]
+[ext_resource type="PackedScene" uid="uid://cyr8sxeou2aws" path="res://personagem/inimigo/boss/duval/BossDuval.tscn" id="4_pdfnp"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_5yxjc"]
 tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 1, 131072, 0, 1, 196608, 0, 2, 1, 65536, 0, 65537, 65536, 1, 131073, 65536, 1, 196609, 65536, 2, 2, 65536, 0, 65538, 65536, 1, 131074, 65536, 1, 196610, 65536, 2, 3, 131072, 0, 65539, 131072, 1, 131075, 131072, 1, 196611, 131072, 2)

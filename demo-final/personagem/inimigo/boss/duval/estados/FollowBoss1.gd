@@ -16,6 +16,7 @@ var hurtBox : HurtBoxBoss1
 var on = false
 
 func Enter():
+	print("Follow")
 	on = true
 	minTimer = 0.4
 	personagem = get_tree().get_first_node_in_group("PlayerMetro").playerNode

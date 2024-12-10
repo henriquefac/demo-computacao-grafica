@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://b7pqsgf54f4g6"]
+[gd_scene load_steps=47 format=3 uid="uid://dgenrromaqu5l"]
 
 [ext_resource type="Script" path="res://personagem/inimigo/boss/duval/duval_node.gd" id="1_wuvlj"]
 [ext_resource type="Texture2D" uid="uid://bq5prc63akic4" path="res://assets/personagem/inimigo/boss/duval/attack_pirate.png" id="2_jgpo8"]
@@ -364,7 +364,7 @@ tracks/5/keys = {
 
 [sub_resource type="Animation" id="Animation_nlgej"]
 resource_name = "death"
-length = 2.5
+length = 2.0
 step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -385,10 +385,10 @@ tracks/1/path = NodePath("frames:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.75, 1.5, 2.25),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [1, 0, 2, 3]
+"times": PackedFloat32Array(0, 1.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1, 3]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
