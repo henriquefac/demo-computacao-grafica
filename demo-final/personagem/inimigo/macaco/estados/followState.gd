@@ -44,7 +44,6 @@ func directionPlayer():
 	direction = (personagem.global_position - enemy.global_position)
 	vectorMove = direction.normalized() * speed
 	vectorMove.y = 0
-
 	
 
 func transitionTrigger():

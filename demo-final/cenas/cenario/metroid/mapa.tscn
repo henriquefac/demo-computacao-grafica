@@ -879,7 +879,7 @@ scale = Vector2(1, 4)
 
 [node name="gameOver" type="Area2D" parent="."]
 z_index = 1
-position = Vector2(3243, 382)
+position = Vector2(3242, 378)
 scale = Vector2(3, 3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="gameOver"]
@@ -888,7 +888,7 @@ metadata/_edit_lock_ = true
 
 [node name="Personagem" parent="." instance=ExtResource("6_12qlt")]
 z_index = 2
-position = Vector2(45, 384)
+position = Vector2(53.5973, 378.481)
 scale = Vector2(0.8, 0.8)
 
 [node name="Camera2D" type="Camera2D" parent="Personagem"]

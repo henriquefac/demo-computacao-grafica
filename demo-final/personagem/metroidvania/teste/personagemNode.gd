@@ -101,7 +101,7 @@ func animationControl():
 		frame.flip_h = true
 		flipHitBox = false
 	if velocity.x < 0:
-		frame.flip_h = false		
+		frame.flip_h = false
 		flipHitBox = true
 	if velocity.length() > 0:
 		animation.play("run")
@@ -115,7 +115,7 @@ func flipBox():
 		hitBox.position.x = -1* x_value_hitbox
 	else:
 		hitBox.position.x = x_value_hitbox
-		
+	
 
 func getDamage(area: HitBoxEnemy):
 	var statusAply = area.getStatus()
@@ -139,8 +139,8 @@ func faceVelocity():
 
 func faceJump():
 	return JUMP + aux[1]
-	
-	
+
+
 # funcao de atk
 # script basico de ataque
 func atkProcess():

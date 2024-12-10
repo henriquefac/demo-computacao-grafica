@@ -35,8 +35,13 @@ func _ready() -> void:
 
 # Atualiza a física e movimento do personagem
 func _physics_process(delta: float) -> void:
-	Status.posX_TD = self.global_position.x
-	Status.posY_TD = self.global_position.y
+	
+	if not Status.win:
+		Status.posX_TD = self.global_position.x
+		Status.posY_TD = self.global_position.y
+	else:
+		Status.posX_TD = 152
+		Status.posY_TD = 269
 	
 	if pausado:
 		atualizar_animacao(Vector2.ZERO, true)  # Para a animação enquanto pausado
@@ -125,7 +130,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Pausar"):
 		pausado = !pausado
 		pause_menu.visible = pausado
-		close_button.visible = false
+		close_button.visible = pausado
 		
 		get_tree().paused = pausado
 
@@ -133,8 +138,10 @@ func _on_bedroomdoor_body_entered(body: Node2D) -> void:
 	get_tree().change_scene_to_file("res://cenas/cenario/topdown/Scenario_1.tscn")
 
 func _on_livingroomdoor_body_entered(body: Node2D) -> void:
-	#get_tree().change_scene_to_file("res://cenas/cenario/topdown/Scenario_2.tscn")
-	pass
+	if body.is_in_group("player") and Status.esta_vivo() and Status.pages == Status.max_pages and Status.win:
+		Status.pages = 0
+		Status.win = false
+		get_tree().change_scene_to_file("res://cenas/cenario/endgame/end_game.tscn")
 
 func _on_computer_lvl_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):

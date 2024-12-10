@@ -119,3 +119,22 @@ theme_override_font_sizes/font_size = 86
 text = "X"
 icon = SubResource("ViewportTexture_yegyn")
 language = "Por_BR"
+
+[node name="close2" type="Button" parent="."]
+process_mode = 3
+visible = false
+self_modulate = Color(1, 0, 0, 1)
+top_level = true
+z_index = 25
+layout_direction = 1
+offset_left = 1877.0
+offset_top = 52.0
+offset_right = 1945.0
+offset_bottom = 129.0
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_fffcw")
+theme_override_font_sizes/font_size = 86
+text = "X"
+icon = SubResource("ViewportTexture_yegyn")
+language = "Por_BR"

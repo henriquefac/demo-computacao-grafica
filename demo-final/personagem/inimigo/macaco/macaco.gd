@@ -69,6 +69,7 @@ func _ready() -> void:
 	
 	hitBoxArea = $HitBoxEnemy/hitbox
 	pass
+
 func _physics_process(delta: float) -> void:
 	if !is_on_floor():
 		velocity.y += gravity * delta
@@ -90,25 +91,26 @@ func animation():
 	if velocity.x > 0:
 		frames.flip_h = true
 		flipHitBox = true
+	
 	if velocity.x < 0 :
 		frames.flip_h = false
 		flipHitBox = false
-
-
 	
 	if velocity.length() > 0:
 		animationPLayer.play("walk")
 	else:
 		animationPLayer.play("idle")
-		
+	
 	if velocity.y != 0:
 		animationPLayer.stop(true)
+	
 
 func flipBox():
 	if flipHitBox:
 		hitbox.position.x = -1* x_value_hitbox
 	else:
 		hitbox.position.x = x_value_hitbox
+	
 
 func checkFortWall():
 	if esquerda.is_colliding() and LeftWall:
@@ -116,13 +118,13 @@ func checkFortWall():
 		wallEsquerda.emit()
 	elif !esquerda.is_colliding() and !LeftWall:
 		LeftWall = true
-		
 	if direita.is_colliding() and RightWall:
 		RightWall = false
 		wallDireita.emit()
 	elif !direita.is_colliding() and !RightWall:
 		RightWall = true
-		
+	
+
 # realizar animacão de ataque
 # quando realizar o ataque, personagem se move suavemente para adireção
 # atual
@@ -144,9 +146,9 @@ func atkMove():
 func stopAtkMove():
 	is_dashing = false
 	velocity.x = 0
-		
+	
+
 func getDamage(area: HitBoxPlayer):
-	print("dano1")
 	velocity = Vector2()
 	velocity = area.vectorKnock()
 	if randf() < 0.2:
@@ -154,20 +156,18 @@ func getDamage(area: HitBoxPlayer):
 		velocity.x *= 0.5
 	vectorDirDamage = velocity.normalized().x
 	vida -= area.dano
+	
 
 # receber dano
-
-
 func getDamage2(area: HitBoxPlayer):
-	print("dano2")
 	# Calcula a direção normalizada entre o inimigo (self) e o jogador
 	var dir = (global_position - area.player.global_position).normalized()
 	
 	# Determina se o inimigo está à esquerda ou à direita da área do jogador
-	if position.x < area.player.position.x:
-		print("Inimigo está à esquerda da área")
-	else:
-		print("Inimigo está à direita da área")
+	#if position.x < area.player.position.x:
+		#print("Inimigo está à esquerda da área")
+	#else:
+		#print("Inimigo está à direita da área")
 	
 	# Ajusta a direção para o vetor oposto e define a velocidade
 	dir *= 200  # Amplia o vetor

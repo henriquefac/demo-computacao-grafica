@@ -7,6 +7,7 @@ var dictStatus: Dictionary = {}  # Dicionário para armazenar os status ativos
 func _ready() -> void:
 	Player.STATUS_ON.connect(addStatus)
 	
+
 func _process(delta: float) -> void:
 	for status:StatusEfect in get_children():
 		if status.toStart:
@@ -16,11 +17,13 @@ func _process(delta: float) -> void:
 		
 func addStatus(status: StatusEfect):
 	add_child(status)
-		
+	
+
 # Aplica os efeitos no jogador
 func Aply(status: StatusEfect):
 	for i in range(2):
 		Player.aux[i] += status.listEfects[i]
+
 # Remove o efeito quando o status termina
 func Terminate(status: StatusEfect):
 	for i in range(2):

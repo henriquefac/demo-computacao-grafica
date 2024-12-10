@@ -13,6 +13,8 @@ var playerInterface: Node2D
 var player: PlayerCharacter
 var gameOver: bool = false
 
+var start = "res://cenas/cenario/topdown/Scenario_1.tscn"
+
 @onready var camera := $Personagem/Camera2D
 @onready var pages_text = $Personagem/PersonagemNode/main_ui
 @onready var erros: ColorRect = $Personagem/PersonagemNode/main_ui/Control/Erro
@@ -22,7 +24,6 @@ var gameOver: bool = false
 @onready var loockedArea = $mapa/blur
 @onready var enemys: Array[Node] = $enemys.get_children()
 @onready var maxPages: Array[Node] = $pages.get_children()
-@onready var start = load("res://cenas/cenario/topdown/Scenario_1.tscn") as PackedScene
 @export var circle_scene: PackedScene
 
 
@@ -30,6 +31,7 @@ func _ready() -> void:
 	AudioPlayer.play_music_scene(1)
 	
 	$endGame_text.visible = false
+	Status.win = false
 	erros.visible = false
 	
 	playerInterface = get_tree().get_first_node_in_group("PlayerMetro")
@@ -84,10 +86,11 @@ func _process(delta: float) -> void:
 	
 	# CONDICAO DE VITORIA
 	if Status.max_pages == Status.pages && gameOver:
+		Status.win = true
 		$endGame_text.visible = true
 		player.SPEED = 0
 		await get_tree().create_timer(4).timeout
-		get_tree().change_scene_to_packed(start)
+		get_tree().change_scene_to_file(start)
 
 func _start_timer(timer):
 	await get_tree().create_timer(timer).timeout

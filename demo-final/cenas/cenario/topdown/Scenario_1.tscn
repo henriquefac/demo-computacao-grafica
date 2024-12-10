@@ -7357,7 +7357,7 @@ scale = Vector2(0.25, 0.25)
 metadata/_edit_lock_ = true
 
 [node name="Living-room-door" parent="." instance=ExtResource("6_h8qua")]
-position = Vector2(152, 305)
+position = Vector2(152, 304)
 scale = Vector2(2, 0.505)
 
 [node name="computer_lvl" parent="." instance=ExtResource("8_n0khy")]
@@ -7376,7 +7376,7 @@ editor_draw_limits = true
 metadata/_edit_lock_ = true
 
 [node name="bed" parent="." instance=ExtResource("6_h8qua")]
-position = Vector2(242, 108)
+position = Vector2(240, 109)
 scale = Vector2(1, 2)
 
 [connection signal="body_entered" from="Living-room-door" to="Escritor" method="_on_livingroomdoor_body_entered"]

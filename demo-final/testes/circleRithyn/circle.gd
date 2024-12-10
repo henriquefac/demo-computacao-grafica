@@ -5,6 +5,7 @@ var orbit_radius = 100
 var orbit_speed = 1.0  # Velocidade de rotação
 var angle = 0.0  # Ângulo da órbita
 var girar: bool = false
+
 signal continueCircle
 
 
@@ -56,10 +57,10 @@ func orbit(delta: float) -> void:
 # Verifica se o botão foi pressionado
 func is_pressed():
 	if flag_in_area and girar:
-		print(new_position)
 		girar = false
 		position = new_position
 		continueCircle.emit()
+	
 
 # Função chamada a cada frame
 func _process(delta: float) -> void:

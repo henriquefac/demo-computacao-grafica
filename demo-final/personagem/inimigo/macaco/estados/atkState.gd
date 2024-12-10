@@ -15,7 +15,6 @@ func Enter():
 	
 	if not animationNode.is_connected("animation_finished",  transitionIdle):
 		animationNode.connect("animation_finished", transitionIdle)
-
 	
 	if hurtBox == null:
 		hurtBox = enemy.hurtbox
@@ -33,7 +32,6 @@ func transitionIdle(algo):
 		Transitioned.emit(self, "idle")
 
 func transictionDamage(area: Area2D):
-	print("área")
 	if area.is_in_group("hitboxPlayer") and area is HitBoxPlayer and on:
 		enemy.getDamage(area)
 		Transitioned.emit(self, "damage")

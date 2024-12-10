@@ -11,6 +11,9 @@ var posY_TD = 269
 var pages = 0
 var max_pages = 1
 
+# Vitoria papai
+var win = false
+
 
 # emitir sinias quando algum status forem afetados
 signal foco_auterado
@@ -20,7 +23,7 @@ signal count_alterado
 signal foco_zero
 
 var vida_maxima = 100
-var vida_atual = 0
+var vida_atual = vida_maxima
 
 
 
